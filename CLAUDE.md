@@ -168,6 +168,33 @@ docs/planning/
 
 ---
 
+## Demo Platform
+
+**URL:** https://meter-tracker.com
+**Container:** LXC 120 (water-monitor) on Proxmox `pve` (10.0.1.11)
+**App Path:** `/opt/water-monitor/`
+**Database:** `/opt/water-monitor/water_monitor.db`
+
+### Registered Users (as of 2026-01-28)
+
+| ID | Username | Email | Created | Last Login |
+|----|----------|-------|---------|------------|
+| 1 | jason | jason@precept.co.za | 2025-12-17 | 2026-01-24 |
+| 2 | Quin1983 | *(none)* | 2025-12-17 | *(never)* |
+
+**Note:** Tanya Dowley invited to create account (2026-01-28) - not yet registered.
+
+### Access Commands (via Proxmox)
+
+```bash
+ssh root@10.0.1.11
+pct exec 120 -- cat /opt/water-monitor/.env
+pct pull 120 /opt/water-monitor/water_monitor.db /tmp/water_monitor.db
+sqlite3 /tmp/water_monitor.db "SELECT * FROM users;"
+```
+
+---
+
 ## Related Projects
 
 - **Fairfield Water** (`/home/jason/Projects/fairfield-water`) - Sister project, reference implementation

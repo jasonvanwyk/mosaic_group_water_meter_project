@@ -101,6 +101,8 @@
 - Mosaic Group is a major property developer in Durban
 - 477 Anton Lembede Street is a block of flats with ~500 units
 - Tanya mentioned orders will be phased (not all 500 at once)
+- Demo platform (meter-tracker.com) shared with Tanya - not yet registered
+- Demo platform has 2 users: jason, Quin1983
 
 ## Correspondence
 

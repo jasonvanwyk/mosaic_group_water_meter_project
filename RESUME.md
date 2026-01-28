@@ -149,3 +149,4 @@
 - 500 meters is a significant project - phased approach wise
 - Leak detection (bulk meters) likely higher priority
 - Demo platform shared: https://meter-tracker.com
+- **Tanya has NOT registered on demo platform yet** - demo in person tomorrow
