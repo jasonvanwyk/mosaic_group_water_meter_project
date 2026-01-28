@@ -69,7 +69,9 @@ mosaic_group/
 
 | # | Document | Description | Status |
 |---|----------|-------------|--------|
-| - | *To be created after initial meeting* | - | - |
+| 00 | [00-site-visit-checklist.md](docs/planning/internal/00-site-visit-checklist.md) | Site visit checklist and form | Current |
+| 01 | [01-customer-discovery.md](docs/planning/internal/01-customer-discovery.md) | Customer discovery questionnaire | Current |
+| 02 | [02-technical-requirements.md](docs/planning/internal/02-technical-requirements.md) | Technical requirements (plumber + IT) | Current |
 
 ### Client Documents (`docs/planning/client/`)
 
