@@ -72,6 +72,7 @@ mosaic_group/
 | 00 | [00-site-visit-checklist.md](docs/planning/internal/00-site-visit-checklist.md) | Site visit checklist and form | Current |
 | 01 | [01-customer-discovery.md](docs/planning/internal/01-customer-discovery.md) | Customer discovery questionnaire | Current |
 | 02 | [02-technical-requirements.md](docs/planning/internal/02-technical-requirements.md) | Technical requirements (plumber + IT) | Current |
+| - | [site-visit-pack-2026-01-29.html](docs/planning/internal/site-visit-pack-2026-01-29.html) | Printable site visit pack (HTML) | Current |
 
 ### Client Documents (`docs/planning/client/`)
 

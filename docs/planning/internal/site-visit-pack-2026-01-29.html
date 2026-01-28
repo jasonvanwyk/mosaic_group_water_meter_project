@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGW Site Visit Pack - 29 January 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 9pt;
+            line-height: 1.3;
+            color: #333;
+            padding: 10mm;
+        }
+
+        @media print {
+            body { padding: 5mm; }
+            .page-break { page-break-before: always; }
+            .no-print { display: none; }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 8pt;
+            color: #666;
+        }
+
+        .doc-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 3px;
+        }
+
+        .doc-ref {
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 12pt;
+            color: #2c5aa0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 3px;
+            margin: 12px 0 6px 0;
+        }
+
+        h2 {
+            font-size: 10pt;
+            color: #444;
+            margin: 8px 0 4px 0;
+        }
+
+        h3 {
+            font-size: 9pt;
+            color: #555;
+            margin: 6px 0 3px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 4px 0 8px 0;
+            font-size: 8pt;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 3px 5px;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 15px;
+            margin: 4px 0;
+        }
+
+        .info-item {
+            display: flex;
+        }
+
+        .info-label {
+            font-weight: 600;
+            min-width: 100px;
+            color: #555;
+        }
+
+        .checkbox-list {
+            columns: 2;
+            column-gap: 15px;
+            list-style: none;
+            margin: 4px 0;
+        }
+
+        .checkbox-list li {
+            margin: 2px 0;
+        }
+
+        .checkbox {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #666;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .fill-line {
+            border-bottom: 1px solid #999;
+            min-width: 150px;
+            display: inline-block;
+            margin: 0 3px;
+        }
+
+        .fill-box {
+            border: 1px solid #999;
+            min-height: 60px;
+            padding: 5px;
+            margin: 4px 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .three-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .compact-table td:first-child {
+            width: 35%;
+            background: #fafafa;
+        }
+
+        .yes-no {
+            font-size: 7pt;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 10px;
+        }
+
+        .priority {
+            font-size: 7pt;
+            color: #888;
+        }
+
+        .footer {
+            margin-top: 15px;
+            padding-top: 8px;
+            border-top: 1px solid #ddd;
+            font-size: 7pt;
+            color: #888;
+            text-align: center;
+        }
+
+        .notes-area {
+            border: 1px solid #ccc;
+            min-height: 40px;
+            margin: 4px 0;
+        }
+
+        .highlight {
+            background: #fffde7;
+        }
+    </style>
+</head>
+<body>
+
+<!-- DOCUMENT 1: SITE VISIT CHECKLIST -->
+<div class="document">
+    <div class="header">
+        <img src="../../../assets/precept_logo/Precept Systems Logo.png" alt="Precept Systems" class="logo">
+        <div class="header-right">
+            <strong>Precept Systems (Pty) Ltd</strong><br>
+            Tel: +27 83 288 9052<br>
+            jason@precept.co.za
+        </div>
+    </div>
+
+    <div class="doc-title">Site Visit Checklist</div>
+    <div class="doc-ref">Ref: MGW-INT-001 | Mosaic Group Water Meter Monitoring | 29 January 2026</div>
+
+    <h1>1. Visit Details</h1>
+    <div class="info-grid">
+        <div class="info-item"><span class="info-label">Date:</span> Wednesday, 29 January 2026</div>
+        <div class="info-item"><span class="info-label">Time:</span> 12:00 PM</div>
+        <div class="info-item"><span class="info-label">Location:</span> 477 Anton Lembede Street, Durban</div>
+        <div class="info-item"><span class="info-label">Client:</span> Mosaic Group</div>
+    </div>
+
+    <h2>Attendees</h2>
+    <table>
+        <tr><th>Name</th><th>Role</th><th>Company</th><th>Contact</th></tr>
+        <tr><td>Jason van Wyk</td><td>Contractor</td><td>Precept Systems</td><td>083 288 9052</td></tr>
+        <tr><td>Tanya Dowley</td><td>Client</td><td>Mosaic Group</td><td>072 227 0883</td></tr>
+        <tr><td class="fill-line" style="width:120px"></td><td>Plumber</td><td>Mosaic Group</td><td class="fill-line" style="width:100px"></td></tr>
+        <tr><td class="fill-line" style="width:120px"></td><td>IT Technician</td><td>Mosaic Group</td><td class="fill-line" style="width:100px"></td></tr>
+    </table>
+
+    <h1>2. Pre-Visit Checklist</h1>
+    <ul class="checkbox-list">
+        <li><span class="checkbox"></span> Business cards</li>
+        <li><span class="checkbox"></span> Phone (camera ready)</li>
+        <li><span class="checkbox"></span> Notebook and pen</li>
+        <li><span class="checkbox"></span> Tape measure</li>
+        <li><span class="checkbox"></span> This document pack</li>
+        <li><span class="checkbox"></span> Demo ready (meter-tracker.com)</li>
+    </ul>
+
+    <h1>3. Building Overview</h1>
+    <table class="compact-table">
+        <tr><td>Building Name</td><td></td></tr>
+        <tr><td>Number of Floors</td><td></td></tr>
+        <tr><td>Number of Units</td><td>~500</td></tr>
+        <tr><td>Year Built / Age</td><td></td></tr>
+        <tr><td>Property Manager On-site?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h1>4. Scope Confirmation</h1>
+    <div class="two-col">
+        <div>
+            <h3>Bulk Meters (Leak Detection)</h3>
+            <table class="compact-table">
+                <tr><td>Quantity</td><td><strong>11</strong></td></tr>
+                <tr><td>Size</td><td>50mm</td></tr>
+                <tr><td>Purpose</td><td>Leak detection</td></tr>
+            </table>
+        </div>
+        <div>
+            <h3>Unit Meters (Per-Flat)</h3>
+            <table class="compact-table">
+                <tr><td>Quantity</td><td><strong>500</strong></td></tr>
+                <tr><td>Size</td><td>15mm</td></tr>
+                <tr><td>Phased Rollout?</td><td class="yes-no">Yes / No</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <h1>5. Bulk Meter Locations (11 Required)</h1>
+    <table>
+        <tr><th>#</th><th>Location / Description</th><th>Access?</th><th>Notes</th></tr>
+        <tr><td>1</td><td>Main incoming supply</td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>2</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>3</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>4</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>5</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>6</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>7</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>8</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>9</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>10</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+        <tr><td>11</td><td></td><td class="yes-no">Y / N</td><td></td></tr>
+    </table>
+
+    <h1>6. Photos to Capture</h1>
+    <ul class="checkbox-list">
+        <li><span class="checkbox"></span> Building exterior</li>
+        <li><span class="checkbox"></span> Main water supply point</li>
+        <li><span class="checkbox"></span> Each bulk meter location</li>
+        <li><span class="checkbox"></span> Typical unit meter location</li>
+        <li><span class="checkbox"></span> Pipe risers / shafts</li>
+        <li><span class="checkbox"></span> Comms room</li>
+        <li><span class="checkbox"></span> Gateway location options</li>
+        <li><span class="checkbox"></span> Problem areas</li>
+    </ul>
+
+    <h1>7. Next Steps Discussed</h1>
+    <table class="compact-table">
+        <tr><td>Proposal Due Date</td><td></td></tr>
+        <tr><td>Decision Maker(s)</td><td></td></tr>
+        <tr><td>Budget Discussed?</td><td class="yes-no">Yes / No</td></tr>
+        <tr><td>Preferred Start Date</td><td></td></tr>
+        <tr><td>Phasing Preference</td><td></td></tr>
+    </table>
+
+    <h1>8. Action Items</h1>
+    <table>
+        <tr><th>#</th><th>Action</th><th>Owner</th><th>Due</th></tr>
+        <tr><td>1</td><td></td><td></td><td></td></tr>
+        <tr><td>2</td><td></td><td></td><td></td></tr>
+        <tr><td>3</td><td></td><td></td><td></td></tr>
+        <tr><td>4</td><td></td><td></td><td></td></tr>
+    </table>
+</div>
+
+<!-- PAGE BREAK -->
+<div class="page-break"></div>
+
+<!-- DOCUMENT 2: CUSTOMER DISCOVERY -->
+<div class="document">
+    <div class="header">
+        <img src="../../../assets/precept_logo/Precept Systems Logo.png" alt="Precept Systems" class="logo">
+        <div class="header-right">
+            <strong>Precept Systems (Pty) Ltd</strong><br>
+            Tel: +27 83 288 9052<br>
+            jason@precept.co.za
+        </div>
+    </div>
+
+    <div class="doc-title">Customer Discovery Questionnaire</div>
+    <div class="doc-ref">Ref: MGW-INT-002 | Mosaic Group Water Meter Monitoring | 29 January 2026</div>
+
+    <h1>1. Business Context</h1>
+    <table class="compact-table">
+        <tr><td>Tanya's role at Mosaic?</td><td></td></tr>
+        <tr><td>Properties Mosaic manages?</td><td></td></tr>
+        <tr><td>Other buildings need this?</td><td></td></tr>
+    </table>
+
+    <h2>The Problem</h2>
+    <table class="compact-table">
+        <tr><td>What triggered the need?</td><td></td></tr>
+        <tr><td>Current problems?</td><td></td></tr>
+        <tr><td>Leak incidents / cost?</td><td></td></tr>
+        <tr><td>Current monthly water bill?</td><td></td></tr>
+        <tr><td>How is water billed to tenants?</td><td></td></tr>
+    </table>
+
+    <h1>2. Current State</h1>
+    <table class="compact-table">
+        <tr><td>Existing water meters?</td><td class="yes-no">Yes / No &nbsp;&nbsp; Type:</td></tr>
+        <tr><td>Who reads them? How often?</td><td></td></tr>
+        <tr><td>How are leaks detected now?</td><td></td></tr>
+        <tr><td>Is water included in rent?</td><td class="yes-no">Yes / No</td></tr>
+        <tr><td>Want to bill tenants for water?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h1>3. Goals & Priorities</h1>
+    <table class="compact-table">
+        <tr><td>What does success look like?</td><td></td></tr>
+        <tr><td>#1 priority?</td><td></td></tr>
+        <tr><td>#2 priority?</td><td></td></tr>
+        <tr><td>#3 priority?</td><td></td></tr>
+    </table>
+
+    <h2>Feature Priority <span class="priority">(H = High, M = Medium, L = Low)</span></h2>
+    <div class="two-col">
+        <table>
+            <tr><td>Real-time monitoring</td><td style="width:50px">H M L</td></tr>
+            <tr><td>Leak detection alerts</td><td>H M L</td></tr>
+            <tr><td>Per-unit billing</td><td>H M L</td></tr>
+            <tr><td>Historical reports</td><td>H M L</td></tr>
+            <tr><td>Tenant portal</td><td>H M L</td></tr>
+        </table>
+        <table>
+            <tr><td>Mobile app</td><td style="width:50px">H M L</td></tr>
+            <tr><td>Billing integration</td><td>H M L</td></tr>
+            <tr><td>Automated readings</td><td>H M L</td></tr>
+            <tr><td>Tamper detection</td><td>H M L</td></tr>
+            <tr><td>Pressure monitoring</td><td>H M L</td></tr>
+        </table>
+    </div>
+
+    <h1>4. Decision Process</h1>
+    <table class="compact-table">
+        <tr><td>Who makes final decision?</td><td></td></tr>
+        <tr><td>Who else needs to approve?</td><td></td></tr>
+        <tr><td>Procurement process?</td><td></td></tr>
+    </table>
+
+    <h2>Timeline & Budget</h2>
+    <table class="compact-table">
+        <tr><td>When needed operational?</td><td></td></tr>
+        <tr><td>Deadline driving this?</td><td></td></tr>
+        <tr><td>Budget allocated?</td><td class="yes-no">Yes / No &nbsp;&nbsp; Range:</td></tr>
+        <tr><td>CapEx or OpEx preference?</td><td></td></tr>
+        <tr><td>Phased payment OK?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h1>5. Constraints & Concerns</h1>
+    <table class="compact-table">
+        <tr><td>Technical concerns?</td><td></td></tr>
+        <tr><td>Data hosting preference?</td><td class="yes-no">Cloud / On-prem / Either</td></tr>
+        <tr><td>Tenant disruption concerns?</td><td></td></tr>
+        <tr><td>Who manages day-to-day?</td><td></td></tr>
+        <tr><td>Pilot first or full rollout?</td><td></td></tr>
+    </table>
+
+    <h1>6. Phasing Discussion</h1>
+    <table>
+        <tr><th>Phase</th><th>Scope</th><th>Priority</th><th>Notes</th></tr>
+        <tr><td>1</td><td>11 bulk meters (leak detection)</td><td>High</td><td></td></tr>
+        <tr><td>2</td><td>Unit meters batch 1 (_____ units)</td><td></td><td></td></tr>
+        <tr><td>3</td><td>Unit meters batch 2 (_____ units)</td><td></td><td></td></tr>
+        <tr><td>4</td><td>Remaining units</td><td></td><td></td></tr>
+    </table>
+
+    <h1>7. Other Properties</h1>
+    <table class="compact-table">
+        <tr><td>Other properties need this?</td><td class="yes-no">Yes / No &nbsp;&nbsp; How many:</td></tr>
+        <tr><td>Central dashboard wanted?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h1>8. Key Quotes / Insights</h1>
+    <div class="notes-area" style="min-height: 50px;"></div>
+
+    <h1>9. Top 3 Takeaways</h1>
+    <table>
+        <tr><td style="width:30px">1.</td><td></td></tr>
+        <tr><td>2.</td><td></td></tr>
+        <tr><td>3.</td><td></td></tr>
+    </table>
+</div>
+
+<!-- PAGE BREAK -->
+<div class="page-break"></div>
+
+<!-- DOCUMENT 3: TECHNICAL REQUIREMENTS -->
+<div class="document">
+    <div class="header">
+        <img src="../../../assets/precept_logo/Precept Systems Logo.png" alt="Precept Systems" class="logo">
+        <div class="header-right">
+            <strong>Precept Systems (Pty) Ltd</strong><br>
+            Tel: +27 83 288 9052<br>
+            jason@precept.co.za
+        </div>
+    </div>
+
+    <div class="doc-title">Technical Requirements</div>
+    <div class="doc-ref">Ref: MGW-INT-003 | Mosaic Group Water Meter Monitoring | 29 January 2026</div>
+
+    <h1>Section A: Plumber Assessment</h1>
+    <p><strong>Plumber Name:</strong> <span class="fill-line" style="width:150px"></span> <strong>Contact:</strong> <span class="fill-line" style="width:120px"></span></p>
+
+    <h2>A1. Water Supply Configuration</h2>
+    <table class="compact-table">
+        <tr><td>Municipal supply entry point?</td><td></td></tr>
+        <tr><td>Number of supply lines?</td><td></td></tr>
+        <tr><td>Main pipe size & material?</td><td></td></tr>
+        <tr><td>Existing bulk meter from municipality?</td><td class="yes-no">Yes / No &nbsp;&nbsp; Size:</td></tr>
+    </table>
+
+    <h2>A2. Internal Distribution</h2>
+    <table class="compact-table">
+        <tr><td>Distribution type?</td><td class="yes-no">Riser / Ring / Other:</td></tr>
+        <tr><td>Number of risers?</td><td></td></tr>
+        <tr><td>Riser pipe sizes?</td><td></td></tr>
+        <tr><td>Risers accessible?</td><td class="yes-no">Yes / No &nbsp;&nbsp; Access method:</td></tr>
+    </table>
+
+    <h2>A3. Unit Connections</h2>
+    <table class="compact-table">
+        <tr><td>Pipe size to each unit?</td><td></td></tr>
+        <tr><td>Where does pipe enter unit?</td><td class="yes-no">Kitchen / Bathroom / Utility</td></tr>
+        <tr><td>Isolation valve per unit?</td><td class="yes-no">Yes / No</td></tr>
+        <tr><td>Space for meter at entry?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h2>A4. Installation Considerations</h2>
+    <table class="compact-table">
+        <tr><td>Can water be shut off per riser?</td><td class="yes-no">Yes / No</td></tr>
+        <tr><td>Shut-off duration acceptable?</td><td></td></tr>
+        <tr><td>Best time for shut-offs?</td><td></td></tr>
+        <tr><td>Plumber available for install?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h2>A5. Leak History</h2>
+    <table class="compact-table">
+        <tr><td>Leak frequency?</td><td></td></tr>
+        <tr><td>Common leak locations?</td><td></td></tr>
+        <tr><td>Estimated monthly water loss?</td><td></td></tr>
+    </table>
+
+    <h1>Section B: IT Assessment</h1>
+    <p><strong>IT Tech Name:</strong> <span class="fill-line" style="width:150px"></span> <strong>Contact:</strong> <span class="fill-line" style="width:120px"></span></p>
+
+    <h2>B1. Network Infrastructure</h2>
+    <table class="compact-table">
+        <tr><td>Internet provider / type?</td><td></td></tr>
+        <tr><td>Bandwidth?</td><td></td></tr>
+        <tr><td>Static IP available?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h2>B2. Building Network</h2>
+    <table class="compact-table">
+        <tr><td>Ethernet throughout?</td><td class="yes-no">Yes / No &nbsp;&nbsp; Coverage:</td></tr>
+        <tr><td>Cable type?</td><td class="yes-no">CAT5e / CAT6 / Other:</td></tr>
+        <tr><td>Managed switches?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h2>B3. Comms Room</h2>
+    <table class="compact-table">
+        <tr><td>Location?</td><td>Floor: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Room:</td></tr>
+        <tr><td>Rack space available?</td><td class="yes-no">Yes / No</td></tr>
+        <tr><td>UPS power?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h2>B4. LoRa/IoT Feasibility</h2>
+    <table class="compact-table">
+        <tr><td>Building construction?</td><td class="yes-no">Concrete / Brick / Steel / Mixed</td></tr>
+        <tr><td>Floors / Basements?</td><td>Floors: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Basements:</td></tr>
+        <tr><td>Rooftop access for antenna?</td><td class="yes-no">Yes / No</td></tr>
+    </table>
+
+    <h2>B5. Gateway Placement Options</h2>
+    <table>
+        <tr><th>Location</th><th>Power?</th><th>Ethernet?</th><th>Secure?</th><th>Notes</th></tr>
+        <tr><td>Comms room</td><td class="yes-no">Y/N</td><td class="yes-no">Y/N</td><td class="yes-no">Y/N</td><td></td></tr>
+        <tr><td>Rooftop</td><td class="yes-no">Y/N</td><td class="yes-no">Y/N</td><td class="yes-no">Y/N</td><td></td></tr>
+        <tr><td></td><td class="yes-no">Y/N</td><td class="yes-no">Y/N</td><td class="yes-no">Y/N</td><td></td></tr>
+    </table>
+
+    <h2>B6. Data & Security</h2>
+    <table class="compact-table">
+        <tr><td>Hosting preference?</td><td class="yes-no">Cloud / On-prem / Hybrid</td></tr>
+        <tr><td>Integration with existing systems?</td><td></td></tr>
+    </table>
+
+    <h1>Section C: Summary</h1>
+
+    <h2>Recommended Architecture</h2>
+    <table class="compact-table">
+        <tr><td>Connectivity</td><td class="yes-no">LoRa / Ethernet / Hybrid</td></tr>
+        <tr><td>Gateway quantity</td><td></td></tr>
+        <tr><td>Server/hosting</td><td class="yes-no">Cloud / On-prem</td></tr>
+    </table>
+
+    <h2>Documents to Request</h2>
+    <ul class="checkbox-list">
+        <li><span class="checkbox"></span> Building floor plans</li>
+        <li><span class="checkbox"></span> Plumbing drawings</li>
+        <li><span class="checkbox"></span> Network diagram</li>
+        <li><span class="checkbox"></span> Water bills (12 months)</li>
+        <li><span class="checkbox"></span> Unit list / tenant schedule</li>
+    </ul>
+
+    <h1>Section D: Sketch Area</h1>
+    <div class="two-col">
+        <div>
+            <h3>Building Layout</h3>
+            <div style="border: 1px solid #ccc; height: 120px;"></div>
+        </div>
+        <div>
+            <h3>Riser Diagram</h3>
+            <div style="border: 1px solid #ccc; height: 120px;"></div>
+        </div>
+    </div>
+
+    <h1>Section E: Notes</h1>
+    <div class="notes-area" style="min-height: 80px;"></div>
+
+    <div class="footer">
+        Precept Systems (Pty) Ltd | Reg: 2024/507423/07 | www.precept.co.za
+    </div>
+</div>
+
+</body>
+</html>
