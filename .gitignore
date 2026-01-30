@@ -33,6 +33,9 @@ Thumbs.db
 !docs/**/*.jpg
 !assets/**/*.png
 !assets/**/*.jpg
+!pics/**/*.jpg
+!pics/**/*.jpeg
+!pics/**/*.png
 !assets/**/*.svg
 walks/
 output/

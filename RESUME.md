@@ -2,24 +2,23 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-01-28
+**Last Updated:** 2026-01-30
 
 ---
 
 ## Right Now
 
-**Phase:** Initial Contact / Site Assessment
-**Next Action:** Site visit tomorrow (Wed 29 Jan) at 12:00 PM
+**Phase:** Post-Site Visit / Solution Design
+**Next Action:** Document full site visit findings, then develop technical proposal
 
-### Site Visit Details
+### Site Visit Completed
 | Item | Details |
 |------|---------|
 | **Date** | Wednesday, 29 January 2026 |
 | **Time** | 12:00 PM |
-| **Location** | 477 Anton Lembede Street, Durban |
-| **Contact** | Tanya Dowley (072 227 0883) |
-| **Attendees** | Tanya, in-house plumber, IT technician |
-| **Purpose** | Introduction, site visit, initial assessment |
+| **Location** | 477 Anton Lembede Street, Durban (City Life) |
+| **Attendees** | Tanya Dowley (part owner), Ryan (plumber), Sumir (IT technician) |
+| **Status** | Completed |
 
 ### Quick Links
 | Need | File |
@@ -32,24 +31,32 @@
 
 ---
 
-## Last Session (2026-01-28)
+## Last Session (2026-01-30)
 
 ### Completed
+- Site visit conducted at 477 Anton Lembede Street (City Life)
+- Met Tanya Dowley (part owner), Ryan (plumber), Sumir (IT technician)
+- Photographed main riser and piping infrastructure
+- Uploaded Precision Meters vendor spec sheets (4 product PDFs)
+- Conducted initial research on smart metering architecture for high-rise
+
+### Previous Session (2026-01-28)
 - Initial phone call with Tanya Dowley
-- Site visit scheduled for tomorrow 12:00 PM
+- Site visit scheduled
 - Email sent to Tanya confirming meeting
 - Email sent to Bradley & Garth updating on progress
 - Correspondence saved to `docs/planning/correspondence/`
 - Demo platform shared with Tanya: https://meter-tracker.com
 
-### Project Scope Confirmed
-| Item | Quantity | Size | Purpose |
-|------|----------|------|---------|
-| Bulk meters | 11 | 50mm | Leak detection |
-| Unit meters | 500 | 15mm | Per-flat metering |
+### Piping Infrastructure (from site visit)
+| Section | Size | Notes |
+|---------|------|-------|
+| Main riser | 75mm | Single riser through all floors |
+| Floor branch | 50mm | Branches off riser at each floor |
+| Unit feed | 16mm | From floor branch to each unit |
 
-**Property:** Block of flats (~500 units) at 477 Anton Lembede Street, Durban
-**Note:** 500 unit meters to be ordered in phases
+**Building:** City Life / Delta Towers - 15-story high-rise, 48 units per floor (~720 units)
+**Note:** Meters to be ordered in phases. Must source from Precision Meters.
 
 ---
 
@@ -62,10 +69,12 @@
 - **Condition:** Must use Precision Meters' smart water meters
 - Jason provides: telemetry, monitoring platform, integration services
 
-### Site: 477 Anton Lembede Street, Durban
-- Block of flats with ~500 units
-- Requires 11 bulk meters (50mm) for leak detection
-- Requires 500 unit meters (15mm) for individual flat metering
+### Site: 477 Anton Lembede Street, Durban (City Life / Delta Towers)
+- 15-story high-rise, 48 units per floor (~720 units total)
+- Single 75mm main riser through all floors
+- 50mm branch per floor, 16mm feed to each unit
+- Requires bulk meters (50mm) for leak detection
+- Requires unit meters for individual flat metering
 - Phased rollout planned
 
 ### Reference Project
@@ -80,54 +89,45 @@
 
 | Person | Company | Role | Cell |
 |--------|---------|------|------|
-| **Tanya Dowley** | Mosaic Group | Client | 072 227 0883 |
+| **Tanya Dowley** | Mosaic Group | Part Owner / Client | 072 227 0883 |
+| **Ryan** | Mosaic Group | In-house Plumber | - |
+| **Sumir** | Mosaic Group | In-house IT Technician | - |
 | **Bradley Cassani** | Precision Meters | Smart Meter Manager | 061 864 0536 |
 | **Garth Le Roux** | Precision Meters | Sales Rep | 072 469 8133 |
 
 ---
 
-## Site Visit Checklist (29 Jan)
+## Site Visit Checklist (29 Jan) - COMPLETED
 
-### To Assess
-- [ ] Building layout and infrastructure
-- [ ] Bulk meter locations (11 points for leak detection)
-- [ ] Unit meter installation requirements (500 flats)
-- [ ] Existing water infrastructure and piping
-- [ ] Connectivity options (LoRa coverage, Ethernet availability)
-- [ ] Gateway placement options
-- [ ] Power availability at meter locations
+### Assessed
+- [x] Building layout and infrastructure
+- [x] Existing water infrastructure and piping (75mm riser -> 50mm floor -> 16mm unit)
+- [ ] Bulk meter locations (11 points for leak detection) - *awaiting full notes*
+- [ ] Unit meter installation requirements - *awaiting full notes*
+- [ ] Connectivity options (LoRa coverage, Ethernet availability) - *awaiting full notes*
+- [ ] Gateway placement options - *awaiting full notes*
+- [ ] Power availability at meter locations - *awaiting full notes*
 
-### To Discuss with Tanya
-- [ ] Timeline and priorities
-- [ ] Phased rollout preferences
-- [ ] Budget considerations
-- [ ] Decision-making process
+### Discussed
+- [ ] Timeline and priorities - *awaiting full notes*
+- [ ] Phased rollout preferences - *awaiting full notes*
+- [ ] Budget considerations - *awaiting full notes*
+- [ ] Decision-making process - *awaiting full notes*
 
-### Questions for Plumber
-- [ ] Existing pipe sizes and configurations
-- [ ] Access to meter installation points
-- [ ] Any plumbing constraints or challenges
-- [ ] Meter installation feasibility (50mm bulk, 15mm unit)
+### Captured
+- [x] Photographs of key areas (main riser photo)
+- [ ] Building floor plans (if available) - *awaiting full notes*
+- [ ] Existing meter details - *awaiting full notes*
+- [ ] Notes on challenges/constraints - *awaiting full notes*
 
-### Questions for IT Technician
-- [ ] Existing network infrastructure
-- [ ] Ethernet availability at key points
-- [ ] Server room / comms room location
-- [ ] Wi-Fi coverage across building
-- [ ] Potential gateway mounting locations
-
-### To Capture
-- [ ] Photographs of key areas
-- [ ] Building floor plans (if available)
-- [ ] Existing meter details
-- [ ] Notes on challenges/constraints
+**Note:** Full site visit findings pending - Jason to provide detailed notes.
 
 ---
 
 ## Next Steps
 
-1. **Tomorrow:** Site visit at 477 Anton Lembede Street (12:00 PM)
-2. **Post-visit:** Document findings in site assessment report
+1. **Now:** Document full site visit findings (awaiting Jason's detailed notes)
+2. **Next:** Create site assessment report
 3. **Design:** Create technical solution for phased rollout
 4. **Proposal:** Develop proposal with Precision Meters pricing
 5. **Present:** Submit proposal to Tanya
@@ -146,7 +146,11 @@
 
 - Precision Meters has no KZN presence (Cape Town based)
 - Jason positioned as N3 corridor contact for field support
-- 500 meters is a significant project - phased approach wise
+- ~720 meters is a significant project - phased approach wise
 - Leak detection (bulk meters) likely higher priority
 - Demo platform shared: https://meter-tracker.com
-- **Tanya has NOT registered on demo platform yet** - demo in person tomorrow
+- **Tanya has NOT registered on demo platform yet** (as of 2026-01-30)
+- Building identified as City Life / Delta Towers - 15 floors, 48 units/floor
+- Single 75mm riser serves entire building
+- Research completed on LoRaWAN architecture for high-rise deployment
+- Vendor spec sheets uploaded from Precision Meters (4 product lines)

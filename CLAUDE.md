@@ -2,7 +2,7 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-01-28
+**Last Updated:** 2026-01-30
 
 ---
 
@@ -21,8 +21,8 @@ The project is similar to the **Fairfield Dairy water monitoring system** (`/hom
 
 ## Project Status
 
-**Phase:** Initial Contact / Pre-Proposal
-**Next Milestone:** Initial meeting with Tanya Dowley (Mosaic Group)
+**Phase:** Post-Site Visit / Solution Design
+**Next Milestone:** Site assessment report and technical proposal
 
 ### Key Files to Read First
 
@@ -46,7 +46,9 @@ The project is similar to the **Fairfield Dairy water monitoring system** (`/hom
 
 | Person | Role | Contact |
 |--------|------|---------|
-| **Tanya Dowley** | Primary Contact | 072 227 0883 / 031 562 8716 / tanya@mosaicgroup.co.za |
+| **Tanya Dowley** | Part Owner / Primary Contact | 072 227 0883 / 031 562 8716 / tanya@mosaicgroup.co.za |
+| **Ryan** | In-house Plumber | On-site |
+| **Sumir** | In-house IT Technician | On-site |
 
 ### Supplier (Precision Meters)
 
@@ -79,6 +81,19 @@ The project is similar to the **Fairfield Dairy water monitoring system** (`/hom
 - **Adapt Media** - Out-of-home advertising
 
 **Water Monitoring Relevance:** Extensive property portfolio with significant water consumption across residential, commercial, and amenity spaces. Utility monitoring critical for operational efficiency and cost management.
+
+### Target Site: 477 Anton Lembede Street (City Life / Delta Towers)
+
+| Item | Details |
+|------|---------|
+| Building | City Life / Delta Towers |
+| Floors | 15 |
+| Units per floor | 48 |
+| Total units | ~720 |
+| Main riser | 75mm (single riser, all floors) |
+| Floor branch | 50mm (branches at each floor) |
+| Unit feed | 16mm (to each unit) |
+| Construction | Reinforced concrete high-rise |
 
 ---
 
@@ -116,11 +131,11 @@ The project is similar to the **Fairfield Dairy water monitoring system** (`/hom
 docs/planning/
 ├── client/           # Client-facing (proposals, scope of work)
 ├── internal/         # Technical docs (numbered 00-NN)
-│   ├── 00-*.md
-│   ├── 01-*.md
-│   └── ...
+│   ├── Research/     # Technical research and analysis
+│   └── Vendors/      # Supplier spec sheets and datasheets
 ├── correspondence/   # Meeting notes (dated YYYY-MM-DD)
 └── site-visits/      # Field visit reports
+pics/                 # Site visit photographs
 ```
 
 ### Naming Conventions
@@ -136,14 +151,20 @@ docs/planning/
 |----------|--------|-----------|
 | Meter supplier | Precision Meters | Referral relationship, condition of opportunity |
 | Solution approach | Custom (like Fairfield) | Flexibility, proven architecture |
+| IoT protocol | LoRaWAN (private) | High-rise concrete penetration, no subscriptions |
+| Network server | ChirpStack | Open-source, self-hosted, full API access |
 
 ---
 
-## Upcoming
+## Milestones
 
-| Event | Date | Notes |
-|-------|------|-------|
-| Initial contact with Tanya | TBD | Arrange introductory meeting |
+| Event | Date | Status |
+|-------|------|--------|
+| Initial contact with Tanya | 2026-01-28 | Done |
+| Site visit at 477 Anton Lembede | 2026-01-29 | Done |
+| Site assessment report | TBD | Next |
+| Technical proposal | TBD | Upcoming |
+| Submit proposal to Tanya | TBD | Upcoming |
 
 ---
 

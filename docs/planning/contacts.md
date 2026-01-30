@@ -2,7 +2,7 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-01-28
+**Last Updated:** 2026-01-30
 
 ---
 
@@ -17,7 +17,9 @@
 
 | Person | Role | Cell | Office | Email |
 |--------|------|------|--------|-------|
-| **Tanya Dowley** | Primary Contact | 072 227 0883 | 031 562 8716 | tanya@mosaicgroup.co.za |
+| **Tanya Dowley** | Part Owner / Primary Contact | 072 227 0883 | 031 562 8716 | tanya@mosaicgroup.co.za |
+| **Ryan** | In-house Plumber | - | - | - |
+| **Sumir** | In-house IT Technician | - | - | - |
 
 ---
 
