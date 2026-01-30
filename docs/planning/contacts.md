@@ -13,13 +13,13 @@
 **Head Office:** 2 Heleza Boulevard, Sibaya Drive, eMdloti, Durban
 
 ### Site Address
-**477 Anton Lembede Street, Durban** (Block of flats, ~500 units)
+**477 Anton Lembede Street, Durban** (City Life / Delta Towers — 27 floors, 12 in scope, 576 units)
 
 | Person | Role | Cell | Office | Email |
 |--------|------|------|--------|-------|
 | **Tanya Dowley** | Part Owner / Primary Contact | 072 227 0883 | 031 562 8716 | tanya@mosaicgroup.co.za |
-| **Ryan** | In-house Plumber | - | - | - |
-| **Sumir** | In-house IT Technician | - | - | - |
+| **Ryan** | In-house Plumber | 084 701 2780 | - | ryan@mosaicgroup.co.za |
+| **Sumir** | In-house IT Technician | 084 347 5755 | - | sumir@city-life.co.za |
 
 ---
 
@@ -85,5 +85,7 @@ Mosaic Group (Tanya Dowley)
 | Need | Contact | Number |
 |------|---------|--------|
 | Client queries | Tanya Dowley | 072 227 0883 |
+| On-site IT / ERP | Sumir | 084 347 5755 |
+| On-site plumbing | Ryan | 084 701 2780 |
 | Meter specs/pricing | Bradley Cassani | 061 864 0536 |
 | Sales/referral | Garth Le Roux | 072 469 8133 |

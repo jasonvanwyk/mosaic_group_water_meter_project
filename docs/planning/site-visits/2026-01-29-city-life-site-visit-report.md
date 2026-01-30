@@ -21,7 +21,7 @@
 
 ## 1. Executive Summary
 
-Precept Systems conducted a site visit at City Life (477 Anton Lembede Street, Durban CBD), a 27-storey residential high-rise managed by Mosaic Group. The visit focused on the first 12 floors, which fall under Mosaic Group's management and are the scope for a proposed water metering and monitoring solution. The upper floors serve a different set of clients and are excluded.
+Precept Systems conducted a site visit at City Life (477 Anton Lembede Street, Durban CBD), a 27-storey residential high-rise managed by Mosaic Group. The visit focused on the first 12 floors, which fall under Mosaic Group's management and are the scope for a proposed water metering and monitoring solution. The upper floors accommodate a different tenant type and are excluded from this phase.
 
 The building has 48 units per floor, totalling 576 units across the 12 floors in scope. The client requires individual unit metering, bulk floor metering for leak detection, and integration with their existing CLTM ERP tenant management system. Mosaic Group currently charges tenants a flat R400/month for water with no usage visibility — the building's total municipal water bill is approximately R1.2M/month.
 
@@ -42,7 +42,7 @@ Tanya Dowley confirmed that budget has been allocated and that she will be revie
 | Building age | Approximately 60 years |
 | Construction | Reinforced concrete, brick, and steel (no basements) |
 | Property manager on-site | Tanya Dowley |
-| Upper floors | Excluded — different client group |
+| Upper floors | Excluded — different tenant type (entire building owned by Mosaic Group) |
 
 ---
 

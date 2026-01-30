@@ -141,7 +141,7 @@ Given the existing UniFi WiFi infrastructure, the following alternatives were ev
 
 ### 2.1 Unit Meters (16mm Feed) -- Precision Meters Ultrasonic 15mm
 
-**Recommended product: Precision Meters Ultrasonic 15mm (QALCOSONIC W1)**
+**Recommended product: Precision Meters Ultrasonic 15mm**
 
 Based on the vendor spec sheets at `/home/jason/Projects/mosaic_group/docs/planning/internal/Vendors/`:
 

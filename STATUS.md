@@ -50,7 +50,7 @@
 |------|---------|
 | Building | City Life (Delta Towers) |
 | Total floors | 27 |
-| Floors in scope | 12 (first 12 — upper floors are a different client group) |
+| Floors in scope | 12 (first 12 — upper floors have a different tenant type) |
 | Units per floor | 48 |
 | Total units in scope | 576 |
 | Building age | ~60 years |
@@ -72,8 +72,8 @@
 - [x] ~~Research CLTM ERP system~~ — Done (not identified; must ask Sumir for exact product name)
 - [x] ~~Research hosting options~~ — Done (Hetzner SA VPS recommended for cloud; on-prem Proxmox for pilot)
 - [x] ~~Research solution design~~ — Done (LoRaWAN + ChirpStack, 3 gateways, RAK3172 nodes, valve-ready PCB)
-- [ ] **Email Sumir** — confirm CLTM product name, API, login URL (BLOCKER for ERP integration)
-- [ ] **Email Bradley** — confirm 15mm ultrasonic LoRaWAN availability and pricing (CRITICAL for architecture)
+- [x] **Email Tanya re CLTM** — sent 2026-01-30 12:07, requesting product name and vendor details (awaiting reply)
+- [x] **Email Bradley & Garth** — sent 2026-01-30, site assessment report + LoRaWAN/pricing/supply chain questions (awaiting reply)
 
 ### Next
 - [ ] Create site assessment report
@@ -85,8 +85,8 @@
 ## Blockers
 | Blocker | Owner | Status |
 |---------|-------|--------|
-| CLTM ERP identity unknown — need Sumir's contact details from Tanya | Jason | Pending |
-| Precision Meters LoRaWAN confirmation — need Bradley to confirm integrated radio in 15mm | Jason | Pending |
+| CLTM ERP identity unknown — email sent to Tanya 2026-01-30, awaiting reply | Jason | Awaiting reply |
+| Precision Meters LoRaWAN confirmation — email sent to Bradley 2026-01-30 with site assessment report | Jason | Awaiting reply |
 
 ## Upcoming
 | Event | Date | Notes |
@@ -102,8 +102,8 @@
 | Person | Company | Role | Cell |
 |--------|---------|------|------|
 | Tanya Dowley | Mosaic Group | Part Owner / Client | 072 227 0883 |
-| Ryan | Mosaic Group | In-house Plumber | - |
-| Sumir | Mosaic Group | In-house IT Technician | - |
+| Ryan | Mosaic Group | In-house Plumber | 084 701 2780 |
+| Sumir | Mosaic Group | In-house IT Technician | 084 347 5755 |
 | Bradley Cassani | Precision Meters | Smart Meter Manager | 061 864 0536 |
 | Garth Le Roux | Precision Meters | Sales Rep (Referrer) | 072 469 8133 |
 
@@ -145,6 +145,9 @@
 | Date | Reference | Description |
 |------|-----------|-------------|
 | 2026-01-28 | MGW-COR-202601-001 | [Initial contact emails](docs/planning/correspondence/2026-01-28-initial-contact-emails.md) |
+| 2026-01-29 | MGW-COR-202601-002 | [Site visit email thread](docs/planning/correspondence/2026-01-29-site-visit-email-thread.md) |
+| 2026-01-30 | MGW-COR-202601-003 | [CLTM ERP inquiry to Tanya](docs/planning/correspondence/2026-01-30-tanya-cltm-inquiry.md) |
+| 2026-01-30 | MGW-COR-202601-004 | [Site assessment report & meter questions to Bradley/Garth](docs/planning/correspondence/2026-01-30-bradley-site-assessment-email.md) |
 
 ## Documentation
 

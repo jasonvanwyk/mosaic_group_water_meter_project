@@ -47,8 +47,8 @@ The project is similar to the **Fairfield Dairy water monitoring system** (`/hom
 | Person | Role | Contact |
 |--------|------|---------|
 | **Tanya Dowley** | Part Owner / Primary Contact | 072 227 0883 / 031 562 8716 / tanya@mosaicgroup.co.za |
-| **Ryan** | In-house Plumber | On-site |
-| **Sumir** | In-house IT Technician | On-site |
+| **Ryan** | In-house Plumber | 084 701 2780 / ryan@mosaicgroup.co.za |
+| **Sumir** | In-house IT Technician | 084 347 5755 / sumir@city-life.co.za |
 
 ### Supplier (Precision Meters)
 

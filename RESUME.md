@@ -77,7 +77,7 @@
 - Jason provides: telemetry, monitoring platform, integration services
 
 ### Site: 477 Anton Lembede Street, Durban (City Life / Delta Towers)
-- 27-storey high-rise, 12 floors in scope (upper floors are a different client group)
+- 27-storey high-rise, 12 floors in scope (upper floors have a different tenant type; entire building owned by Mosaic Group)
 - 48 units per floor, 576 units total in scope
 - Building age: ~60 years, construction: concrete/brick/steel
 - Single 75mm main riser (gravity-fed from top), 50mm branch per floor, 16mm feed to each unit
@@ -100,8 +100,8 @@
 | Person | Company | Role | Cell |
 |--------|---------|------|------|
 | **Tanya Dowley** | Mosaic Group | Part Owner / Client | 072 227 0883 |
-| **Ryan** | Mosaic Group | In-house Plumber | - |
-| **Sumir** | Mosaic Group | In-house IT Technician | - |
+| **Ryan** | Mosaic Group | In-house Plumber | 084 701 2780 |
+| **Sumir** | Mosaic Group | In-house IT Technician | 084 347 5755 |
 | **Bradley Cassani** | Precision Meters | Smart Meter Manager | 061 864 0536 |
 | **Garth Le Roux** | Precision Meters | Sales Rep | 072 469 8133 |
 
@@ -138,7 +138,8 @@
 
 1. ~~**Document full site visit findings**~~ — Done
 2. ~~**Internal research**~~ — Done (CLTM ERP, hosting, solution design)
-3. **Now:** Email Sumir (confirm CLTM product name + API) and Bradley (confirm LoRaWAN in 15mm meter)
+3. ~~**Email Tanya re CLTM**~~ — Sent 2026-01-30 (awaiting reply)
+4. ~~**Email Bradley & Garth**~~ — Sent 2026-01-30 (site assessment report + LoRaWAN/pricing/supply chain questions, awaiting reply)
 4. **Next:** Site assessment report
 5. **Then:** Build business case (benefits analysis, ROI, alternatives comparison)
 6. **Then:** Technical solution design with phased rollout
@@ -152,6 +153,9 @@
 | Date | Reference | Description |
 |------|-----------|-------------|
 | 2026-01-28 | MGW-COR-202601-001 | Initial contact emails |
+| 2026-01-29 | MGW-COR-202601-002 | Site visit email thread (contact details, water tariff data) |
+| 2026-01-30 | MGW-COR-202601-003 | CLTM ERP inquiry to Tanya (awaiting reply) |
+| 2026-01-30 | MGW-COR-202601-004 | Site assessment report & meter questions to Bradley/Garth (awaiting reply) |
 
 ---
 

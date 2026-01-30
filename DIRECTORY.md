@@ -64,6 +64,7 @@ mosaic_group/
 | File | Description | Status |
 |------|-------------|--------|
 | [contacts.md](docs/planning/contacts.md) | Contact directory | Current |
+| [MGW-Site-Assessment-Report-2026-01-30.md](docs/planning/MGW-Site-Assessment-Report-2026-01-30.md) | Site assessment report for Precision Meters | Current |
 
 ### Internal Documents (`docs/planning/internal/`)
 
@@ -85,6 +86,9 @@ mosaic_group/
 | Date | Document | Description |
 |------|----------|-------------|
 | 2026-01-28 | [2026-01-28-initial-contact-emails.md](docs/planning/correspondence/2026-01-28-initial-contact-emails.md) | Initial contact emails (MGW-COR-202601-001) |
+| 2026-01-29 | [2026-01-29-site-visit-email-thread.md](docs/planning/correspondence/2026-01-29-site-visit-email-thread.md) | Site visit email thread (MGW-COR-202601-002) |
+| 2026-01-30 | [2026-01-30-tanya-cltm-inquiry.md](docs/planning/correspondence/2026-01-30-tanya-cltm-inquiry.md) | CLTM ERP inquiry to Tanya (MGW-COR-202601-003) |
+| 2026-01-30 | [2026-01-30-bradley-site-assessment-email.md](docs/planning/correspondence/2026-01-30-bradley-site-assessment-email.md) | Site assessment report to Precision Meters (MGW-COR-202601-004) |
 
 ---
 
