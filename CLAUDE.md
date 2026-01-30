@@ -82,11 +82,11 @@ The project is similar to the **Fairfield Dairy water monitoring system** (`/hom
 
 **Water Monitoring Relevance:** Extensive property portfolio with significant water consumption across residential, commercial, and amenity spaces. Utility monitoring critical for operational efficiency and cost management.
 
-### Target Site: 477 Anton Lembede Street (City Life / Delta Towers)
+### Target Site: 477 Anton Lembede Street (City Life)
 
 | Item | Details |
 |------|---------|
-| Building | City Life (Delta Towers) |
+| Building | City Life |
 | Total floors | 27 |
 | Floors in scope | 12 (first 12 floors — upper floors are a different client group) |
 | Units per floor | 48 |

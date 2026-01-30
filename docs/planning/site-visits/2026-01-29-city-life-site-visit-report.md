@@ -33,7 +33,7 @@ Tanya Dowley confirmed that budget has been allocated and that she will be revie
 
 | Item | Details |
 |------|---------|
-| Building name | City Life (Delta Towers) |
+| Building name | City Life |
 | Address | 477 Anton Lembede Street, Durban CBD |
 | Total floors | 27 |
 | Floors in scope | 12 (first 12 floors only) |

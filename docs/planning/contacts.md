@@ -13,7 +13,7 @@
 **Head Office:** 2 Heleza Boulevard, Sibaya Drive, eMdloti, Durban
 
 ### Site Address
-**477 Anton Lembede Street, Durban** (City Life / Delta Towers — 27 floors, 12 in scope, 576 units)
+**477 Anton Lembede Street, Durban** (City Life — 27 floors, 12 in scope, 576 units)
 
 | Person | Role | Cell | Office | Email |
 |--------|------|------|--------|-------|

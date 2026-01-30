@@ -1,6 +1,6 @@
 # **Comprehensive Engineering and Economic Analysis for Large-Scale Advanced Metering Infrastructure: Vertical Urban Deployment at 477 Anton Lembede Street, Durban**
 
-The modernization of urban residential utility management requires a paradigm shift from reactive maintenance to proactive, data-driven infrastructure. At 477 Anton Lembede Street, Durban—a location characterized by the high-density residential profile of Delta Towers and the surrounding City Life developments—the engineering requirements for an Advanced Metering Infrastructure (AMI) are dictated by extreme physical and electromagnetic constraints. Establishing a reliable, 15-story vertical network of 720 nodes necessitates a deep integration of low-power radio frequency (RF) engineering, ultrasonic metrological science, and decentralized server-side logic. To satisfy the mandate for a 5-minute reporting interval and a decade-long battery maintenance cycle, the proposed solution eschews high-energy protocols like WiFi and subscription-locked services like Sigfox or NB-IoT in favor of a privately hosted LoRaWAN architecture. This report provides an exhaustive blueprint for the deployment, analyzing the structural, electromagnetic, and economic variables inherent to the Durban Central Business District (CBD) environment.
+The modernization of urban residential utility management requires a paradigm shift from reactive maintenance to proactive, data-driven infrastructure. At 477 Anton Lembede Street, Durban—a location characterized by the high-density residential profile of City Life and the surrounding City Life developments—the engineering requirements for an Advanced Metering Infrastructure (AMI) are dictated by extreme physical and electromagnetic constraints. Establishing a reliable, 15-story vertical network of 720 nodes necessitates a deep integration of low-power radio frequency (RF) engineering, ultrasonic metrological science, and decentralized server-side logic. To satisfy the mandate for a 5-minute reporting interval and a decade-long battery maintenance cycle, the proposed solution eschews high-energy protocols like WiFi and subscription-locked services like Sigfox or NB-IoT in favor of a privately hosted LoRaWAN architecture. This report provides an exhaustive blueprint for the deployment, analyzing the structural, electromagnetic, and economic variables inherent to the Durban Central Business District (CBD) environment.
 
 ## **Site Profile and Electromagnetic Environmental Analysis**
 
@@ -8,7 +8,7 @@ The structural reality of 477 Anton Lembede Street presents a formidable obstacl
 
 Furthermore, the external RF environment of the Durban CBD is one of extreme saturation. The site is a "concrete canyon," a term used in urban RF engineering to describe environments where high-rise buildings create narrow corridors that reflect and diffract signals, leading to multipath interference and significant fading. In the 2.4 GHz ISM band, the congestion is catastrophic, with 13 to 15 WiFi Access Points (APs) per floor contributing to a noise floor that effectively masks low-power signals.3 This congestion makes consumer-grade protocols like standard WiFi or ESP-NOW unsuitable for utility-grade reliability.5 The reliance on the sub-GHz 868 MHz band (as permitted by South African ICASA regulations) is therefore not optional; it is a fundamental requirement for achieving the necessary building penetration and overcoming the noise floor of the CBD.6
 
-The following table summarizes the signal loss characteristics that must be accounted for in the RF link budget for Delta Towers.
+The following table summarizes the signal loss characteristics that must be accounted for in the RF link budget for City Life.
 
 | Structural Component | Typical Thickness | Estimated RF Attenuation (dB) |
 | :---- | :---- | :---- |
@@ -58,7 +58,7 @@ Wireless M-Bus is a popular standard for submetering, but its architectural limi
 
 ### **ESP-NOW (over 2.4 GHz)**
 
-ESP-NOW, a proprietary protocol by Espressif, offers high data rates and low latency.19 However, its operation in the 2.4 GHz band is its primary disqualifier for Delta Towers. The extreme WiFi congestion (13-15 APs per floor) would result in catastrophic packet loss as the 720 nodes struggle to find clear airtime.5 Furthermore, the energy required for WiFi-based radio transmission (\~100mA) is roughly three to four times that of LoRa radios, making a 10-year battery life on AA cells an engineering impossibility at a 5-minute interval.19
+ESP-NOW, a proprietary protocol by Espressif, offers high data rates and low latency.19 However, its operation in the 2.4 GHz band is its primary disqualifier for City Life. The extreme WiFi congestion (13-15 APs per floor) would result in catastrophic packet loss as the 720 nodes struggle to find clear airtime.5 Furthermore, the energy required for WiFi-based radio transmission (\~100mA) is roughly three to four times that of LoRa radios, making a 10-year battery life on AA cells an engineering impossibility at a 5-minute interval.19
 
 ### **Private LoRaWAN: The Engineering Solution**
 
@@ -76,7 +76,7 @@ The "non-negotiable" constraint of zero third-party subscriptions necessitates t
 
 ### **ChirpStack vs. The Things Stack (TTS)**
 
-While The Things Stack offers a robust platform, its self-hosted open-source version can be complex to manage for a single-building deployment. ChirpStack is known for its horizontal scalability and ease of integration into custom dashboards.26 It provides a gRPC-based API that allows the Lead Architect to build a proprietary management interface for Delta Towers, enabling features like live frame logging and remote valve control without external licensing fees.29
+While The Things Stack offers a robust platform, its self-hosted open-source version can be complex to manage for a single-building deployment. ChirpStack is known for its horizontal scalability and ease of integration into custom dashboards.26 It provides a gRPC-based API that allows the Lead Architect to build a proprietary management interface for City Life, enabling features like live frame logging and remote valve control without external licensing fees.29
 
 ### **Deduplication and Multi-Gateway Management**
 
@@ -94,7 +94,7 @@ By utilizing ChirpStack, the Senior IoT Solutions Architect maintains full contr
 
 ## **The "Gold Standard" Architecture for 477 Anton Lembede Street**
 
-The proposed architecture for Delta Towers is a multi-gateway, high-density LoRaWAN network optimized for minimal Time-on-Air and maximal battery life.
+The proposed architecture for City Life is a multi-gateway, high-density LoRaWAN network optimized for minimal Time-on-Air and maximal battery life.
 
 ### **Gateway Placement and Backhaul**
 
@@ -168,7 +168,7 @@ The transition to a private LoRaWAN-based AMI system at 477 Anton Lembede Street
 
 ### **Robustness in the Durban CBD**
 
-Traditional WiFi and 2.4 GHz systems are designed for the home, not for utility-grade infrastructure in a dense CBD. The interference at Delta Towers will render WiFi-based meters unreliable within months of deployment. LoRaWAN’s sub-GHz frequency and CSS modulation are specifically engineered to cut through the noise floor and penetrate the reinforced concrete of high-rise buildings, ensuring that every 5-minute reading is delivered.4
+Traditional WiFi and 2.4 GHz systems are designed for the home, not for utility-grade infrastructure in a dense CBD. The interference at City Life will render WiFi-based meters unreliable within months of deployment. LoRaWAN’s sub-GHz frequency and CSS modulation are specifically engineered to cut through the noise floor and penetrate the reinforced concrete of high-rise buildings, ensuring that every 5-minute reading is delivered.4
 
 ### **Complete Financial Autonomy**
 

@@ -62,7 +62,7 @@
 | Floor branch | 50mm | Branches off riser at each floor |
 | Unit feed | 16mm | From floor branch to each unit |
 
-**Building:** City Life (Delta Towers) — 27-storey high-rise, 12 floors in scope, 48 units per floor (576 units)
+**Building:** City Life — 27-storey high-rise, 12 floors in scope, 48 units per floor (576 units)
 **Note:** Meters to be ordered in phases. Must source from Precision Meters. Pilot: 1 floor + 5 units.
 
 ---
@@ -76,7 +76,7 @@
 - **Condition:** Must use Precision Meters' smart water meters
 - Jason provides: telemetry, monitoring platform, integration services
 
-### Site: 477 Anton Lembede Street, Durban (City Life / Delta Towers)
+### Site: 477 Anton Lembede Street, Durban (City Life)
 - 27-storey high-rise, 12 floors in scope (upper floors have a different tenant type; entire building owned by Mosaic Group)
 - 48 units per floor, 576 units total in scope
 - Building age: ~60 years, construction: concrete/brick/steel
@@ -167,7 +167,7 @@
 - Leak detection (bulk meters) likely higher priority
 - Demo platform shared: https://meter-tracker.com
 - **Tanya has NOT registered on demo platform yet** (as of 2026-01-30)
-- Building confirmed as City Life (Delta Towers) — 27 floors, 12 in scope, 48 units/floor, 576 units
+- Building confirmed as City Life — 27 floors, 12 in scope, 48 units/floor, 576 units
 - Building is ~60 years old, concrete/brick/steel construction, no basements
 - Single 75mm riser, gravity-fed from top, pumped to lower floors
 - Municipal supply: 110mm, R1.2M/month bill, R65.91/kL, 10,500 kL/month (whole building)

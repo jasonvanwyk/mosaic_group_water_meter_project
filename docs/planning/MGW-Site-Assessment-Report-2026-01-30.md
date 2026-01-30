@@ -1,6 +1,6 @@
 # Site Assessment Report
 
-**City Life (Delta Towers) — 477 Anton Lembede Street, Durban CBD**
+**City Life — 477 Anton Lembede Street, Durban CBD**
 
 ---
 
@@ -42,7 +42,7 @@ Reg: 2024/507423/07
 
 ## 1. Executive Summary
 
-Precept Systems conducted a site visit at City Life (Delta Towers), 477 Anton Lembede Street, Durban CBD on 29 January 2026. The building is a 27-storey residential high-rise owned by Mosaic Group, a Durban-based property developer managing 2,500+ residential units and 9,000+ tenants across multiple brands.
+Precept Systems conducted a site visit at City Life, 477 Anton Lembede Street, Durban CBD on 29 January 2026. The building is a 27-storey residential high-rise owned by Mosaic Group, a Durban-based property developer managing 2,500+ residential units and 7,000+ tenants across multiple brands.
 
 The scope of the proposed water metering solution covers the first 12 floors (576 units at 48 per floor). The upper 15 floors accommodate a different tenant type and are excluded from this phase, though future expansion is possible.
 
@@ -67,7 +67,7 @@ This report details our findings, the rationale for these recommendations, and t
 
 | Item | Details |
 |------|---------|
-| **Building name** | City Life (Delta Towers) |
+| **Building name** | City Life |
 | **Address** | 477 Anton Lembede Street, Durban CBD |
 | **Owner** | Mosaic Group |
 | **Total floors** | 27 |

@@ -48,7 +48,7 @@
 
 | Item | Details |
 |------|---------|
-| Building | City Life (Delta Towers) |
+| Building | City Life |
 | Total floors | 27 |
 | Floors in scope | 12 (first 12 — upper floors have a different tenant type) |
 | Units per floor | 48 |
@@ -130,7 +130,7 @@
 - Initial phone call with Tanya: 2026-01-28
 - Site visit completed: 2026-01-29
 - Mosaic Group is a major property developer in Durban
-- 477 Anton Lembede Street is City Life (Delta Towers) — 27 floors total, 12 in scope, 576 units
+- 477 Anton Lembede Street is City Life — 27 floors total, 12 in scope, 576 units
 - Single 75mm main riser -> 50mm floor branches -> 16mm unit feeds
 - Current water bill: R1.2M/month, flat tenant charge: R400/month, tariff: R65.91/kL
 - CLTM ERP integration required (tenant management/billing system)

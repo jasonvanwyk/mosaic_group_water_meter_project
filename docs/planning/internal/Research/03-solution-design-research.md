@@ -4,7 +4,7 @@
 **Document:** 03-solution-design-research
 **Date:** 2026-01-30
 **Author:** Jason van Wyk, Precept Systems
-**Scope:** First 12 floors, 576 units (48/floor), City Life (Delta Towers)
+**Scope:** First 12 floors, 576 units (48/floor), City Life
 
 ---
 

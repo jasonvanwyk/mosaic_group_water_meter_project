@@ -43,7 +43,7 @@ The following are the established property/tenant management platforms in South 
 | **MRI Rentbook** | MRI (SA) | Simple rental management | Limited | [rentbook.co.za](https://www.rentbook.co.za/) |
 | **Sage 200 Evolution** | Sage (SA) | Accounting + ERP | REST API | [sage.com/za](https://www.sage.com/za/) |
 
-**Note:** Mosaic Group manages 2,500+ residential units and 9,000+ tenants across multiple brands (City Life, Luna, Ole). An operation of this scale likely uses a more capable ERP system (MRI Software, Sage, or a bespoke solution) rather than a lightweight rental tool.
+**Note:** Mosaic Group manages 2,500+ residential units and 7,000+ tenants across multiple brands (City Life, Luna, Ole). An operation of this scale likely uses a more capable ERP system (MRI Software, Sage, or a bespoke solution) rather than a lightweight rental tool.
 
 ---
 
