@@ -21,9 +21,10 @@
 - [x] Site photography (main riser)
 - [x] Precision Meters vendor spec sheets uploaded (4 products)
 - [x] Initial research: Smart metering architecture for high-rise
+- [x] **Site visit notes formalized** into full report
 
 ## In Progress
-- [ ] **Document full site visit findings** (awaiting detailed notes)
+- [ ] **Internal research** — CLTM ERP system, hosting options, motorised ball valve power, solution design
 
 ## Site Visit Summary (29 Jan 2026)
 
@@ -41,14 +42,16 @@
 | Floor branch | 50mm | Branches off riser at each floor |
 | Unit feed | 16mm | From floor branch to each unit |
 
-## Building Profile (from research)
+## Building Profile (confirmed from site visit)
 
 | Item | Details |
 |------|---------|
-| Building | City Life / Delta Towers |
-| Floors | 15 |
+| Building | City Life (Delta Towers) |
+| Total floors | 27 |
+| Floors in scope | 12 (first 12 — upper floors are a different client group) |
 | Units per floor | 48 |
-| Total units | ~720 |
+| Total units in scope | 576 |
+| Building age | ~60 years |
 | Location | 477 Anton Lembede Street, Durban CBD |
 
 ## Vendor Specs Collected (Precision Meters)
@@ -63,13 +66,17 @@
 ## Todo
 
 ### Now
-- [ ] Document full site visit findings (awaiting Jason's detailed notes)
-- [ ] Create site assessment report
+- [x] ~~Document full site visit findings~~ — Done (see `docs/planning/site-visits/2026-01-29-city-life-site-visit-report.md`)
+- [ ] Research CLTM ERP system (provider, API, documentation, contacts)
+- [ ] Research hosting options (cloud providers, hybrid, on-prem)
+- [ ] Research motorised ball valve power requirements (12V DC, PoE)
 
 ### Next
+- [ ] Create site assessment report
+- [ ] Build business case (benefits analysis, alternatives comparison)
 - [ ] Create technical solution design
-- [ ] Develop proposal with phased approach
-- [ ] Coordinate with Precision Meters on meter specs/pricing
+- [ ] Develop proposal with phased approach, brief, and scope
+- [ ] Coordinate with Precision Meters on meter specs/pricing for 576 units + 12 bulk meters
 
 ## Blockers
 | Blocker | Owner | Status |
@@ -79,9 +86,11 @@
 ## Upcoming
 | Event | Date | Notes |
 |-------|------|-------|
-| Document site findings | ASAP | Full notes from Jason pending |
-| Site assessment report | After findings | Formal write-up |
-| Proposal development | After assessment | Include Precision Meters pricing |
+| ~~Document site findings~~ | 2026-01-30 | Done — formalized into site visit report |
+| Internal research (CLTM, hosting, valves) | Next | Required before proposal |
+| Site assessment report | After research | Formal write-up |
+| Business case + proposal | After assessment | Benefits, alternatives, pricing |
+| Submit to Tanya | Before 1st week Feb | Tanya reviewing pricing then |
 
 ## Key Contacts
 
@@ -116,8 +125,10 @@
 - Initial phone call with Tanya: 2026-01-28
 - Site visit completed: 2026-01-29
 - Mosaic Group is a major property developer in Durban
-- 477 Anton Lembede Street is City Life / Delta Towers - 15 floors, ~720 units
+- 477 Anton Lembede Street is City Life (Delta Towers) — 27 floors total, 12 in scope, 576 units
 - Single 75mm main riser -> 50mm floor branches -> 16mm unit feeds
+- Current water bill: R1.2M/month, flat tenant charge: R400/month, tariff: R65.91/kL
+- CLTM ERP integration required (tenant management/billing system)
 - Tanya is part owner of Mosaic Group (not just contact)
 - Orders will be phased (not all at once)
 - Demo platform (meter-tracker.com) shared with Tanya - not yet registered

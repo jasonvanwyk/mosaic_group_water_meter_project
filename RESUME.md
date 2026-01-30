@@ -8,8 +8,8 @@
 
 ## Right Now
 
-**Phase:** Post-Site Visit / Solution Design
-**Next Action:** Document full site visit findings, then develop technical proposal
+**Phase:** Post-Site Visit / Internal Research & Solution Design
+**Next Action:** Complete internal research (CLTM ERP, hosting, etc.), then build business case and proposal
 
 ### Site Visit Completed
 | Item | Details |
@@ -39,6 +39,9 @@
 - Photographed main riser and piping infrastructure
 - Uploaded Precision Meters vendor spec sheets (4 product PDFs)
 - Conducted initial research on smart metering architecture for high-rise
+- **Formalized site visit notes** into full report (`docs/planning/site-visits/2026-01-29-city-life-site-visit-report.md`)
+- **Corrected building data** across all project docs (27 floors total, 12 in scope, 576 units)
+- Updated project docs with new information (water costs, IT infrastructure, CLTM ERP, feature priorities)
 
 ### Previous Session (2026-01-28)
 - Initial phone call with Tanya Dowley
@@ -55,8 +58,8 @@
 | Floor branch | 50mm | Branches off riser at each floor |
 | Unit feed | 16mm | From floor branch to each unit |
 
-**Building:** City Life / Delta Towers - 15-story high-rise, 48 units per floor (~720 units)
-**Note:** Meters to be ordered in phases. Must source from Precision Meters.
+**Building:** City Life (Delta Towers) — 27-storey high-rise, 12 floors in scope, 48 units per floor (576 units)
+**Note:** Meters to be ordered in phases. Must source from Precision Meters. Pilot: 1 floor + 5 units.
 
 ---
 
@@ -70,12 +73,15 @@
 - Jason provides: telemetry, monitoring platform, integration services
 
 ### Site: 477 Anton Lembede Street, Durban (City Life / Delta Towers)
-- 15-story high-rise, 48 units per floor (~720 units total)
-- Single 75mm main riser through all floors
-- 50mm branch per floor, 16mm feed to each unit
-- Requires bulk meters (50mm) for leak detection
-- Requires unit meters for individual flat metering
-- Phased rollout planned
+- 27-storey high-rise, 12 floors in scope (upper floors are a different client group)
+- 48 units per floor, 576 units total in scope
+- Building age: ~60 years, construction: concrete/brick/steel
+- Single 75mm main riser (gravity-fed from top), 50mm branch per floor, 16mm feed to each unit
+- Requires bulk meters (50mm) per floor for leak detection (12 meters)
+- Requires unit meters (16mm) for individual flat metering (576 meters)
+- Phased rollout planned — pilot: 1 floor + 5 units
+- Current water bill: R1.2M/month, flat tenant charge: R400/month
+- CLTM ERP integration required for billing
 
 ### Reference Project
 **Fairfield Water** (`/home/jason/Projects/fairfield-water`)
@@ -97,40 +103,42 @@
 
 ---
 
-## Site Visit Checklist (29 Jan) - COMPLETED
+## Site Visit Checklist (29 Jan) - COMPLETED & DOCUMENTED
 
 ### Assessed
-- [x] Building layout and infrastructure
-- [x] Existing water infrastructure and piping (75mm riser -> 50mm floor -> 16mm unit)
-- [ ] Bulk meter locations (11 points for leak detection) - *awaiting full notes*
-- [ ] Unit meter installation requirements - *awaiting full notes*
-- [ ] Connectivity options (LoRa coverage, Ethernet availability) - *awaiting full notes*
-- [ ] Gateway placement options - *awaiting full notes*
-- [ ] Power availability at meter locations - *awaiting full notes*
+- [x] Building layout and infrastructure (27 floors, 12 in scope, 576 units)
+- [x] Existing water infrastructure and piping (110mm municipal -> 75mm riser -> 50mm floor -> 16mm unit)
+- [x] Bulk meter locations (12 floor branches, 50mm each)
+- [x] Unit meter installation requirements (576 units, 16mm, entry above front door in passage)
+- [x] Connectivity options (Ubiquiti/UniFi, Cat6, 1Gb fiber, VLAN available)
+- [x] Gateway placement options (comms room + rooftop, both with power/ethernet/security)
+- [x] Power availability (UPS to comms room and switches, rooftop has power)
 
 ### Discussed
-- [ ] Timeline and priorities - *awaiting full notes*
-- [ ] Phased rollout preferences - *awaiting full notes*
-- [ ] Budget considerations - *awaiting full notes*
-- [ ] Decision-making process - *awaiting full notes*
+- [x] Timeline and priorities (Q1 2026 start, pricing review 1st week Feb)
+- [x] Phased rollout preferences (pilot: 1 floor + 5 units)
+- [x] Budget considerations (allocated, undisclosed, price-sensitive, phased payment)
+- [x] Decision-making process (Tanya + board of directors)
 
 ### Captured
-- [x] Photographs of key areas (main riser photo)
-- [ ] Building floor plans (if available) - *awaiting full notes*
-- [ ] Existing meter details - *awaiting full notes*
-- [ ] Notes on challenges/constraints - *awaiting full notes*
+- [x] Photographs of key areas (`pics/city-life-29012026.jpeg`)
+- [ ] Building floor plans — not available
+- [x] Existing infrastructure details (isolation valves per unit, no existing meters)
+- [x] Notes on challenges/constraints (see formal report)
 
-**Note:** Full site visit findings pending - Jason to provide detailed notes.
+**Full report:** `docs/planning/site-visits/2026-01-29-city-life-site-visit-report.md`
 
 ---
 
 ## Next Steps
 
-1. **Now:** Document full site visit findings (awaiting Jason's detailed notes)
-2. **Next:** Create site assessment report
-3. **Design:** Create technical solution for phased rollout
-4. **Proposal:** Develop proposal with Precision Meters pricing
-5. **Present:** Submit proposal to Tanya
+1. ~~**Document full site visit findings**~~ — Done
+2. **Now:** Internal research (CLTM ERP system, hosting options, motorised ball valve power, solution alternatives)
+3. **Next:** Site assessment report
+4. **Then:** Build business case (benefits analysis, ROI, alternatives comparison)
+5. **Then:** Technical solution design with phased rollout
+6. **Proposal:** Develop proposal with brief, scope, pricing (Precision Meters coordination)
+7. **Present:** Submit proposal to Tanya (before 1st week Feb pricing review)
 
 ---
 
@@ -150,7 +158,14 @@
 - Leak detection (bulk meters) likely higher priority
 - Demo platform shared: https://meter-tracker.com
 - **Tanya has NOT registered on demo platform yet** (as of 2026-01-30)
-- Building identified as City Life / Delta Towers - 15 floors, 48 units/floor
-- Single 75mm riser serves entire building
+- Building confirmed as City Life (Delta Towers) — 27 floors, 12 in scope, 48 units/floor, 576 units
+- Building is ~60 years old, concrete/brick/steel construction, no basements
+- Single 75mm riser, gravity-fed from top, pumped to lower floors
+- Municipal supply: 110mm, R1.2M/month bill, R65.91/kL, 10,500 kL/month (whole building)
+- Current tenant charge: flat R400/month — no usage-based billing
+- CLTM ERP system integration required (needs research)
+- Ubiquiti/UniFi network, Cat6 copper, 1Gb Vox fiber, VLANs, UPS
+- Prepaid meters rejected, fire/sprinkler system out of scope
 - Research completed on LoRaWAN architecture for high-rise deployment
 - Vendor spec sheets uploaded from Precision Meters (4 product lines)
+- Site visit notes formalized into report (2026-01-30)

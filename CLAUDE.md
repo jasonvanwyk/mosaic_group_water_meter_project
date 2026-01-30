@@ -86,14 +86,20 @@ The project is similar to the **Fairfield Dairy water monitoring system** (`/hom
 
 | Item | Details |
 |------|---------|
-| Building | City Life / Delta Towers |
-| Floors | 15 |
+| Building | City Life (Delta Towers) |
+| Total floors | 27 |
+| Floors in scope | 12 (first 12 floors — upper floors are a different client group) |
 | Units per floor | 48 |
-| Total units | ~720 |
-| Main riser | 75mm (single riser, all floors) |
+| Total units in scope | 576 |
+| Building age | ~60 years |
+| Municipal supply | 110mm pipe, enters at top of building |
+| Main riser | 75mm (single riser, gravity-fed top to bottom) |
 | Floor branch | 50mm (branches at each floor) |
-| Unit feed | 16mm (to each unit) |
-| Construction | Reinforced concrete high-rise |
+| Unit feed | 16mm (to each unit, entry above front door in passage) |
+| Construction | Reinforced concrete, brick, and steel (no basements) |
+| Current water bill | R1.2M/month (entire building) |
+| Current tenant charge | R400/month flat rate |
+| ERP system | CLTM (tenant management — integration required) |
 
 ---
 
@@ -162,8 +168,10 @@ pics/                 # Site visit photographs
 |-------|------|--------|
 | Initial contact with Tanya | 2026-01-28 | Done |
 | Site visit at 477 Anton Lembede | 2026-01-29 | Done |
-| Site assessment report | TBD | Next |
-| Technical proposal | TBD | Upcoming |
+| Site visit notes formalized | 2026-01-30 | Done |
+| Internal research (CLTM ERP, hosting, etc.) | TBD | Next |
+| Site assessment report | TBD | Upcoming |
+| Business case and proposal | TBD | Upcoming |
 | Submit proposal to Tanya | TBD | Upcoming |
 
 ---
