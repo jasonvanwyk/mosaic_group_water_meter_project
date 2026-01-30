@@ -42,6 +42,10 @@
 - **Formalized site visit notes** into full report (`docs/planning/site-visits/2026-01-29-city-life-site-visit-report.md`)
 - **Corrected building data** across all project docs (27 floors total, 12 in scope, 576 units)
 - Updated project docs with new information (water costs, IT infrastructure, CLTM ERP, feature priorities)
+- **Completed internal research** — 3 research documents:
+  - `docs/planning/internal/Research/03-cltm-erp-research.md` — ERP not identified; must ask Sumir
+  - `docs/planning/internal/Research/03-hosting-options-research.md` — Hetzner SA recommended for cloud; on-prem Proxmox for pilot
+  - `docs/planning/internal/Research/03-solution-design-research.md` — LoRaWAN architecture, meter selection, valve research, pilot design
 
 ### Previous Session (2026-01-28)
 - Initial phone call with Tanya Dowley
@@ -133,12 +137,13 @@
 ## Next Steps
 
 1. ~~**Document full site visit findings**~~ — Done
-2. **Now:** Internal research (CLTM ERP system, hosting options, motorised ball valve power, solution alternatives)
-3. **Next:** Site assessment report
-4. **Then:** Build business case (benefits analysis, ROI, alternatives comparison)
-5. **Then:** Technical solution design with phased rollout
-6. **Proposal:** Develop proposal with brief, scope, pricing (Precision Meters coordination)
-7. **Present:** Submit proposal to Tanya (before 1st week Feb pricing review)
+2. ~~**Internal research**~~ — Done (CLTM ERP, hosting, solution design)
+3. **Now:** Email Sumir (confirm CLTM product name + API) and Bradley (confirm LoRaWAN in 15mm meter)
+4. **Next:** Site assessment report
+5. **Then:** Build business case (benefits analysis, ROI, alternatives comparison)
+6. **Then:** Technical solution design with phased rollout
+7. **Proposal:** Develop proposal with brief, scope, pricing (Precision Meters coordination)
+8. **Present:** Submit proposal to Tanya (before 1st week Feb pricing review)
 
 ---
 

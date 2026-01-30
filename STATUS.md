@@ -24,7 +24,9 @@
 - [x] **Site visit notes formalized** into full report
 
 ## In Progress
-- [ ] **Internal research** — CLTM ERP system, hosting options, motorised ball valve power, solution design
+- [x] **Internal research** — CLTM ERP, hosting options, solution design groundwork (completed 2026-01-30)
+- [ ] **Confirm CLTM ERP identity** — must email Sumir for exact product name and API details (blocker)
+- [ ] **Confirm Precision Meters LoRaWAN** — must confirm with Bradley if 15mm ultrasonic has integrated LoRaWAN (critical)
 
 ## Site Visit Summary (29 Jan 2026)
 
@@ -66,22 +68,25 @@
 ## Todo
 
 ### Now
-- [x] ~~Document full site visit findings~~ — Done (see `docs/planning/site-visits/2026-01-29-city-life-site-visit-report.md`)
-- [ ] Research CLTM ERP system (provider, API, documentation, contacts)
-- [ ] Research hosting options (cloud providers, hybrid, on-prem)
-- [ ] Research motorised ball valve power requirements (12V DC, PoE)
+- [x] ~~Document full site visit findings~~ — Done
+- [x] ~~Research CLTM ERP system~~ — Done (not identified; must ask Sumir for exact product name)
+- [x] ~~Research hosting options~~ — Done (Hetzner SA VPS recommended for cloud; on-prem Proxmox for pilot)
+- [x] ~~Research solution design~~ — Done (LoRaWAN + ChirpStack, 3 gateways, RAK3172 nodes, valve-ready PCB)
+- [ ] **Email Sumir** — confirm CLTM product name, API, login URL (BLOCKER for ERP integration)
+- [ ] **Email Bradley** — confirm 15mm ultrasonic LoRaWAN availability and pricing (CRITICAL for architecture)
 
 ### Next
 - [ ] Create site assessment report
-- [ ] Build business case (benefits analysis, alternatives comparison)
-- [ ] Create technical solution design
-- [ ] Develop proposal with phased approach, brief, and scope
+- [ ] Build business case (benefits analysis, ROI, alternatives comparison)
+- [ ] Create technical solution design (formal)
+- [ ] Develop proposal with phased approach, brief, scope, and pricing
 - [ ] Coordinate with Precision Meters on meter specs/pricing for 576 units + 12 bulk meters
 
 ## Blockers
 | Blocker | Owner | Status |
 |---------|-------|--------|
-| None | - | - |
+| CLTM ERP identity unknown — need Sumir's contact details from Tanya | Jason | Pending |
+| Precision Meters LoRaWAN confirmation — need Bradley to confirm integrated radio in 15mm | Jason | Pending |
 
 ## Upcoming
 | Event | Date | Notes |
