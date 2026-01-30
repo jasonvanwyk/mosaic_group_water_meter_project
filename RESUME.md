@@ -140,8 +140,8 @@
 2. ~~**Internal research**~~ — Done (CLTM ERP, hosting, solution design)
 3. ~~**Email Tanya re CLTM**~~ — Sent 2026-01-30 (awaiting reply)
 4. ~~**Email Bradley & Garth**~~ — Sent 2026-01-30 (site assessment report + LoRaWAN/pricing/supply chain questions, awaiting reply)
-4. **Next:** Site assessment report
-5. **Then:** Build business case (benefits analysis, ROI, alternatives comparison)
+4. ~~**Site assessment report**~~ — Done (MD + HTML, sent to Bradley/Garth 2026-01-30)
+5. **Next:** Build business case (benefits analysis, ROI, alternatives comparison)
 6. **Then:** Technical solution design with phased rollout
 7. **Proposal:** Develop proposal with brief, scope, pricing (Precision Meters coordination)
 8. **Present:** Submit proposal to Tanya (before 1st week Feb pricing review)

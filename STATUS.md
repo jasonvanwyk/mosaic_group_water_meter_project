@@ -76,7 +76,7 @@
 - [x] **Email Bradley & Garth** — sent 2026-01-30, site assessment report + LoRaWAN/pricing/supply chain questions (awaiting reply)
 
 ### Next
-- [ ] Create site assessment report
+- [x] ~~Create site assessment report~~ — Done (MD + HTML versions, sent to Bradley/Garth 2026-01-30)
 - [ ] Build business case (benefits analysis, ROI, alternatives comparison)
 - [ ] Create technical solution design (formal)
 - [ ] Develop proposal with phased approach, brief, scope, and pricing
@@ -92,8 +92,8 @@
 | Event | Date | Notes |
 |-------|------|-------|
 | ~~Document site findings~~ | 2026-01-30 | Done — formalized into site visit report |
-| Internal research (CLTM, hosting, valves) | Next | Required before proposal |
-| Site assessment report | After research | Formal write-up |
+| ~~Internal research~~ | 2026-01-30 | Done — CLTM, hosting, solution design |
+| ~~Site assessment report~~ | 2026-01-30 | Done — sent to Precision Meters |
 | Business case + proposal | After assessment | Benefits, alternatives, pricing |
 | Submit to Tanya | Before 1st week Feb | Tanya reviewing pricing then |
 
