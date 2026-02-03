@@ -3,7 +3,8 @@
 **Project:** Mosaic Group Water Meter Monitoring (MGW)
 **Date:** 30 January 2026
 **Author:** Jason van Wyk, Precept Systems
-**Status:** Incomplete — requires client clarification
+**Status:** Resolved (2026-02-02) — CLTM is custom in-house application
+**Updated:** 3 February 2026
 
 ---
 
@@ -76,51 +77,37 @@ Regardless of which ERP system "CLTM" turns out to be, the water monitoring plat
 
 ---
 
-## 5. Action Required — HIGHEST PRIORITY
+## 5. Resolution — Sumir's Reply (2 February 2026)
 
-The fastest path to resolving this is to contact **Sumir** (Mosaic Group IT Administrator) directly.
+Sumir Singh (Mosaic Group IT) replied via email on 2 February 2026 (ref: MGW-COR-202602-003):
 
-### Draft Email to Sumir
+### Confirmed Facts
 
-> **Subject:** Water Monitoring Project — ERP System Information Request
->
-> Hi Sumir,
->
-> Following our site visit on Wednesday, I am working on the technical solution design for the water monitoring system. One of the key requirements is integration with your tenant management / ERP system.
->
-> During the visit, I captured the system name as "CLTM" — could you confirm:
->
-> 1. The full product name and version
-> 2. The software vendor / provider company name
-> 3. The vendor's website
-> 4. Your login URL for the system
-> 5. Whether the system has an API (for programmatic data exchange)
-> 6. Any technical documentation or developer guides available
-> 7. Your account manager or support contact at the vendor
-> 8. How utility billing data is currently captured into the system (manual entry, import, etc.)
->
-> This information will allow me to design the integration between the water monitoring platform and your billing system, ensuring automated and frictionless data flow as Tanya requested.
->
-> Kind regards,
-> Jason van Wyk
-> Precept Systems
+| Item | Detail |
+|------|--------|
+| **CLTM identity** | Custom-built, in-house application |
+| **Developer** | Remote developer (name unknown, coordinated via Sumir) |
+| **Vendor** | None — not a commercial product |
+| **"CLTM" meaning** | Likely "City Life Tenant Management" (hypothesis 1 from section 2 was correct) |
 
-**Note:** Sumir's contact details have been requested from Tanya (pending).
+### Integration Model
 
----
+- Sumir's developer advised: **Jason should build the water platform with API calls**
+- Their developer will integrate those API calls into CLTM on their side
+- **Precedent:** Ekhwesi (electricity/prepaid system) already integrated into CLTM via API + Postman collections
+- Same pattern expected for water monitoring
 
-## 6. Contingency Planning
+### What This Means for Solution Design
 
-If the ERP system has **no API** (common with older/bespoke systems):
+1. Water monitoring platform must expose a **clean REST API** with documented endpoints
+2. **Postman collection** should be provided (following the Ekhwesi precedent they're familiar with)
+3. **We do not need to write the CLTM integration** — their developer handles that side
+4. API contract/schema should be shared with Sumir's developer for review
+5. Data points from section 4 (unit ID, consumption, billing amount, etc.) remain the required payload
 
-| Fallback | Implementation |
-|----------|---------------|
-| CSV export | Generate monthly billing CSV for manual import into ERP |
-| PDF reports | Generate per-unit billing reports for manual capture |
-| Screen scraping | Automate data entry via browser automation (last resort) |
-| Middleware | Build a lightweight API wrapper if the ERP has a database accessible via ODBC/SQL |
+### Previous Contingency Planning (Superseded)
 
-The proposal should present API integration as the recommended approach, with CSV/PDF export as an included fallback at no additional cost. This manages the risk of the ERP not supporting modern integration.
+The fallback options (CSV export, PDF reports, etc.) from the original research are no longer the primary concern since API integration is confirmed as the approach. However, CSV/PDF export remains a sensible inclusion in the platform for reporting and audit purposes.
 
 ---
 

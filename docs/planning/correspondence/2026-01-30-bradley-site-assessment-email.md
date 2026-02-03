@@ -52,10 +52,10 @@ Email: jason@precept.co.za
 
 | # | Question | Status |
 |---|----------|--------|
-| 1 | LoRaWAN radio — standard or optional in 15mm? | Awaiting reply |
-| 2 | 32-50mm spec sheet 3rd column — is it 50mm? | Awaiting reply |
-| 3 | Volume pricing (15mm and 50mm at pilot + scale quantities) | Awaiting reply |
-| 4 | ChirpStack device profile / payload codec | Awaiting reply |
-| 5 | Default uplink interval / NFC configurability | Awaiting reply |
-| 6 | Tail ends — 15mm meter to 16mm pipe compatibility | Awaiting reply |
-| 7 | Supply chain — direct to client or via Precept? (VAT implications) | Awaiting reply |
+| 1 | LoRaWAN radio — standard or optional in 15mm? | Answered — standard across all sizes (MGW-COR-202602-002) |
+| 2 | 32-50mm spec sheet 3rd column — is it 50mm? | Answered — confirmed, 2nd "40mm" is 50mm (MGW-COR-202602-002) |
+| 3 | Volume pricing (15mm and 50mm at pilot + scale quantities) | Answered — R2,100 (15mm), R9,360 (50mm) ex VAT (MGW-COR-202602-002) |
+| 4 | ChirpStack device profile / payload codec | Answered — no codec; APP & DEV keys supplied (MGW-COR-202602-002) |
+| 5 | Default uplink interval / NFC configurability | Answered — 8hr default, 4hr min, pre-dispatch config (MGW-COR-202602-002) |
+| 6 | Tail ends — 15mm meter to 16mm pipe compatibility | Answered — tail pieces supplied with meters (MGW-COR-202602-002) |
+| 7 | Supply chain — direct to client or via Precept? (VAT implications) | Answered — direct to client preferred (MGW-COR-202602-002) |

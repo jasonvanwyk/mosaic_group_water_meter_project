@@ -35,6 +35,16 @@
 
 ### Updates
 - **09:43** — Called Garth Le Roux (Precision Meters). Confirmed he and Bradley will sit together today and reply to our email (site assessment report + 7 questions) by this afternoon.
+- **11:31** — Garth replied to all 7 questions (inline). All technical and commercial questions resolved:
+  - LoRaWAN is **standard** on all ultrasonic meters (no add-on needed)
+  - 50mm spec sheet error confirmed (mislabelled as 40mm)
+  - **Pricing:** 15mm = R2,100/unit, 50mm = R9,360/unit (ex VAT)
+  - No ChirpStack codec — APP & DEV keys supplied, codec to be developed
+  - Uplink: 8hr default, 4hr minimum (affects battery), configured pre-dispatch
+  - Tail pieces supplied with meters (resolves 15mm-to-16mm issue)
+  - **Supply chain:** Precision invoices Mosaic Group directly for meters; Precept handles platform separately
+  - **Total meter cost:** ~R1.32M ex VAT (576 x R2,100 + 12 x R9,360)
+  - **Pilot cost:** ~R21,960 ex VAT (6 x R2,100 + 1 x R9,360)
 
 ---
 
@@ -145,13 +155,14 @@
 
 1. ~~**Document full site visit findings**~~ — Done
 2. ~~**Internal research**~~ — Done (CLTM ERP, hosting, solution design)
-3. ~~**Email Tanya re CLTM**~~ — Sent 2026-01-30 (awaiting reply)
-4. ~~**Email Bradley & Garth**~~ — Sent 2026-01-30 (site assessment report + LoRaWAN/pricing/supply chain questions, awaiting reply)
+3. ~~**Email Tanya re CLTM**~~ — Sent 2026-01-30; **answered by Sumir 2026-02-02** — CLTM is custom in-house app, API integration model confirmed
+4. ~~**Email Bradley & Garth**~~ — Sent 2026-01-30; **all 7 questions answered by Garth 2026-02-03**
 4. ~~**Site assessment report**~~ — Done (MD + HTML, sent to Bradley/Garth 2026-01-30)
-5. **Next:** Build business case (benefits analysis, ROI, alternatives comparison)
+5. **Next:** Build business case (benefits analysis, ROI using confirmed pricing)
 6. **Then:** Technical solution design with phased rollout
-7. **Proposal:** Develop proposal with brief, scope, pricing (Precision Meters coordination)
-8. **Present:** Submit proposal to Tanya (before 1st week Feb pricing review)
+7. **Then:** Develop ChirpStack payload codec for Precision ultrasonic meters
+8. **Proposal:** Develop proposal with brief, scope, pricing (meters direct from Precision, platform from Precept)
+9. **Present:** Submit proposal to Tanya (before 1st week Feb pricing review)
 
 ---
 
@@ -161,9 +172,11 @@
 |------|-----------|-------------|
 | 2026-01-28 | MGW-COR-202601-001 | Initial contact emails |
 | 2026-01-29 | MGW-COR-202601-002 | Site visit email thread (contact details, water tariff data) |
-| 2026-01-30 | MGW-COR-202601-003 | CLTM ERP inquiry to Tanya (awaiting reply) |
+| 2026-01-30 | MGW-COR-202601-003 | CLTM ERP inquiry to Tanya (answered by Sumir 2 Feb) |
 | 2026-01-30 | MGW-COR-202601-004 | Site assessment report & meter questions to Bradley/Garth (awaiting reply) |
+| 2026-02-02 | MGW-COR-202602-003 | Sumir reply — CLTM is custom in-house, API integration confirmed |
 | 2026-02-03 | MGW-COR-202602-001 | Phone call with Garth — reply expected today PM |
+| 2026-02-03 | MGW-COR-202602-002 | Garth reply — all 7 questions answered (pricing, LoRaWAN, supply chain) |
 
 ---
 
@@ -180,7 +193,7 @@
 - Single 75mm riser, gravity-fed from top, pumped to lower floors
 - Municipal supply: 110mm, R1.2M/month bill, R65.91/kL, 10,500 kL/month (whole building)
 - Current tenant charge: flat R400/month — no usage-based billing
-- CLTM ERP system integration required (needs research)
+- CLTM ERP integration required — CLTM is custom in-house (not commercial). Their remote developer will consume our API (same pattern as Ekhwesi electricity integration). Postman collection recommended.
 - Ubiquiti/UniFi network, Cat6 copper, 1Gb Vox fiber, VLANs, UPS
 - Prepaid meters rejected, fire/sprinkler system out of scope
 - Research completed on LoRaWAN architecture for high-rise deployment

@@ -3,7 +3,7 @@
 ## Current Status
 **Phase:** Post-Site Visit / Solution Design
 **Health:** Green
-**Last Updated:** 2026-01-30
+**Last Updated:** 2026-02-03
 
 ## Completed
 - [x] Project directory created
@@ -25,8 +25,11 @@
 
 ## In Progress
 - [x] **Internal research** — CLTM ERP, hosting options, solution design groundwork (completed 2026-01-30)
-- [ ] **Confirm CLTM ERP identity** — must email Sumir for exact product name and API details (blocker)
-- [ ] **Confirm Precision Meters LoRaWAN** — must confirm with Bradley if 15mm ultrasonic has integrated LoRaWAN (critical)
+- [x] **Confirm CLTM ERP identity** — resolved 2026-02-02: CLTM is custom-built in-house (not commercial). API integration model confirmed.
+- [x] **Confirm Precision Meters LoRaWAN** — confirmed by Garth (2026-02-03): LoRaWAN standard on all ultrasonic sizes
+- [x] **Meter pricing received** — 15mm: R2,100, 50mm: R9,360 (ex VAT)
+- [x] **Supply chain agreed** — Precision invoices Mosaic Group directly for meters; Precept handles platform
+- [ ] **Develop ChirpStack payload codec** — no codec supplied; APP & DEV keys provided per meter
 
 ## Site Visit Summary (29 Jan 2026)
 
@@ -65,6 +68,40 @@
 | ASM Polymer Volumetric Rotary Piston | - | Mechanical |
 | Infinity Evo Class C Woltmann | - | Woltmann |
 
+## Confirmed Pricing (2026-02-03, from Garth Le Roux)
+
+| Meter | Unit Price (ex VAT) | Qty Needed | Total (ex VAT) |
+|-------|---------------------|------------|----------------|
+| 15mm ultrasonic (LoRaWAN) — unit meters | R2,100 | 576 | R1,209,600 |
+| 50mm ultrasonic (LoRaWAN) — bulk meters | R9,360 | 12 | R112,320 |
+| **Total** | | **588** | **R1,321,920** |
+
+### Pilot Phase
+
+| Meter | Unit Price (ex VAT) | Qty | Total (ex VAT) |
+|-------|---------------------|-----|----------------|
+| 15mm ultrasonic (LoRaWAN) | R2,100 | 6 | R12,600 |
+| 50mm ultrasonic (LoRaWAN) | R9,360 | 1 | R9,360 |
+| **Pilot total** | | **7** | **R21,960** |
+
+### Technical Confirmations
+
+| Item | Detail |
+|------|--------|
+| LoRaWAN radio | Standard on all ultrasonic sizes |
+| Alternative protocol | Wireless M-BUS available |
+| ChirpStack integration | APP & DEV keys supplied per meter; codec must be developed |
+| Default uplink interval | 8 hours |
+| Minimum uplink interval | 4 hours (affects battery life) |
+| Uplink configuration | Pre-dispatch only (not field-configurable via NFC) |
+| 15mm-to-16mm pipe | Tail pieces supplied with meters |
+| 50mm spec sheet | Confirmed: 2nd "40mm" column is actually 50mm |
+
+### Supply Chain Arrangement
+
+- **Meters:** Precision Meters invoices Mosaic Group directly (avoids 15% VAT markup)
+- **Platform & integration:** Precept Systems invoices Mosaic Group separately
+
 ## Todo
 
 ### Now
@@ -73,7 +110,7 @@
 - [x] ~~Research hosting options~~ — Done (Hetzner SA VPS recommended for cloud; on-prem Proxmox for pilot)
 - [x] ~~Research solution design~~ — Done (LoRaWAN + ChirpStack, 3 gateways, RAK3172 nodes, valve-ready PCB)
 - [x] **Email Tanya re CLTM** — sent 2026-01-30 12:07, requesting product name and vendor details (awaiting reply)
-- [x] **Email Bradley & Garth** — sent 2026-01-30, site assessment report + LoRaWAN/pricing/supply chain questions (awaiting reply)
+- [x] **Email Bradley & Garth** — sent 2026-01-30; **all 7 questions answered by Garth 2026-02-03 11:31**
 
 ### Next
 - [x] ~~Create site assessment report~~ — Done (MD + HTML versions, sent to Bradley/Garth 2026-01-30)
@@ -85,8 +122,8 @@
 ## Blockers
 | Blocker | Owner | Status |
 |---------|-------|--------|
-| CLTM ERP identity unknown — email sent to Tanya 2026-01-30, awaiting reply | Jason | Awaiting reply |
-| Precision Meters LoRaWAN confirmation — email sent to Bradley 2026-01-30; Garth confirmed by phone (3 Feb 09:43) that he and Bradley will review today, reply expected this afternoon | Jason | Reply expected today (3 Feb PM) |
+| ~~CLTM ERP identity~~ — **Resolved 2026-02-02.** Custom in-house app, API integration confirmed. | Jason | Done |
+| ~~Precision Meters LoRaWAN confirmation~~ — **Resolved 2026-02-03.** All questions answered. | Jason | Done |
 
 ## Upcoming
 | Event | Date | Notes |
@@ -148,6 +185,9 @@
 | 2026-01-29 | MGW-COR-202601-002 | [Site visit email thread](docs/planning/correspondence/2026-01-29-site-visit-email-thread.md) |
 | 2026-01-30 | MGW-COR-202601-003 | [CLTM ERP inquiry to Tanya](docs/planning/correspondence/2026-01-30-tanya-cltm-inquiry.md) |
 | 2026-01-30 | MGW-COR-202601-004 | [Site assessment report & meter questions to Bradley/Garth](docs/planning/correspondence/2026-01-30-bradley-site-assessment-email.md) |
+| 2026-02-02 | MGW-COR-202602-003 | [Sumir reply — CLTM is custom in-house, API integration](docs/planning/correspondence/2026-02-02-sumir-cltm-reply.md) |
+| 2026-02-03 | MGW-COR-202602-001 | [Phone call with Garth](docs/planning/correspondence/2026-02-03-garth-phone-call.md) |
+| 2026-02-03 | MGW-COR-202602-002 | [Garth reply — all 7 questions answered](docs/planning/correspondence/2026-02-03-garth-meter-questions-reply.md) |
 | 2026-02-03 | MGW-COR-202602-001 | [Phone call with Garth — reply expected today PM](docs/planning/correspondence/2026-02-03-garth-phone-call.md) |
 
 ## Documentation
