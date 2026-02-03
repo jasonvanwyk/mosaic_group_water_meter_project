@@ -2,7 +2,7 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-01-30
+**Last Updated:** 2026-02-03
 
 ---
 
@@ -31,7 +31,14 @@
 
 ---
 
-## Last Session (2026-01-30)
+## Current Session (2026-02-03)
+
+### Updates
+- **09:43** — Called Garth Le Roux (Precision Meters). Confirmed he and Bradley will sit together today and reply to our email (site assessment report + 7 questions) by this afternoon.
+
+---
+
+## Previous Session (2026-01-30)
 
 ### Completed
 - Site visit conducted at 477 Anton Lembede Street (City Life)
@@ -47,7 +54,7 @@
   - `docs/planning/internal/Research/03-hosting-options-research.md` — Hetzner SA recommended for cloud; on-prem Proxmox for pilot
   - `docs/planning/internal/Research/03-solution-design-research.md` — LoRaWAN architecture, meter selection, valve research, pilot design
 
-### Previous Session (2026-01-28)
+### Earlier Session (2026-01-28)
 - Initial phone call with Tanya Dowley
 - Site visit scheduled
 - Email sent to Tanya confirming meeting
@@ -156,6 +163,7 @@
 | 2026-01-29 | MGW-COR-202601-002 | Site visit email thread (contact details, water tariff data) |
 | 2026-01-30 | MGW-COR-202601-003 | CLTM ERP inquiry to Tanya (awaiting reply) |
 | 2026-01-30 | MGW-COR-202601-004 | Site assessment report & meter questions to Bradley/Garth (awaiting reply) |
+| 2026-02-03 | MGW-COR-202602-001 | Phone call with Garth — reply expected today PM |
 
 ---
 

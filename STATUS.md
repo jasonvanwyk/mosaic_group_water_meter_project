@@ -86,7 +86,7 @@
 | Blocker | Owner | Status |
 |---------|-------|--------|
 | CLTM ERP identity unknown — email sent to Tanya 2026-01-30, awaiting reply | Jason | Awaiting reply |
-| Precision Meters LoRaWAN confirmation — email sent to Bradley 2026-01-30 with site assessment report | Jason | Awaiting reply |
+| Precision Meters LoRaWAN confirmation — email sent to Bradley 2026-01-30; Garth confirmed by phone (3 Feb 09:43) that he and Bradley will review today, reply expected this afternoon | Jason | Reply expected today (3 Feb PM) |
 
 ## Upcoming
 | Event | Date | Notes |
@@ -148,6 +148,7 @@
 | 2026-01-29 | MGW-COR-202601-002 | [Site visit email thread](docs/planning/correspondence/2026-01-29-site-visit-email-thread.md) |
 | 2026-01-30 | MGW-COR-202601-003 | [CLTM ERP inquiry to Tanya](docs/planning/correspondence/2026-01-30-tanya-cltm-inquiry.md) |
 | 2026-01-30 | MGW-COR-202601-004 | [Site assessment report & meter questions to Bradley/Garth](docs/planning/correspondence/2026-01-30-bradley-site-assessment-email.md) |
+| 2026-02-03 | MGW-COR-202602-001 | [Phone call with Garth — reply expected today PM](docs/planning/correspondence/2026-02-03-garth-phone-call.md) |
 
 ## Documentation
 
