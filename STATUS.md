@@ -3,7 +3,7 @@
 ## Current Status
 **Phase:** Post-Site Visit / Proposal Development
 **Health:** Green
-**Last Updated:** 2026-02-04
+**Last Updated:** 2026-02-05
 
 ## Completed
 - [x] Project directory created
@@ -22,6 +22,7 @@
 - [x] Precision Meters vendor spec sheets uploaded (4 products)
 - [x] Initial research: Smart metering architecture for high-rise
 - [x] **Site visit notes formalized** into full report
+- [x] **Business case completed** (v1.1, `docs/planning/client/02-business-case.md`) — three-pillar ROI analysis, phased investment, IP terms, Precision Meters partnership
 
 ## In Progress
 - [x] **Internal research** — CLTM ERP, hosting options, solution design groundwork (completed 2026-01-30)
@@ -114,10 +115,14 @@
 
 ### Next
 - [x] ~~Create site assessment report~~ — Done (MD + HTML versions, sent to Bradley/Garth 2026-01-30)
-- [ ] Build business case (benefits analysis, ROI, alternatives comparison)
-- [ ] Create technical solution design (formal)
-- [ ] Develop proposal with phased approach, brief, scope, and pricing
-- [ ] Coordinate with Precision Meters on meter specs/pricing for 576 units + 12 bulk meters
+- [x] **Build business case** — Done (v1.2, MD + HTML, `docs/planning/client/02-business-case.md`)
+- [x] **Communications technology validation** — Done (v1.0, MD + HTML, `docs/planning/client/05-communications-technology-validation.md`)
+- [x] **Update site assessment for client** — Done (external node architecture, 4 gateways, audience/next steps fixed)
+- [x] **Coordinate with Precision Meters** — Done (pricing confirmed, supply chain agreed, all questions answered)
+- [ ] **Send document pack to Bradley/Garth for review** — drafted (MGW-COR-202602-008), sending tonight
+- [ ] Send document pack to Tanya — after Bradley/Garth approval
+- [ ] Create Scope of Work (MGW-PRO-202602-003) — after Tanya buy-in
+- [ ] Create Proposal / Quote (MGW-PRO-202602-004) — after Tanya buy-in
 
 ## Blockers
 | Blocker | Owner | Status |
@@ -138,8 +143,10 @@
 | ~~Document site findings~~ | 2026-01-30 | Done — formalized into site visit report |
 | ~~Internal research~~ | 2026-01-30 | Done — CLTM, hosting, solution design |
 | ~~Site assessment report~~ | 2026-01-30 | Done — sent to Precision Meters |
-| Business case + proposal | 5 Feb 2026 | Benefits, alternatives, pricing — target delivery |
-| Submit to Tanya | 5 Feb 2026 | Tanya advised proposal coming tomorrow |
+| ~~Business case + supporting docs~~ | 4 Feb 2026 | Done — business case, comms validation, site assessment updated |
+| Send doc pack to Bradley/Garth | 4 Feb 2026 | Tonight — for review before client submission |
+| Send doc pack to Tanya | 5 Feb 2026 | After Bradley/Garth approval |
+| Scope of Work + Proposal | TBD | After Tanya confirms interest |
 
 ## Key Contacts
 
@@ -200,6 +207,7 @@
 | 2026-02-04 | MGW-COR-202602-005 | [Tanya reply — meters direct from Garth](docs/planning/correspondence/2026-02-04-tanya-proposal-update-reply.md) |
 | 2026-02-04 | MGW-COR-202602-006 | [Phone call with Garth — pricing revision, supplier loyalty](docs/planning/correspondence/2026-02-04-garth-phone-call.md) |
 | 2026-02-04 | MGW-COR-202602-007 | [RFQ to Garth — 1× 15mm ultrasonic for R&D](docs/planning/correspondence/2026-02-04-garth-rfq-bench-meter.md) |
+| 2026-02-04 | MGW-COR-202602-008 | [Document pack to Bradley/Garth for review](docs/planning/correspondence/2026-02-04-bradley-garth-document-pack-review.md) |
 
 ## Documentation
 

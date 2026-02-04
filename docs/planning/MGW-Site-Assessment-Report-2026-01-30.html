@@ -80,8 +80,8 @@
 <div class="doc-subtitle">City Life &mdash; 477 Anton Lembede Street, Durban CBD</div>
 <div class="doc-meta">
     <div><strong>Prepared by:</strong> Jason van Wyk, Precept Systems (Pty) Ltd</div>
-    <div><strong>Prepared for:</strong> Precision Meters &mdash; Bradley Cassani, Garth Le Roux</div>
-    <div><strong>Client:</strong> Mosaic Group &mdash; Tanya Dowley</div>
+    <div><strong>Prepared for:</strong> Mosaic Group &mdash; Tanya Dowley</div>
+    <div><strong>Meter supply partner:</strong> Precision Meters (Pty) Ltd</div>
 </div>
 
 <!-- 1. EXECUTIVE SUMMARY -->
@@ -89,7 +89,7 @@
 <p>Precept Systems conducted a site visit at City Life, 477 Anton Lembede Street, Durban CBD on 29 January 2026. The building is a 27-storey residential high-rise owned by Mosaic Group (2,500+ residential units, 7,000+ tenants across multiple brands). The scope covers the first 12 floors (576 units at 48/floor). The upper floors accommodate a different tenant type and are excluded from this phase.</p>
 <p>The building has no individual water metering. Tenants pay a flat R400/month; Mosaic Group absorbs the full municipal water bill (~R1.2M/month). The client requires <strong>576 unit meters</strong> (15mm), <strong>12 bulk floor meters</strong> (50mm), automated telemetry, and ERP integration.</p>
 <div class="callout">
-    <strong>Recommendation:</strong> Precision Meters Ultrasonic 15mm (576x) and Ultrasonic 50mm (12x) with integrated LoRaWAN radio, connected via a private LoRaWAN network (868 MHz, EU863-870, ChirpStack) using the building's existing UniFi ethernet for gateway backhaul. Total: 588 meters, phased rollout.
+    <strong>Recommendation:</strong> Precision Meters Ultrasonic 15mm (576x) and Ultrasonic 50mm (12x) with pulse output, each connected to a Precept-designed LoRaWAN telemetry node. Private LoRaWAN network (868 MHz, EU863-870, ChirpStack) with 4 gateways using the building's existing UniFi ethernet for backhaul. Total: 588 meters + 588 nodes, phased rollout.
 </div>
 
 <!-- 2. BUILDING PROFILE + 3. WATER INFRASTRUCTURE (side by side) -->
@@ -167,7 +167,7 @@
     <tr><td>Passage ceiling, mixed orientation</td><td>Position-independent (U0D0) meters essential</td></tr>
     <tr><td>No straight pipe sections available</td><td>Eliminates meters requiring upstream/downstream runs</td></tr>
     <tr><td>576 meters at scale</td><td>Battery &gt;10 years, maintenance-free, no moving parts</td></tr>
-    <tr><td>Manual reading impractical</td><td>Integrated LoRaWAN radio required (avoids 576 separate nodes)</td></tr>
+    <tr><td>Manual reading impractical</td><td>Automated telemetry via LoRaWAN nodes required &mdash; 576 meters cannot be read manually</td></tr>
     <tr><td>Leak detection is primary driver</td><td>Low-flow sensitivity critical for bulk meters</td></tr>
 </table>
 
@@ -185,12 +185,12 @@
     <tr><td>Battery</td><td>&gt;16 years</td><td>Exceeds 10-year horizon</td></tr>
     <tr><td>Data logger</td><td>Hourly, daily, monthly</td><td>Resilience if comms fail</td></tr>
     <tr><td>Standards</td><td>SANS 1529-1:2019 Class C/D</td><td>SA legal metrology compliant</td></tr>
-    <tr><td><strong>AMR/AMI</strong></td><td><strong>LoRaWAN (EU863-870), wM-Bus, NB-IoT, NFC</strong></td><td><strong>Integrated radio &mdash; no separate node needed</strong></td></tr>
+    <tr><td><strong>Output</strong></td><td><strong>Pulse output, NFC, data logger</strong></td><td><strong>Pulse connects to external LoRaWAN node for telemetry</strong></td></tr>
 </table>
-<div class="callout"><strong>Key advantage:</strong> Integrated LoRaWAN radio means each meter transmits directly to a gateway. For 576 meters, this eliminates separate telemetry hardware, reducing cost, installation complexity, and maintenance. Built-in leak, burst, backflow, tamper, and temperature alarms are all transmitted over the radio.</div>
+<div class="callout"><strong>Key advantage:</strong> Each meter&rsquo;s pulse output connects to a Precept-designed LoRaWAN node (RAK3172-based). This gives full control over firmware, transmit intervals, payload format, and future valve integration. The meter&rsquo;s own battery (&gt;16 years) powers metering independently; the node has a separate Li-SOCl2 battery (6&ndash;15 year life). Leak, burst, backflow, and tamper alarms are detected by the meter and relayed via the node.</div>
 
 <h2>7.2 Bulk Floor Meters &mdash; Precision Meters Ultrasonic 50mm</h2>
-<p>Same ultrasonic range recommended for 12 bulk meters. <strong>Note:</strong> The 32&ndash;50mm spec sheet shows a third column labelled "40mm" with doubled flow rates (Qs 24 m&sup3;/h) and shorter body (255mm). We believe this is the 50mm variant &mdash; confirmation requested.</p>
+<p>Same ultrasonic range recommended for 12 bulk meters. The 32&ndash;50mm spec sheet&rsquo;s third column (higher flow rates, 255mm body) has been confirmed as the 50mm variant.</p>
 
 <h2>7.3 Why Not Woltmann for Bulk? Why Not ASM Polymer for Unit?</h2>
 <div class="cols-2">
@@ -199,7 +199,7 @@
             <tr><th>Bulk meter factor</th><th>Ultrasonic 50mm</th><th>Woltmann 50mm</th></tr>
             <tr><td><strong>Qmin</strong></td><td><strong>72 L/h</strong></td><td><strong>240 L/h</strong></td></tr>
             <tr><td>Leak sensitivity</td><td>3.3x better</td><td>Misses small leaks</td></tr>
-            <tr><td>LoRaWAN</td><td>Integrated</td><td>No (pulse only)</td></tr>
+            <tr><td>Telemetry</td><td>Pulse output &rarr; external node</td><td>Pulse output &rarr; external node</td></tr>
             <tr><td>Moving parts</td><td>None</td><td>Turbine bearings</td></tr>
         </table>
         <p class="note">A running toilet at ~100 L/h: detected by ultrasonic, missed by Woltmann.</p>
@@ -209,7 +209,7 @@
             <tr><th>Unit meter factor</th><th>Ultrasonic 15mm</th><th>ASM Polymer 15mm</th></tr>
             <tr><td>Moving parts</td><td>None</td><td>Rotary piston</td></tr>
             <tr><td>Qmin</td><td>7.5 L/h</td><td>15 L/h</td></tr>
-            <tr><td>LoRaWAN</td><td>Integrated</td><td>No (pulse only)</td></tr>
+            <tr><td>Telemetry</td><td>Pulse output &rarr; external node</td><td>Pulse output &rarr; external node</td></tr>
             <tr><td>Enclosure needed</td><td>No (IP68)</td><td>Yes (legal req.)</td></tr>
             <tr><td>Sediment resilience</td><td>Excellent</td><td>At risk</td></tr>
         </table>
@@ -241,30 +241,31 @@
             <tr><td>RX sensitivity (SF12)</td><td>-137 dBm</td></tr>
             <tr><td><strong>Max link budget</strong></td><td><strong>~157 dB</strong></td></tr>
             <tr><td>Atten. per slab (conservative)</td><td>23 dB</td></tr>
-            <tr><td><strong>Floors per gateway</strong></td><td><strong>5&ndash;7</strong></td></tr>
+            <tr><td><strong>Floors per gateway</strong></td><td><strong>3 (at SF7, battery-optimal)</strong></td></tr>
         </table>
         <table class="compact-table">
             <tr><th>Gateway</th><th>Location</th><th>Primary</th></tr>
-            <tr><td>GW-1</td><td>Floor 3</td><td>Floors 1&ndash;6</td></tr>
-            <tr><td>GW-2</td><td>Floor 8</td><td>Floors 5&ndash;12</td></tr>
-            <tr><td>GW-3</td><td>Floor 12/Roof</td><td>Floors 9&ndash;12</td></tr>
+            <tr><td>GW-1</td><td>Floor 3</td><td>Floors 1&ndash;3</td></tr>
+            <tr><td>GW-2</td><td>Floor 6</td><td>Floors 4&ndash;6</td></tr>
+            <tr><td>GW-3</td><td>Floor 9</td><td>Floors 7&ndash;9</td></tr>
+            <tr><td>GW-4</td><td>Floor 12</td><td>Floors 10&ndash;12</td></tr>
         </table>
     </div>
 </div>
-<p>Three gateways with deliberate overlap zones. ChirpStack handles deduplication. Meters are in passage ceilings (open corridors), not inside sealed apartments &mdash; vertical penetration through floor slabs only.</p>
+<p>Four gateways with deliberate overlap zones (67% dual-gateway coverage). ChirpStack handles deduplication. Meters and nodes are in passage ceilings (open corridors), not inside sealed apartments &mdash; vertical penetration through floor slabs only.</p>
 
 <h2>8.3 LoRaWAN vs WiFi vs Ethernet</h2>
 <table class="compact-table">
     <tr><th>Factor</th><th>LoRaWAN (868 MHz)</th><th>WiFi (2.4 GHz)</th><th>Wired Ethernet</th></tr>
     <tr><td>Building penetration</td><td>Excellent (sub-GHz)</td><td>Poor in concrete</td><td>N/A (wired)</td></tr>
-    <tr><td><strong>Battery life (5-min)</strong></td><td><strong>10&ndash;16 years</strong></td><td><strong>12&ndash;18 months</strong></td><td>No battery (PoE)</td></tr>
+    <tr><td><strong>Node battery life</strong></td><td><strong>6&ndash;15 years</strong></td><td><strong>6&ndash;18 months</strong></td><td>No battery (PoE)</td></tr>
     <tr><td>Spectrum congestion</td><td>None (dedicated band)</td><td>Severe (13&ndash;15 APs/floor)</td><td>None</td></tr>
-    <tr><td>10-year battery cost (576)</td><td><strong>R0</strong></td><td><strong>~R864,000</strong></td><td>R0</td></tr>
-    <tr><td>Infrastructure cost (12 floors)</td><td>R0 per meter</td><td>R0 per meter</td><td>R240K&ndash;R480K</td></tr>
+    <tr><td>10-year battery cost (576)</td><td><strong>R0&ndash;R90K</strong></td><td><strong>~R864,000</strong></td><td>R0</td></tr>
+    <tr><td>Infrastructure cost (12 floors)</td><td>R28&ndash;36K (4 gateways)</td><td>~R0 (existing APs)</td><td>R145K&ndash;R200K</td></tr>
     <tr><td>Reliability</td><td>High (CSS, below noise floor)</td><td>Low (contention, interference)</td><td>Very high</td></tr>
     <tr><td>Client acceptance</td><td><strong>Accepted</strong></td><td>Possible</td><td><strong>Rejected</strong> (cost)</td></tr>
 </table>
-<div class="callout"><strong>Critical factor:</strong> With integrated LoRaWAN in the ultrasonic meter, the meter's own battery (&gt;16 years) powers both metering and radio. No external node, no external battery, no replacement schedule. WiFi would require battery replacement every 12&ndash;18 months at ~R86,400/year for 576 meters.</div>
+<div class="callout"><strong>Critical factor:</strong> Each meter connects to a Precept-designed LoRaWAN node via pulse output. The meter battery (&gt;16 years) powers metering; the node battery (Li-SOCl2, 6&ndash;15 years) powers the radio. WiFi nodes would require battery replacement every 12&ndash;18 months at ~R172,800 per cycle.</div>
 
 <h2>8.4 Private LoRaWAN (ChirpStack) vs Public Networks</h2>
 <table class="compact-table">
@@ -275,14 +276,16 @@
     <tr><td>Downlink (future valves)</td><td>Full (Class A/B/C)</td><td>Limited (TTN: 10/day)</td></tr>
     <tr><td>Device limits</td><td>Unlimited</td><td>Fair Use or per-device</td></tr>
 </table>
-<p>Precept Systems already operates ChirpStack in production for the Fairfield Water monitoring project &mdash; proven and portable.</p>
+<p>Precept Systems already operates ChirpStack in production for water monitoring deployments &mdash; proven and portable.</p>
 
 <h2>8.5 Architecture Summary</h2>
 <div class="architecture">  Precision Meters Ultrasonic 15mm (576x) + 50mm (12x)
-  &mdash; integrated LoRaWAN EU863-870 &mdash;
-              |  868 MHz uplink
+              |  Pulse output
               v
-  LoRaWAN Gateways (3x) &mdash; Floors 3, 8, 12
+  Precept LoRaWAN Nodes (588x) &mdash; RAK3172, Li-SOCl2 battery
+              |  868 MHz LoRaWAN uplink (EU863-870)
+              v
+  LoRaWAN Gateways (4x) &mdash; Floors 3, 6, 9, 12
   PoE from existing UniFi switches
               |  Ethernet (existing Cat6)
               v
@@ -323,7 +326,7 @@
             <tr><td>Plumbing</td><td>Ryan (Mosaic, in-house)</td></tr>
             <tr><td>IT support</td><td>Sumir (Mosaic, in-house)</td></tr>
         </table>
-        <p class="note">With integrated LoRaWAN meters, installation is purely plumbing. No node wiring or per-unit configuration.</p>
+        <p class="note">Installation involves plumbing (meter) plus mounting and connecting the LoRaWAN node (pulse wire to meter). Nodes are pre-configured &mdash; no per-unit software setup required on site.</p>
     </div>
 </div>
 
@@ -345,9 +348,10 @@
         <h2>Gateway Rollout</h2>
         <table class="compact-table">
             <tr><th>Gateway</th><th>Phase</th><th>Location</th><th>Covers</th></tr>
-            <tr><td>GW-1</td><td>Pilot</td><td>Floor 3</td><td>Floors 1&ndash;6</td></tr>
-            <tr><td>GW-2</td><td>Phase 3</td><td>Floor 8</td><td>Floors 5&ndash;12</td></tr>
-            <tr><td>GW-3</td><td>Phase 4</td><td>Floor 12/Roof</td><td>Floors 9&ndash;12</td></tr>
+            <tr><td>GW-1</td><td>Pilot</td><td>Floor 3</td><td>Floors 1&ndash;3</td></tr>
+            <tr><td>GW-2</td><td>Phase 2</td><td>Floor 6</td><td>Floors 4&ndash;6</td></tr>
+            <tr><td>GW-3</td><td>Phase 3</td><td>Floor 9</td><td>Floors 7&ndash;9</td></tr>
+            <tr><td>GW-4</td><td>Phase 4</td><td>Floor 12</td><td>Floors 10&ndash;12</td></tr>
         </table>
         <h2>Pilot Design Principles</h2>
         <ul>
@@ -363,14 +367,12 @@
 <h1>12. Next Steps</h1>
 <table>
     <tr><th>#</th><th>Action</th><th>Owner</th></tr>
-    <tr><td>1</td><td>Confirm 15mm ultrasonic LoRaWAN availability (standard or optional module)</td><td>Precision Meters</td></tr>
-    <tr><td>2</td><td>Confirm 50mm ultrasonic variant (3rd column in spec sheet)</td><td>Precision Meters</td></tr>
-    <tr><td>3</td><td>Provide volume pricing for 15mm and 50mm (pilot and full quantities)</td><td>Precision Meters</td></tr>
-    <tr><td>4</td><td>Provide ChirpStack device profile / payload codec for ultrasonic 15mm</td><td>Precision Meters</td></tr>
-    <tr><td>5</td><td>Confirm LoRaWAN uplink interval and NFC configuration capability</td><td>Precision Meters</td></tr>
-    <tr><td>6</td><td>Clarify supply chain arrangement (direct to client or via Precept)</td><td>Precision Meters / Precept</td></tr>
-    <tr><td>7</td><td>Develop technical proposal and business case for Mosaic Group</td><td>Precept Systems</td></tr>
-    <tr><td>8</td><td>Submit proposal to client</td><td>Precept Systems</td></tr>
+    <tr><td>1</td><td>Review this site assessment and supporting documents (business case, technology validation)</td><td>Mosaic Group</td></tr>
+    <tr><td>2</td><td>Confirm scope and priorities for pilot phase</td><td>Mosaic Group / Precept</td></tr>
+    <tr><td>3</td><td>Agree on pilot floor selection (recommended: Floor 3 or 4)</td><td>Mosaic Group / Precept</td></tr>
+    <tr><td>4</td><td>Formal proposal with detailed pricing and timeline</td><td>Precept Systems</td></tr>
+    <tr><td>5</td><td>Pilot deployment upon agreement</td><td>Precept Systems / Ryan (plumbing)</td></tr>
+    <tr><td>6</td><td>Pilot validation and review before full rollout</td><td>Joint</td></tr>
 </table>
 
 <!-- FOOTER -->

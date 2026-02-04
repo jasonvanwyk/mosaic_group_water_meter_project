@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communications Technology Validation — Mosaic Group Water Meter Monitoring</title>
+    <style>
+        @page { size: A4; margin: 10mm 12mm 12mm 12mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 8.5pt; line-height: 1.35; color: #333; padding: 10mm 14mm; }
+        @media print {
+            body { padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            .page-break { page-break-before: always; }
+            .no-break { page-break-inside: avoid; break-inside: avoid; }
+        }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2.5px solid #4c86c6; padding-bottom: 6px; margin-bottom: 6px; }
+        .logo svg { height: 32px; width: auto; }
+        .header-right { text-align: right; font-size: 7.5pt; color: #666; line-height: 1.3; }
+        .doc-title { font-size: 14pt; font-weight: 700; color: #4c86c6; margin-bottom: 2px; }
+        .doc-subtitle { font-size: 9pt; color: #555; margin-bottom: 4px; }
+        .doc-meta { display: flex; gap: 30px; font-size: 7.5pt; color: #666; margin-bottom: 8px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .doc-meta div { line-height: 1.4; }
+        .doc-meta strong { color: #444; }
+        h1 { font-size: 11pt; color: #4c86c6; border-bottom: 1.5px solid #4c86c6; padding-bottom: 2px; margin: 10px 0 5px 0; }
+        h2 { font-size: 9pt; color: #333; margin: 7px 0 3px 0; font-weight: 600; }
+        h3 { font-size: 8.5pt; color: #555; margin: 4px 0 2px 0; }
+        p { margin: 2px 0; }
+        ul, ol { margin: 2px 0 4px 16px; }
+        li { margin: 1px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 3px 0 6px 0; font-size: 8pt; }
+        th { background: #4c86c6; color: #fff; font-weight: 600; text-align: left; padding: 3px 6px; font-size: 7.5pt; }
+        td { padding: 2.5px 6px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+        tr:nth-child(even) td { background: #f8f9fb; }
+        td:first-child { font-weight: 500; }
+        .total-row td { background: #1a365d !important; color: #fff !important; font-weight: 600; border-bottom-color: #1a365d; }
+        .highlight-row td { background: #eef4fb !important; font-weight: 600; }
+        .compact-table td, .compact-table th { padding: 2px 5px; }
+        .cols-2 { display: flex; gap: 12px; }
+        .cols-2 > div { flex: 1; }
+        .callout { background: #eef4fb; border-left: 3px solid #4c86c6; padding: 5px 8px; margin: 4px 0 6px 0; font-size: 8pt; }
+        .callout strong { color: #4c86c6; }
+        .highlight { background: #ecfdf5; border-left: 3px solid #10b981; padding: 5px 8px; margin: 4px 0 6px 0; font-size: 8pt; }
+        .warning { background: #fef3c7; border-left: 3px solid #f59e0b; padding: 5px 8px; margin: 4px 0 6px 0; font-size: 8pt; }
+        .note { font-size: 7.5pt; color: #666; font-style: italic; margin: 2px 0; }
+        .metrics { display: flex; gap: 8px; margin: 6px 0; }
+        .metric { flex: 1; text-align: center; padding: 6px 4px; background: #f0f4f8; border-radius: 3px; border-top: 3px solid #4c86c6; }
+        .metric-value { font-size: 14pt; font-weight: 700; color: #1a365d; line-height: 1.2; }
+        .metric-label { font-size: 7pt; color: #666; margin-top: 1px; }
+        .pill { display: inline-block; padding: 1px 6px; border-radius: 8px; font-size: 7pt; font-weight: 600; }
+        .pill-green { background: #d1fae5; color: #065f46; }
+        .pill-blue { background: #dbeafe; color: #1e40af; }
+        .pill-amber { background: #fef3c7; color: #92400e; }
+        .pill-red { background: #fee2e2; color: #991b1b; }
+        .architecture { background: #f5f5f5; padding: 6px 10px; margin: 4px 0 6px 0; font-family: 'Consolas', 'Courier New', monospace; font-size: 7.5pt; line-height: 1.4; white-space: pre; border: 1px solid #ddd; border-radius: 3px; }
+        .footer { margin-top: 10px; padding-top: 6px; border-top: 1.5px solid #4c86c6; font-size: 7pt; color: #888; display: flex; justify-content: space-between; }
+        .confidential { color: #c44; font-weight: 600; font-size: 7pt; }
+        .not-viable td { color: #999; }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">
+        <svg viewBox="0 0 670.88 298.48" xmlns="http://www.w3.org/2000/svg" style="height:32px">
+            <defs><clipPath id="cp"><rect width="670.88" height="298.48" fill="none"/></clipPath></defs>
+            <g clip-path="url(#cp)">
+                <path fill="#4c86c6" d="M255.77,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM280.76,108.28c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM255.77,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C283.88,1.39,282.48,0,280.76,0h-25ZM244.67,216.56c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM219.67,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM244.67,108.28c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM219.67,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C247.78,1.39,246.39,0,244.67,0h-25ZM208.58,72.19c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM183.58,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C211.69,1.39,210.3,0,208.58,0h-25ZM172.48,216.56c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM147.49,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM172.48,72.19c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM147.49,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM172.48,0c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11V3.11C144.37,1.39,145.77,0,147.49,0h25ZM111.39,144.37c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM136.39,108.28c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM111.39,72.19c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM100.3,144.37c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM75.3,108.28c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM100.3,72.19c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM75.3,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM100.3,0c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11V3.11C72.19,1.39,73.58,0,75.3,0h25ZM39.2,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM64.2,180.47c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM3.11,216.56C1.39,216.56,0,217.95,0,219.67v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11H3.11ZM28.11,180.47c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11H3.11C1.39,211.69,0,210.3,0,208.58v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM3.11,144.37C1.39,144.37,0,145.77,0,147.49v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11H3.11ZM28.11,108.28c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11H3.11C1.39,139.5,0,138.11,0,136.39v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM3.11,72.19C1.39,72.19,0,73.58,0,75.3v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11H3.11ZM28.11,36.09c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11H3.11C1.39,67.32,0,65.92,0,64.2v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM3.11,0C1.39,0,0,1.39,0,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C31.22,1.39,29.83,0,28.11,0H3.11Z"/>
+                <path fill="#89cfc7" d="M255.76,144.37c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM244.67,144.37c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM183.58,144.37c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM172.48,144.37c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM255.76,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM255.76,72.19c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM255.76,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM219.67,72.19c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM219.67,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM183.58,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM183.58,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM183.58,108.28c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM183.58,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM147.48,108.28c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM111.39,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM111.39,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM111.39,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM111.39,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C139.5,1.39,138.11,0,136.39,0h-25ZM75.3,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM75.3,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,144.37c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,108.28c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,72.19c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C67.31,1.39,65.92,0,64.2,0h-25Z"/>
+                <path fill="#4c86c6" d="M315.52,22.32c-2.92,0-5.29,2.37-5.29,5.29v47.69c0,2.92,2.37,5.29,5.29,5.29h20.28c2.92,0,5.29-2.37,5.29-5.29V27.61c0-2.92-2.37-5.29-5.29-5.29h-20.28ZM310.23,170.88c0,2.92,2.37,5.29,5.29,5.29h20.28c2.92,0,5.29-2.37,5.29-5.29v-67.08c0-2.92-2.37-5.29-5.29-5.29h-20.28c-2.92,0-5.29,2.37-5.29,5.29v67.08Z"/>
+                <path fill="#89cfc7" d="M420.96,50.94c0,29.29-23.76,52.04-52.93,52.04l-74.89.3c-1.72,0-3.11-1.38-3.11-3.1v-24.99c0-1.72,1.39-3.11,3.11-3.11l74.86-.06c12.17,0,22.09-8.83,22.09-21.07s-9.92-19.96-22.09-19.96l-74.86.23c-1.72,0-3.11-1.38-3.11-3.1V3.11C290.04,1.39,291.43,0,293.15,0h74.86C397.2,0,420.96,21.62,420.96,50.94"/>
+                <path fill="#4c86c6" d="M629.87,175.78h14.83v-40.67h16.03v-11.76h-46.96v11.76h16.1v40.67ZM588.61,150.39h-8.24v-15.35h8.24c6.14,0,9.21,2.85,9.21,7.71s-3.07,7.64-9.21,7.64M589.5,123.36h-23.97v52.42h14.83v-13.7h9.14c14.3,0,23.29-7.41,23.29-19.32s-8.99-19.4-23.29-19.4M529.89,164.32v-9.59h23.29v-11.08h-23.29v-8.84h26.44v-11.46h-41.11v52.42h42.09v-11.46h-27.41ZM486.08,176.83c9.66,0,17.45-3.52,22.54-9.89l-9.44-8.54c-3.3,3.97-7.34,6.14-12.36,6.14-8.61,0-14.6-5.99-14.6-14.98s5.99-14.98,14.6-14.98c5.02,0,9.06,2.17,12.36,6.14l9.44-8.54c-5.09-6.37-12.88-9.89-22.54-9.89-16.62,0-28.83,11.31-28.83,27.26s12.21,27.26,28.83,27.26M424.37,164.32v-9.59h23.29v-11.08h-23.29v-8.84h26.44v-11.46h-41.11v52.42h42.09v-11.46h-27.41ZM386.56,142.75c0,4.79-3.07,7.64-9.21,7.64h-8.24v-15.35h8.24c6.14,0,9.21,2.85,9.21,7.71M386.71,175.78h15.88l-11.31-16.48c6.52-3.15,10.26-8.84,10.26-16.55,0-11.98-8.99-19.4-23.29-19.4h-23.96v52.42h14.83v-13.93h8.09l9.51,13.93Z"/>
+                <path fill="#4c86c6" d="M647.66,247.57c15.58,0,23.22-7.79,23.22-16.92,0-19.32-29.73-13.33-29.73-21.34,0-2.62,2.25-4.72,8.46-4.72,4.57,0,9.51,1.35,14.53,4.04l4.57-11.01c-5.17-3-12.21-4.57-19.02-4.57-15.58,0-23.21,7.64-23.21,17,0,19.47,29.8,13.4,29.8,21.72,0,2.55-2.4,4.27-8.54,4.27s-12.66-2.1-17.3-5.17l-4.87,10.93c4.94,3.44,13.48,5.77,22.09,5.77M618.76,246.52l-.15-52.42h-12.21l-17.97,30.26-18.42-30.26h-12.21v52.42h13.71v-27.04l13.4,21.87h6.59l13.48-22.62.15,27.78h13.63ZM522.15,235.06v-9.59h23.29v-11.08h-23.29v-8.84h26.44v-11.46h-41.11v52.42h42.09v-11.46h-27.41ZM471.08,246.52h14.83v-40.67h16.03v-11.76h-46.96v11.76h16.1v40.67ZM430.64,247.57c15.58,0,23.22-7.79,23.22-16.92,0-19.32-29.73-13.33-29.73-21.34,0-2.62,2.25-4.72,8.46-4.72,4.57,0,9.51,1.35,14.53,4.04l4.57-11.01c-5.17-3-12.21-4.57-19.02-4.57-15.58,0-23.21,7.64-23.21,17,0,19.47,29.8,13.4,29.8,21.72,0,2.55-2.4,4.27-8.54,4.27s-12.66-2.1-17.3-5.17l-4.87,10.93c4.94,3.44,13.48,5.77,22.09,5.77M409.59,194.1h-14.38l-12.43,20.82-12.43-20.82h-15.65l20,33.4v19.02h14.83v-18.8l20.07-33.62ZM332.53,247.57c15.58,0,23.22-7.79,23.22-16.92,0-19.32-29.73-13.33-29.73-21.34,0-2.62,2.25-4.72,8.46-4.72,4.57,0,9.51,1.35,14.53,4.04l4.57-11.01c-5.17-3-12.21-4.57-19.02-4.57-15.58,0-23.22,7.64-23.22,17,0,19.47,29.81,13.4,29.81,21.72,0,2.55-2.4,4.27-8.54,4.27s-12.66-2.1-17.3-5.17l-4.87,10.93c4.94,3.44,13.48,5.77,22.09,5.77"/>
+            </g>
+        </svg>
+    </div>
+    <div class="header-right">
+        <span class="confidential">COMMERCIAL IN CONFIDENCE</span><br>
+        MGW-PRO-202602-005 v1.0<br>
+        5 February 2026
+    </div>
+</div>
+
+<div class="doc-title">Communications Technology Validation</div>
+<div class="doc-subtitle">Water Meter Monitoring &mdash; City Life, 477 Anton Lembede Street, Durban</div>
+<div class="doc-meta">
+    <div><strong>Prepared by:</strong> Jason van Wyk, Precept Systems</div>
+    <div><strong>Prepared for:</strong> Mosaic Group &mdash; Tanya Dowley</div>
+    <div><strong>Supporting document for:</strong> Business Case (MGW-PRO-202602-002)</div>
+</div>
+
+<!-- ===== 1. PURPOSE ===== -->
+<h1>1. Purpose</h1>
+<p>This document validates the selection of <strong>private LoRaWAN (868 MHz)</strong> as the wireless communications technology for the City Life water meter monitoring system. It evaluates the site-specific challenges at 477 Anton Lembede Street, compares available technology options, and demonstrates that LoRaWAN is the only practical choice that satisfies all project requirements: reliable signal penetration through reinforced concrete, battery life measured in years, zero recurring subscription fees, and proven scalability to 588+ devices.</p>
+
+<div class="metrics">
+    <div class="metric">
+        <div class="metric-value">588</div>
+        <div class="metric-label">Wireless Devices</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">12</div>
+        <div class="metric-label">Concrete Floors</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">4</div>
+        <div class="metric-label">LoRa Gateways</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value" style="color:#10b981">R0/mo</div>
+        <div class="metric-label">Subscription Fees</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">6&ndash;15 yr</div>
+        <div class="metric-label">Battery Life</div>
+    </div>
+</div>
+
+<!-- ===== 2. SITE ENVIRONMENT ===== -->
+<h1>2. Site Environment</h1>
+<div class="cols-2">
+<div class="no-break">
+    <h2>2.1 Building Characteristics</h2>
+    <table class="compact-table">
+        <tr><th>Factor</th><th>Detail</th><th>RF Impact</th></tr>
+        <tr><td>Building age</td><td>~60 years</td><td>Denser concrete = higher attenuation per floor</td></tr>
+        <tr><td>Construction</td><td>Reinforced concrete, brick, steel</td><td>23 dB signal loss per floor (conservative)</td></tr>
+        <tr><td>Floors in scope</td><td>12 (of 27 total)</td><td>No single access point can cover all 12 floors</td></tr>
+        <tr><td>Units per floor</td><td>48 (588 total)</td><td>High device density requires capacity planning</td></tr>
+        <tr><td>Meter location</td><td>Passage ceiling above front door</td><td>Corridor line-of-sight, concrete between floors</td></tr>
+        <tr><td>Main riser</td><td>75mm steel pipe</td><td>+5&ndash;10 dB additional loss near riser</td></tr>
+    </table>
+</div>
+<div class="no-break">
+    <h2>2.2 Existing IT &amp; Durban CBD</h2>
+    <table class="compact-table">
+        <tr><th>Factor</th><th>Detail</th></tr>
+        <tr><td>WiFi APs</td><td>13&ndash;15 per floor &mdash; 2.4 GHz heavily congested</td></tr>
+        <tr><td>Network</td><td>Ubiquiti UniFi, Cat6, dedicated VLAN available</td></tr>
+        <tr><td>UPS</td><td>Comms room and switches protected</td></tr>
+        <tr><td>Location</td><td>Durban CBD &mdash; dense urban RF environment</td></tr>
+        <tr><td>868 MHz band</td><td>Less congested than 2.4 GHz in CBD</td></tr>
+        <tr><td>Regulatory</td><td>ICASA EU863-870 channel plan, licence-exempt</td></tr>
+        <tr><td>Load shedding</td><td>Battery-powered nodes unaffected</td></tr>
+        <tr><td>Wired runs</td><td>Rejected by client (cost, disruption)</td></tr>
+    </table>
+</div>
+</div>
+
+<!-- ===== 3. TECHNOLOGY COMPARISON ===== -->
+<div class="page-break"></div>
+<h1>3. Technologies Evaluated</h1>
+<table>
+    <tr><th>Criterion</th><th style="background:#1a365d">LoRaWAN (868 MHz)</th><th>WiFi (2.4 GHz)</th><th>Wired Ethernet</th><th>Sigfox / NB-IoT</th></tr>
+    <tr><td>Concrete penetration</td><td><strong>23 dB/floor (manageable)</strong></td><td>35&ndash;40 dB/floor (severe)</td><td>N/A</td><td>Moderate</td></tr>
+    <tr><td>Battery life</td><td><strong>6&ndash;15 years</strong></td><td>6&ndash;18 months</td><td>N/A (mains)</td><td>2&ndash;5 years</td></tr>
+    <tr><td>Infrastructure cost</td><td><strong>R28&ndash;36K (4 gateways)</strong></td><td>~R0 (existing APs)</td><td>R145&ndash;200K (cabling)</td><td>R0 (carrier)</td></tr>
+    <tr><td>Subscription (annual)</td><td><strong>R0</strong></td><td>R0</td><td>R0</td><td>R103K&ndash;R311K</td></tr>
+    <tr><td>10-year subscription</td><td><strong>R0</strong></td><td>R0</td><td>R0</td><td>R1.03M&ndash;R3.11M</td></tr>
+    <tr><td>WiFi band congestion</td><td><strong>Not affected (sub-GHz)</strong></td><td>Competes with 13&ndash;15 APs/floor</td><td>Not affected</td><td>Not affected</td></tr>
+    <tr><td>10-year battery cost</td><td><strong>R0&ndash;R90K</strong></td><td>~R864K</td><td>R0</td><td>~R200K</td></tr>
+    <tr><td>Data ownership</td><td><strong>Full (self-hosted)</strong></td><td>Full</td><td>Full</td><td>Carrier-dependent</td></tr>
+    <tr><td>Client rejection</td><td>&mdash;</td><td>&mdash;</td><td><span class="pill pill-red">Rejected (cost)</span></td><td>&mdash;</td></tr>
+    <tr class="highlight-row"><td><strong>Verdict</strong></td><td><span class="pill pill-green"><strong>Selected</strong></span></td><td><span class="pill pill-red">Not viable</span></td><td><span class="pill pill-red">Rejected</span></td><td><span class="pill pill-red">Not viable</span></td></tr>
+</table>
+
+<div class="cols-2" style="margin-top:4px">
+<div class="no-break">
+    <h2>Why Not WiFi?</h2>
+    <p>WiFi at 2.4 GHz suffers 35&ndash;40 dB attenuation per concrete floor (vs 23 dB at 868 MHz). The 2.4 GHz band is already heavily congested with 13&ndash;15 APs per floor. WiFi nodes need rechargeable batteries lasting 6&ndash;18 months &mdash; replacement across 576 units costs ~R172,800 per cycle. <strong>10-year battery cost alone: ~R864,000.</strong></p>
+</div>
+<div class="no-break">
+    <h2>Why Not Sigfox / NB-IoT?</h2>
+    <p>Public IoT networks charge R15&ndash;45 per device per month. At 588 devices, that is R105,840&ndash;R317,520 per year &mdash; <strong>over R1M across 10 years.</strong> Sigfox allows only 4 downlinks per day. No data ownership guarantee. Dependent on carrier&rsquo;s continued operation and pricing.</p>
+</div>
+</div>
+
+<div class="no-break">
+<h2>Why LoRaWAN Works</h2>
+<table>
+    <tr><th>Advantage</th><th>Detail</th></tr>
+    <tr><td>Sub-GHz penetration</td><td>868 MHz penetrates reinforced concrete at 23 dB/floor &mdash; manageable with 4-gateway design</td></tr>
+    <tr><td>Below noise floor</td><td>CSS modulation decodes signals up to 20 dB below noise floor &mdash; resilient to CBD interference</td></tr>
+    <tr><td>Adaptive Data Rate</td><td>Nodes auto-adjust spreading factor per floor position &mdash; self-optimising network</td></tr>
+    <tr><td>Zero subscription</td><td>Private ChirpStack server &mdash; no per-device fees, no carrier dependency</td></tr>
+    <tr><td>Multi-year battery</td><td>Li-SOCl2 D-cell: 6&ndash;15 years depending on interval &mdash; no replacement cycle</td></tr>
+    <tr><td>Multi-gateway redundancy</td><td>4 gateways, overlapping coverage &mdash; auto-failover via ADR shift</td></tr>
+    <tr><td>Proven locally</td><td>RAK3172 proven in production water monitoring deployments</td></tr>
+</table>
+</div>
+
+<!-- ===== 4. RF PROPAGATION ===== -->
+<div class="page-break"></div>
+<h1>4. RF Propagation and Coverage Design</h1>
+
+<div class="cols-2">
+<div class="no-break">
+    <h2>4.1 Link Budget</h2>
+    <table class="compact-table">
+        <tr><th>Parameter</th><th>Value</th></tr>
+        <tr><td>Node transmit power</td><td>+14 dBm (25 mW, ICASA max)</td></tr>
+        <tr><td>Node antenna gain</td><td>+2 dBi</td></tr>
+        <tr><td>Gateway antenna gain</td><td>+3 dBi</td></tr>
+        <tr><td>Gateway sensitivity (SF7)</td><td>&minus;138 dBm</td></tr>
+        <tr><td>Gateway sensitivity (SF12)</td><td>&minus;148 dBm</td></tr>
+        <tr class="total-row"><td>Max path loss (SF7)</td><td>138 dB</td></tr>
+        <tr class="total-row"><td>Max path loss (SF12)</td><td>151 dB</td></tr>
+    </table>
+
+    <h2>4.2 Per-Floor Attenuation</h2>
+    <table class="compact-table">
+        <tr><th>Component</th><th>Loss</th></tr>
+        <tr><td>RC floor slab (1960s-era)</td><td>23 dB per floor</td></tr>
+        <tr><td>Horizontal path (corridor&rarr;gateway)</td><td>35 dB</td></tr>
+        <tr><td>Fading margin (multipath, metal)</td><td>10 dB</td></tr>
+        <tr class="highlight-row"><td><strong>Formula</strong></td><td><strong>(N &times; 23) + 35 + 10 dB</strong></td></tr>
+    </table>
+</div>
+<div class="no-break">
+    <h2>4.3 Floor Penetration Feasibility</h2>
+    <table class="compact-table">
+        <tr><th>Floors</th><th>Path Loss</th><th>SF7</th><th>SF10</th><th>SF12</th></tr>
+        <tr><td>1</td><td>68 dB</td><td><span class="pill pill-green">70 dB margin</span></td><td><span class="pill pill-green">Yes</span></td><td><span class="pill pill-green">Yes</span></td></tr>
+        <tr><td>2</td><td>91 dB</td><td><span class="pill pill-green">47 dB margin</span></td><td><span class="pill pill-green">Yes</span></td><td><span class="pill pill-green">Yes</span></td></tr>
+        <tr><td>3</td><td>114 dB</td><td><span class="pill pill-green">24 dB margin</span></td><td><span class="pill pill-green">Yes</span></td><td><span class="pill pill-green">Yes</span></td></tr>
+        <tr><td>4</td><td>137 dB</td><td><span class="pill pill-amber">1 dB margin</span></td><td><span class="pill pill-green">11 dB</span></td><td><span class="pill pill-green">Yes</span></td></tr>
+        <tr><td>5</td><td>160 dB</td><td><span class="pill pill-red">No</span></td><td><span class="pill pill-red">No</span></td><td><span class="pill pill-red">No</span></td></tr>
+    </table>
+    <div class="callout" style="margin-top:4px"><strong>Each gateway reliably covers 3 floors at SF7</strong> (most battery-efficient) and 4 floors at SF10 fallback. No node needs to penetrate more than 3 floors.</div>
+</div>
+</div>
+
+<div class="no-break">
+<h2>4.4 Four-Gateway Placement</h2>
+<div class="cols-2">
+<div>
+<div class="architecture">Floor 12  ─── GW4 ───  Covers 10-12 (primary), 9 (backup)
+Floor 11  ─── ●
+Floor 10  ─── ●
+Floor  9  ─── GW3 ───  Covers 7-9 (primary), 10 (backup)
+Floor  8  ─── ●
+Floor  7  ─── ●
+Floor  6  ─── GW2 ───  Covers 4-6 (primary), 7 (backup)
+Floor  5  ─── ●
+Floor  4  ─── ●
+Floor  3  ─── GW1 ───  Covers 1-3 (primary), 4 (backup)
+Floor  2  ─── ●
+Floor  1  ─── ●</div>
+</div>
+<div>
+    <table class="compact-table">
+        <tr><th>Coverage Metric</th><th>Value</th></tr>
+        <tr><td>Primary coverage</td><td>12 of 12 floors (100%)</td></tr>
+        <tr><td>Dual-gateway coverage</td><td>8 of 12 floors (67%)</td></tr>
+        <tr><td>Max floors to nearest GW</td><td>3 (at SF7)</td></tr>
+        <tr><td>Single GW failure</td><td>All floors still covered (ADR shift)</td></tr>
+    </table>
+    <h3>Gateway Specification</h3>
+    <table class="compact-table">
+        <tr><td>Model</td><td>RAK7268V2 (or equivalent)</td></tr>
+        <tr><td>Channels</td><td>8 simultaneous LoRaWAN</td></tr>
+        <tr><td>Power</td><td>PoE (UPS-backed switches)</td></tr>
+        <tr><td>Backhaul</td><td>Ethernet via Cat6 to IoT VLAN</td></tr>
+        <tr><td>Cost</td><td>R7&ndash;9K per unit &times; 4 = R28&ndash;36K</td></tr>
+    </table>
+    <div class="highlight"><strong>Self-healing:</strong> If a gateway fails, nodes auto-shift to SF10 on adjacent gateways via ADR &mdash; no manual intervention, no data loss.</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 5. CAPACITY + 6. BATTERY ===== -->
+<div class="page-break"></div>
+<h1>5. Network Capacity</h1>
+
+<div class="cols-2">
+<div class="no-break">
+    <h2>5.1 Uplink Traffic Analysis (588 nodes, 4 gateways)</h2>
+    <table>
+        <tr><th>Interval</th><th>Uplinks/Hour</th><th>Per Gateway</th><th>Channel Use</th><th>Success Rate</th></tr>
+        <tr><td>5 minutes</td><td>7,056</td><td>1,764</td><td>1.5%</td><td>&gt;97%</td></tr>
+        <tr class="highlight-row"><td><strong>10 minutes</strong></td><td><strong>3,528</strong></td><td><strong>882</strong></td><td><strong>0.75%</strong></td><td><strong>&gt;98.5%</strong></td></tr>
+        <tr><td>15 minutes</td><td>2,352</td><td>588</td><td>0.5%</td><td>&gt;99%</td></tr>
+    </table>
+    <p>Even at the most aggressive 5-minute interval, channel utilisation is 1.5% &mdash; well within the capacity of 4 eight-channel gateways. The recommended 10&ndash;15 minute interval provides adequate resolution for billing and leak detection.</p>
+</div>
+<div class="no-break">
+    <h2>5.2 Multi-Gateway Deduplication</h2>
+    <p>With 4 gateways and overlapping coverage, most uplinks are received by 2+ gateways simultaneously. ChirpStack automatically:</p>
+    <ul>
+        <li>Deduplicates packets (selects best SNR copy)</li>
+        <li>Provides &gt;99% effective packet delivery rate</li>
+        <li>Catches missed packets at one gateway via another</li>
+        <li>Generates signal quality metrics for diagnostics</li>
+    </ul>
+    <div class="callout"><strong>No capacity concern at any proposed interval.</strong> 588 devices across 4 gateways operates at &lt;2% of available capacity.</div>
+</div>
+</div>
+
+<h1>6. Battery Life</h1>
+
+<div class="cols-2">
+<div class="no-break">
+    <h2>6.1 Battery Specification</h2>
+    <table class="compact-table">
+        <tr><th>Parameter</th><th>Value</th></tr>
+        <tr><td>Chemistry</td><td>Lithium Thionyl Chloride (Li-SOCl2)</td></tr>
+        <tr><td>Cell</td><td>ER34615 (D-cell)</td></tr>
+        <tr><td>Nominal capacity</td><td>19,000 mAh (19 Ah)</td></tr>
+        <tr><td>Configuration</td><td>Dual cells in parallel (30.4 Ah practical)</td></tr>
+        <tr><td>Self-discharge</td><td>&lt;1% per year</td></tr>
+        <tr><td>Temperature range</td><td>&minus;55&deg;C to +85&deg;C</td></tr>
+    </table>
+
+    <h2>6.2 Life Projections</h2>
+    <table class="compact-table">
+        <tr><th>Interval</th><th>Daily Use</th><th>Single Cell</th><th>Dual Cell</th></tr>
+        <tr><td>5 minutes</td><td>0.315 mAh</td><td>~6 years</td><td>~8+ years</td></tr>
+        <tr class="highlight-row"><td><strong>10 minutes</strong></td><td><strong>0.176 mAh</strong></td><td><strong>~10 years</strong></td><td><strong>~15 years</strong></td></tr>
+        <tr><td>15 minutes</td><td>0.129 mAh</td><td>~14 years</td><td>~20+ years</td></tr>
+    </table>
+</div>
+<div class="no-break">
+    <h2>6.3 LoRaWAN vs WiFi Battery Economics</h2>
+    <table>
+        <tr><th>Metric</th><th style="background:#1a365d">LoRaWAN</th><th>WiFi</th></tr>
+        <tr><td>Battery life per cycle</td><td><strong>6&ndash;15 years</strong></td><td>6&ndash;18 months</td></tr>
+        <tr><td>Replacement cycles (10 yr)</td><td><strong>0&ndash;1</strong></td><td>5&ndash;7</td></tr>
+        <tr><td>Cost per replacement (576)</td><td>~R90,000</td><td>~R172,800</td></tr>
+        <tr class="total-row"><td>10-year battery cost</td><td>R0&ndash;R90,000</td><td>~R864,000</td></tr>
+    </table>
+    <div class="highlight"><strong>LoRaWAN battery advantage saves R774K&ndash;R864K over 10 years</strong> compared to WiFi.</div>
+</div>
+</div>
+
+<!-- ===== 7. COMPLIANCE + 8. TCO ===== -->
+<h1>7. Regulatory Compliance</h1>
+<div class="cols-2">
+<div class="no-break">
+    <h2>7.1 ICASA and 868 MHz</h2>
+    <table class="compact-table">
+        <tr><td>Frequency band</td><td>868 MHz (EU863-870, adopted by SA)</td></tr>
+        <tr><td>Regulatory body</td><td>ICASA</td></tr>
+        <tr><td>Power limit</td><td>25 mW ERP (+14 dBm)</td></tr>
+        <tr><td>Duty cycle limit</td><td>1% (868.0&ndash;868.6 MHz)</td></tr>
+        <tr><td>Actual duty cycle (10-min)</td><td>~0.01% &mdash; 100&times; headroom</td></tr>
+        <tr><td>Type approval</td><td>Required for radio modules &mdash; to be verified</td></tr>
+        <tr><td>Licence fee</td><td>None (ISM band, licence-exempt)</td></tr>
+    </table>
+</div>
+<div class="no-break">
+    <h2>7.2 POPIA Compliance</h2>
+    <p>All data remains on-premises (or SA-hosted cloud). No consumption data leaves South Africa. The system collects unit-level water consumption linked to a unit number (not a person). CLTM ERP handles the tenant-to-unit mapping within Mosaic Group&rsquo;s existing systems.</p>
+</div>
+</div>
+
+<h1>8. Total Cost of Ownership (10-Year)</h1>
+<table>
+    <tr><th>Cost Component</th><th style="background:#1a365d">LoRaWAN (Private)</th><th>WiFi</th><th>Wired Ethernet</th><th>Sigfox / NB-IoT</th></tr>
+    <tr><td>Infrastructure (once-off)</td><td><strong>R28&ndash;36K</strong></td><td>~R0 (existing)</td><td>R145&ndash;200K</td><td>R0</td></tr>
+    <tr><td>Subscription (10 years)</td><td><strong>R0</strong></td><td>R0</td><td>R0</td><td>R1.03&ndash;3.11M</td></tr>
+    <tr><td>Battery replacement (10 yr)</td><td><strong>R0&ndash;90K</strong></td><td>R864K</td><td>R0</td><td>R200K</td></tr>
+    <tr><td>Maintenance labour (10 yr)</td><td>~R50K</td><td>~R250K</td><td>~R100K</td><td>~R50K</td></tr>
+    <tr class="total-row"><td><strong>10-Year Total</strong></td><td><strong>~R78K&ndash;R176K</strong></td><td>~R1.11M+</td><td>~R245&ndash;300K</td><td>~R1.28&ndash;3.36M</td></tr>
+</table>
+<div class="highlight"><strong>LoRaWAN has the lowest 10-year TCO by a significant margin</strong> &mdash; up to 19&times; cheaper than public IoT networks and 6&times; cheaper than WiFi.</div>
+
+<!-- ===== 9. RISK + 10. CONCLUSION ===== -->
+<div class="page-break"></div>
+<h1>9. Risk and Mitigation</h1>
+<table>
+    <tr><th style="width:24%">Risk</th><th style="width:55px">Likelihood</th><th style="width:45px">Impact</th><th>Mitigation</th></tr>
+    <tr><td>Floor attenuation exceeds 23 dB model</td><td><span class="pill pill-amber">Low&ndash;Med</span></td><td><span class="pill pill-amber">Medium</span></td><td>Pilot validates actual propagation; 4-GW design limits to 3 floors; additional GWs can be added</td></tr>
+    <tr><td>Metal riser degrades antenna</td><td><span class="pill pill-amber">Medium</span></td><td><span class="pill pill-amber">Medium</span></td><td>Antenna testing during pilot; placement offset from riser; external antenna option</td></tr>
+    <tr><td>ICASA type approval gap</td><td><span class="pill pill-amber">Medium</span></td><td><span class="pill pill-red">High</span></td><td>Verify RAK3172 and RAK7268V2 approval before procurement; alternative modules available</td></tr>
+    <tr><td>CBD RF interference</td><td><span class="pill pill-green">Low</span></td><td><span class="pill pill-green">Low</span></td><td>CSS modulation operates below noise floor; 868 MHz less congested than 2.4/5 GHz</td></tr>
+    <tr><td>Gateway hardware failure</td><td><span class="pill pill-green">Low</span></td><td><span class="pill pill-green">Low</span></td><td>4-GW redundancy with auto ADR shift; replacement within 24 hours; no data lost</td></tr>
+    <tr><td>Battery early depletion</td><td><span class="pill pill-green">Low</span></td><td><span class="pill pill-green">Low</span></td><td>Dashboard monitors voltage; dual-cell design; Li-SOCl2 has &lt;1% self-discharge</td></tr>
+</table>
+<div class="callout"><strong>The pilot phase is designed specifically to validate RF propagation and coverage</strong> before committing to the full 12-floor rollout. All pilot hardware is reused in the full system.</div>
+
+<h1>10. Conclusion</h1>
+
+<table>
+    <tr><th>Requirement</th><th>LoRaWAN Delivers</th></tr>
+    <tr><td>Penetrate 60-year-old reinforced concrete</td><td>Sub-GHz (868 MHz) with 23 dB/floor &mdash; covered by 4-gateway design</td></tr>
+    <tr><td>Support 588 devices reliably</td><td>&lt;1.5% channel utilisation at 5-min intervals; &gt;99% packet delivery</td></tr>
+    <tr><td>Battery life measured in years</td><td>6&ndash;15+ years on Li-SOCl2; no recurring battery replacement</td></tr>
+    <tr><td>No recurring subscription fees</td><td>Private ChirpStack &mdash; R0/month, R0/year, R0/decade</td></tr>
+    <tr><td>Survive load shedding</td><td>Battery-powered nodes; gateways on UPS-backed PoE</td></tr>
+    <tr><td>Data stays on-premises</td><td>Self-hosted network server; POPIA compliant by design</td></tr>
+    <tr><td>Self-healing and redundant</td><td>4 gateways with ADR; automatic failover; no SPOF</td></tr>
+    <tr><td>Proven technology</td><td>RAK3172 proven in production water monitoring deployments</td></tr>
+    <tr><td>CBD-resilient</td><td>CSS below noise floor; 868 MHz less congested than 2.4 GHz</td></tr>
+    <tr><td>Lowest 10-year TCO</td><td>R78&ndash;176K vs R245K&ndash;R3.36M for alternatives</td></tr>
+</table>
+
+<div class="highlight" style="margin-top:6px">
+    <strong>LoRaWAN at 868 MHz is not a preference &mdash; it is the only technology that meets all project requirements simultaneously.</strong> WiFi fails on penetration and battery life. Wired Ethernet was rejected on cost and disruption. Public IoT networks impose unsustainable subscription costs. LoRaWAN addresses every constraint while delivering the lowest total cost of ownership.
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div>MGW-PRO-202602-005 &middot; Version 1.0 &middot; Supporting document for Business Case (MGW-PRO-202602-002)</div>
+    <div><span class="confidential">COMMERCIAL IN CONFIDENCE</span> &middot; Precept Systems &middot; 5 February 2026</div>
+</div>
+
+</body>
+</html>

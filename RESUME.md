@@ -2,14 +2,14 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-02-04
+**Last Updated:** 2026-02-05
 
 ---
 
 ## Right Now
 
-**Phase:** Post-Site Visit / Proposal Development
-**Next Action:** Build business case and proposal — target delivery to Tanya by 5 Feb
+**Phase:** Document Pack Review / Awaiting Supplier Sign-Off
+**Next Action:** Send doc pack to Bradley/Garth tonight for review → forward to Tanya after approval
 
 ### Site Visit Completed
 | Item | Details |
@@ -31,7 +31,30 @@
 
 ---
 
-## Current Session (2026-02-04)
+## Current Session (2026-02-05)
+
+### Document Pack Ready — 3 Documents for Client
+| # | Ref | Document | Files |
+|---|-----|----------|-------|
+| 1 | MGW-PRO-202602-001 | Site Assessment Report (updated) | `docs/planning/MGW-Site-Assessment-Report-2026-01-30.html` |
+| 2 | MGW-PRO-202602-002 | Business Case v1.2 | `docs/planning/client/02-business-case-print.html` |
+| 3 | MGW-PRO-202602-005 | Communications Technology Validation v1.0 | `docs/planning/client/05-communications-technology-validation-print.html` |
+
+**Email to Bradley/Garth drafted:** MGW-COR-202602-008 — sending tonight, asking them to vet before it goes to Tanya.
+
+**Plan:** Tanya reviews these docs → if she wants to proceed → Precept delivers formal Scope of Work (MGW-PRO-202602-003) and Proposal/Quote (MGW-PRO-202602-004).
+
+### Updates This Session
+- **Business case revised to v1.2** — node pricing increased to R750/unit (conservative), all downstream financials recalculated (CAPEX ~R1.91–1.98M, base payback 6.3 months, 5-year ROI 816%). Precision Meters partnership language firmed up — removed "happy to discuss alternatives" messaging, changed "manufacturer" to "specialist supplier of independently tested" meters.
+- **Business case HTML** created with Precept branding for print-to-PDF.
+- **Communications Technology Validation** created (MD + HTML) — justifies LoRaWAN choice with RF propagation analysis, technology comparison (vs WiFi, wired, Sigfox/NB-IoT), battery life modelling, 10-year TCO. References building characteristics and Durban CBD environment.
+- **Comms validation corrections** — WiFi infrastructure already exists (removed R450K AP cost, recalculated WiFi TCO to ~R1.11M+), Ethernet cabling recalculated at R10/m (R145–200K), removed Fairfield Dairy references.
+- **Site assessment report cleaned for client** — audience changed from "Prepared for: Precision Meters" to "Prepared for: Mosaic Group", Fairfield reference removed, Next Steps rewritten for client perspective, supply chain coordination items removed.
+- **Site assessment architecture updated** — "integrated LoRaWAN radio" corrected to external Precept-designed nodes with pulse output throughout (exec summary, meter specs, comparison tables, architecture diagram, install notes, callouts). Gateway count updated from 3 to 4 (Floors 3, 6, 9, 12). Battery life, infrastructure costs, and cabling estimates all aligned with business case and comms validation. 50mm variant confirmed (removed "confirmation requested").
+
+---
+
+## Previous Session (2026-02-04)
 
 ### Updates
 - Emailed Tanya with proposal status update — finalising proposal, waiting on final pricing, out in field today, proposal by tomorrow (5 Feb)
@@ -39,6 +62,7 @@
 - **Garth phone call** — Garth sent Tanya pricing. Tanya requested volume discount and told Garth she's shopping around. Garth raised concern about Tanya using another supplier's meters with Jason's platform. Jason committed to Garth: platform is strategically partnered with Precision Meters only — will not work with other meter suppliers. Jason to communicate this to Tanya. Garth revising pricing with his manager.
 - **RF engineering assessment** completed and documented (`docs/planning/internal/Research/04-rf-engineering-assessment.md`)
 - **RFQ sent to Garth (P00044)** — 1× Ultrasonic 15mm QALCOSONIC W1 for R&D bench testing. Confirmed pulse output needed (not Sigfox). Awaiting quote.
+- **Business case v1.1 completed** (`docs/planning/client/02-business-case.md`) — MGW-PRO-202602-002. Three-pillar value case (conservation, billing, leak detection). Includes node hardware, platform dev, deployment, infrastructure, IP handover terms, Precision Meters partnership framing.
 
 ---
 
@@ -169,11 +193,15 @@
 3. ~~**Email Tanya re CLTM**~~ — Sent 2026-01-30; **answered by Sumir 2026-02-02** — CLTM is custom in-house app, API integration model confirmed
 4. ~~**Email Bradley & Garth**~~ — Sent 2026-01-30; **all 7 questions answered by Garth 2026-02-03**
 4. ~~**Site assessment report**~~ — Done (MD + HTML, sent to Bradley/Garth 2026-01-30)
-5. **Next:** Build business case (benefits analysis, ROI using confirmed pricing)
-6. **Then:** Technical solution design with phased rollout
-7. **Then:** Develop ChirpStack payload codec for Precision ultrasonic meters
-8. **Proposal:** Develop proposal with brief, scope, pricing (meters direct from Precision, platform from Precept)
-9. **Present:** Submit proposal to Tanya (before 1st week Feb pricing review)
+5. ~~**Build business case**~~ — Done (v1.2, `docs/planning/client/02-business-case.md`)
+6. ~~**Communications technology validation**~~ — Done (`docs/planning/client/05-communications-technology-validation.md`)
+7. ~~**Update site assessment for client**~~ — Done (architecture, audience, next steps fixed)
+8. ~~**Draft email to Bradley/Garth**~~ — Done (MGW-COR-202602-008)
+9. **Send doc pack to Bradley/Garth** — tonight
+10. **Send doc pack to Tanya** — after Bradley/Garth approval
+11. **Scope of Work** (MGW-PRO-202602-003) — after Tanya buy-in
+12. **Proposal / Quote** (MGW-PRO-202602-004) — after Tanya buy-in
+13. **Then:** Develop ChirpStack payload codec for Precision ultrasonic meters
 
 ---
 
@@ -192,6 +220,7 @@
 | 2026-02-04 | MGW-COR-202602-005 | Tanya reply — will purchase meters directly from Garth |
 | 2026-02-04 | MGW-COR-202602-006 | Phone call with Garth — Tanya shopping around, pricing revision, supplier loyalty commitment |
 | 2026-02-04 | MGW-COR-202602-007 | RFQ to Garth (P00044) — 1× 15mm ultrasonic for R&D bench testing |
+| 2026-02-04 | MGW-COR-202602-008 | Document pack to Bradley/Garth for review before client submission |
 
 ---
 

@@ -2,7 +2,7 @@
 
 **Project:** Mosaic Group Water Meter Monitoring — City Life, 477 Anton Lembede Street
 **Reference:** MGW-PRO-202602-002
-**Version:** 1.1
+**Version:** 1.2
 **Date:** 2026-02-05
 **Author:** Jason van Wyk, Precept Systems
 
@@ -14,6 +14,7 @@
 |---------|------|---------|
 | 1.0 | 2026-02-05 | Initial draft |
 | 1.1 | 2026-02-05 | Restructured investment breakdown; added node hardware, deployment costs, operating manual; updated hourly rate; added system resilience and IP terms; sewer tariff clarification |
+| 1.2 | 2026-02-05 | Revised node pricing to R750/unit; updated all downstream investment and ROI calculations; strengthened Precision Meters partnership positioning |
 
 ---
 
@@ -24,6 +25,7 @@
 | MGW-PRO-202602-001 | Site Assessment Report | Site visit findings and building profile |
 | MGW-PRO-202602-003 | Scope of Work | Detailed deliverables (TBD) |
 | MGW-PRO-202602-004 | Proposal | Commercial terms and pricing (TBD) |
+| MGW-PRO-202602-005 | Communications Technology Validation | LoRaWAN selection justification and site-specific RF analysis |
 
 ---
 
@@ -52,13 +54,13 @@ This business case proposes installing smart water meters on all 576 units and 1
 | Component | Est. Cost (ex VAT) | Procured From |
 |-----------|---------------------|---------------|
 | Smart meters (588 units) | R1,321,920 | Precision Meters (direct to Mosaic) |
-| IoT telemetry hardware (588 nodes) | R235,000–R325,000 | Precept Systems |
+| IoT telemetry hardware (588 nodes) | R441,000 | Precept Systems |
 | Platform development and integration | R70,200–R105,600 | Precept Systems |
 | Deployment, installation and training | R31,800–R48,000 | Precept Systems |
 | Infrastructure (gateways, server, NAS) | R47,000–R65,000 | Precept Systems |
-| **Total capital** | **~R1,706,000–R1,866,000** | |
+| **Total capital** | **~R1,912,000–R1,982,000** | |
 
-**The system pays for itself within 6–10 months** under conservative assumptions. Every month without metering is another R302,600 in unrecovered water costs.
+**The system pays for itself within 6–10 months.** Every month without metering is another R302,600 in unrecovered water costs.
 
 ---
 
@@ -202,9 +204,9 @@ Each meter requires a custom-built IoT telemetry node that reads the meter's pul
 
 | Item | Qty | Est. Unit Cost (ex VAT) | Est. Total (ex VAT) |
 |------|-----|-------------------------|---------------------|
-| Precept IoT node (LoRaWAN, battery-powered, valve-ready) | 588 | R400–R550 | R235,200–R323,400 |
+| Precept IoT node (LoRaWAN, battery-powered, valve-ready) | 588 | R750 | R441,000 |
 
-*Estimated cost per node includes LoRa radio module, custom PCB, battery, enclosure, antenna, and assembly/testing. Firm pricing in the formal Proposal.*
+*Cost per node includes LoRa radio module, custom PCB, battery, enclosure, antenna, and assembly/testing. Priced at R750/unit as a conservative estimate to account for component sourcing variability. Firm pricing in the formal Proposal.*
 
 ### 4.3 Platform Development and Integration (Precept Systems)
 
@@ -243,6 +245,8 @@ On-site services for physical installation, commissioning, and knowledge transfe
 | Server (production-grade, on-premises) | R12,000–R18,000 |
 | NAS backup device (2-bay, mirrored drives) | R7,000–R11,000 |
 | **Total infrastructure** | **R47,000–R65,000** |
+
+*The selection of LoRaWAN (868 MHz) as the wireless communications technology is documented and validated in the Communications Technology Validation report (MGW-PRO-202602-005). LoRaWAN was selected over WiFi, wired Ethernet, and public IoT networks based on site-specific RF analysis, 10-year total cost of ownership, battery life, and Durban CBD environmental factors.*
 
 *Note: If cloud hosting is preferred, server and NAS hardware costs are replaced by a monthly hosting fee (see Section 4.7). The gateways are always on-premises regardless of hosting choice.*
 
@@ -296,11 +300,11 @@ If cloud hosting is preferred instead of on-premises:
 | Category | Est. Amount (ex VAT) | Procured From |
 |----------|----------------------|---------------|
 | Smart meters (588) | R1,321,920 | Precision Meters → Mosaic Group |
-| IoT telemetry nodes (588) | R235,000–R325,000 | Precept Systems → Mosaic Group |
+| IoT telemetry nodes (588) | R441,000 | Precept Systems → Mosaic Group |
 | Platform development and integration | R70,200–R105,600 | Precept Systems → Mosaic Group |
 | Deployment, installation and training | R31,800–R48,000 | Precept Systems → Mosaic Group |
 | Infrastructure (gateways, server, NAS) | R47,000–R65,000 | Precept Systems → Mosaic Group |
-| **Total capital investment** | **~R1,706,000–R1,866,000** | |
+| **Total capital investment** | **~R1,912,000–R1,982,000** | |
 | Monthly operating (on-premises) | R1,000–R1,500/month | |
 
 *All Precept Systems estimates are indicative. Firm pricing will be provided in the formal Proposal document (MGW-PRO-202602-004).*
@@ -325,9 +329,9 @@ The total annual benefit combines billing improvement (Pillar 2) with conservati
 
 | Scenario | Total Investment | Annual Net Benefit | Payback Period |
 |----------|-----------------|-------------------|----------------|
-| Conservative | R1,866,000 | R2,337,000 | **9.6 months** |
-| Base case | R1,866,000 | R3,776,000 | **5.9 months** |
-| Optimistic | R1,866,000 | R5,775,000 | **3.9 months** |
+| Conservative | R1,982,000 | R2,337,000 | **10.2 months** |
+| Base case | R1,982,000 | R3,776,000 | **6.3 months** |
+| Optimistic | R1,982,000 | R5,775,000 | **4.1 months** |
 
 *Net benefit = gross benefit minus ~R18,000/year operating costs (on-prem). Investment uses the upper-range estimate to be conservative.*
 
@@ -335,12 +339,12 @@ The total annual benefit combines billing improvement (Pillar 2) with conservati
 
 | Scenario | Annual Benefit | Payback |
 |----------|---------------|---------|
-| **Billing only** (R100/kL, no conservation) | R2,836,000 | 7.9 months |
-| **Conservation only** (keep R400 flat, 15% reduction at R114/kL) | R958,000 | 23 months |
-| **Conservation only** (keep R400 flat, 15% reduction at R65.91/kL) | R554,000 | 40 months |
-| **Leak detection only** (detect and fix R156K/month in leaks) | R1,866,000 | 12 months |
+| **Billing only** (R100/kL, no conservation) | R2,836,000 | 8.4 months |
+| **Conservation only** (keep R400 flat, 15% reduction at R114/kL) | R958,000 | 25 months |
+| **Conservation only** (keep R400 flat, 15% reduction at R65.91/kL) | R554,000 | 43 months |
+| **Leak detection only** (detect and fix ~R165K/month in leaks) | R1,982,000 | 12 months |
 
-**The billing improvement alone justifies the investment** with payback under 8 months. Conservation and leak detection provide additional returns but are not required for the financial case to hold.
+**The billing improvement alone justifies the investment** with payback under 9 months. Conservation and leak detection provide additional returns but are not required for the financial case to hold.
 
 ### 5.4 Break-Even Analysis
 
@@ -348,9 +352,9 @@ The system reaches break-even within 12 months if **any one** of the following o
 
 | Condition | Threshold |
 |-----------|-----------|
-| Billing rate increase only | Raise from R400/month flat to ~R670/month flat (unjustifiable without consumption data) |
-| Conservation only (at R114/kL) | 29% reduction in consumption across 12 floors |
-| Leak detection only | Identify and fix R156,000/month in leaks (~1,368 kL/month) |
+| Billing rate increase only | Raise from R400/month flat to ~R690/month flat (unjustifiable without consumption data) |
+| Conservation only (at R114/kL) | 31% reduction in consumption across 12 floors |
+| Leak detection only | Identify and fix ~R165,000/month in leaks (~1,450 kL/month) |
 
 In practice, all three pillars contribute simultaneously. The combined effect means break-even is reached well within the first year under any reasonable scenario.
 
@@ -358,11 +362,11 @@ In practice, all three pillars contribute simultaneously. The combined effect me
 
 | Year | Cumulative Investment | Cumulative Benefit | Cumulative Net | ROI |
 |------|----------------------|-------------------|----------------|-----|
-| 1 | R1,884,000 | R3,794,000 | R1,910,000 | 101% |
-| 2 | R1,902,000 | R7,588,000 | R5,686,000 | 299% |
-| 3 | R1,920,000 | R11,382,000 | R9,462,000 | 493% |
-| 4 | R1,938,000 | R15,176,000 | R13,238,000 | 683% |
-| 5 | R1,956,000 | R18,970,000 | R17,014,000 | 870% |
+| 1 | R2,000,000 | R3,794,000 | R1,794,000 | 90% |
+| 2 | R2,018,000 | R7,588,000 | R5,570,000 | 276% |
+| 3 | R2,036,000 | R11,382,000 | R9,346,000 | 459% |
+| 4 | R2,054,000 | R15,176,000 | R13,122,000 | 639% |
+| 5 | R2,072,000 | R18,970,000 | R16,898,000 | 816% |
 
 *Assumes base case benefits remain constant (no tariff escalation). Operating costs of ~R18,000/year included. Real returns will be higher as municipal tariffs increase annually.*
 
@@ -385,10 +389,10 @@ A phased rollout is recommended. This minimises risk, validates the solution bef
 | Item | Est. Cost (ex VAT) | From |
 |------|---------------------|------|
 | 6× 15mm unit meters + 1× 50mm bulk meter | R21,960 | Precision Meters |
-| 7× IoT telemetry nodes | R2,800–R3,850 | Precept Systems |
+| 7× IoT telemetry nodes | R5,250 | Precept Systems |
 | 1× LoRaWAN gateway | R7,000–R9,000 | Precept Systems |
 | Platform setup, firmware, codec, commissioning | R40,000–R55,000 | Precept Systems |
-| **Pilot total** | **~R72,000–R90,000** | |
+| **Pilot total** | **~R74,000–R91,000** | |
 
 **What the pilot validates:**
 
@@ -414,11 +418,11 @@ A phased rollout is recommended. This minimises risk, validates the solution bef
 | Item | Est. Cost (ex VAT) | From |
 |------|---------------------|------|
 | 570× 15mm unit meters + 11× 50mm bulk meters | R1,299,960 | Precision Meters |
-| 581× IoT telemetry nodes | R232,400–R319,550 | Precept Systems |
+| 581× IoT telemetry nodes | R435,750 | Precept Systems |
 | 3× LoRaWAN gateways | R21,000–R27,000 | Precept Systems |
 | Server + NAS | R19,000–R29,000 | Precept Systems |
 | Remaining development, ERP integration, deployment, training, operating manual | R62,000–R99,000 | Precept Systems |
-| **Phase 1 total** | **~R1,634,000–R1,774,000** | |
+| **Phase 1 total** | **~R1,838,000–R1,891,000** | |
 
 ### 6.3 Future Phases (Not Priced)
 
@@ -451,7 +455,7 @@ A phased rollout is recommended. This minimises risk, validates the solution bef
 | **Meter pricing changes** | Low | Medium | Volume discount pending from Precision Meters; firm pricing to be locked before Phase 1 order |
 | **Load shedding** | Medium | Low | Smart meters are battery-powered (unaffected); gateways on UPS-backed PoE switches; server on building UPS; data buffered during outages, no readings lost |
 | **Server hardware failure** | Low | Medium | NAS + cloud backup (three-tier strategy); containerised deployment allows rebuild within 4–8 hours; see Section 4.6 |
-| **Meter supplier change** | Low | High | Platform is designed for Precision Meters integration (see Section 9); selecting a different supplier would require a compatibility assessment |
+| **Meter supplier dependency** | Low | Low | The platform is purpose-built for Precision Meters products as part of the strategic partnership (Section 9); Precision Meters is an established supplier with national distribution and SANS 1529 certification |
 
 ---
 
@@ -463,7 +467,7 @@ A phased rollout is recommended. This minimises risk, validates the solution bef
 | **2. Manual meter reading** | ~R1.32M (meters only) | R150,000+ (labour) | ~R2.1M | Not recommended |
 | **3. Prepaid meters** | ~R1.5–R2M | R50,000+ | ~R1.8–R2.3M | Rejected by client |
 | **4. SaaS platform (third-party)** | ~R1.32M (meters) + R50–100K (setup) | R60,000–R180,000/year | ~R1.7–R2.3M | Not recommended |
-| **5. Custom platform (Precept)** | ~R1.71–R1.87M | R12,000–R18,000/year | ~R1.77–R1.96M | **Recommended** |
+| **5. Custom platform (Precept)** | ~R1.91–R1.98M | R12,000–R18,000/year | ~R1.97–R2.07M | **Recommended** |
 
 ### Option 1: Status Quo — Do Nothing
 
@@ -514,9 +518,9 @@ Use a commercial water monitoring platform with monthly subscription.
 
 | Aspect | Assessment |
 |--------|------------|
-| Capital cost | ~R1,706,000–R1,866,000 (meters + nodes + platform + infrastructure) |
+| Capital cost | ~R1,912,000–R1,982,000 (meters + nodes + platform + infrastructure) |
 | Annual operating | ~R12,000–R18,000/year (on-premises) |
-| 5-year TCO | ~R1,770,000–R1,956,000 |
+| 5-year TCO | ~R1,972,000–R2,072,000 |
 | Pros | Full control; CLTM ERP integration built to spec; no recurring subscription; data stays on-premises or SA-hosted cloud; expandable to other buildings; proven architecture (Fairfield Dairy reference); **Mosaic Group receives full intellectual property** — all designs, schematics, firmware, application code, and documentation are handed over (see Section 10) |
 | Cons | Requires engagement with Precept Systems for development and initial support |
 | **Verdict** | **Recommended** — lowest total cost of ownership; maximum flexibility; purpose-built for Mosaic Group's requirements; full IP ownership protects Mosaic Group's investment regardless of future circumstances |
@@ -525,18 +529,16 @@ Use a commercial water monitoring platform with monthly subscription.
 
 ## 9. Strategic Partnership — Precision Meters
 
-Precept Systems operates as a technology integration partner aligned with Precision Meters, a specialist manufacturer of SANS 1529-certified ultrasonic water meters. The monitoring platform has been specifically designed, developed, and tested for seamless integration with Precision Meters' product range. This alignment ensures:
+Precept Systems operates in strategic partnership with Precision Meters, a specialist supplier of independently tested, SANS 1529-certified ultrasonic water meters. The monitoring platform has been designed, developed, and tested specifically for integration with Precision Meters' product range. This partnership is a foundation of the solution:
 
 | Factor | Benefit |
 |--------|---------|
-| **Deep technical integration** | Platform firmware, codec, and dashboard purpose-built for Precision Meters' pulse output and LoRaWAN characteristics |
+| **Purpose-built integration** | Platform firmware, payload codec, and dashboard engineered specifically for Precision Meters' pulse output and LoRaWAN protocol |
 | **Single-vendor consistency** | One meter supplier across the entire building — uniform data format, consistent accuracy, shared spare parts |
-| **Coordinated support** | Precept Systems provides field support in KwaZulu-Natal; Precision Meters provides product support from Cape Town |
-| **Quality assurance** | Precision Meters supplies certified ultrasonic meters — industrial quality, not consumer-grade |
+| **Coordinated support** | Precept Systems provides field support in KwaZulu-Natal; Precision Meters provides product and technical support from Cape Town |
+| **Quality assurance** | All meters are independently tested and certified to SANS 1529 standards — industrial quality, not consumer-grade |
 
-As a result of this strategic alignment, the monitoring platform is developed exclusively for Precision Meters products. This ensures the highest level of integration quality, consistent support, and a single point of accountability for the complete metering solution.
-
-Should Mosaic Group wish to evaluate meters from an alternative supplier, a technical compatibility assessment would be required, and additional development may be necessary to achieve equivalent integration quality. Precept Systems would be happy to discuss any such requirements openly.
+The monitoring platform — including firmware, payload codec, device profiles, and dashboard analytics — is engineered exclusively for Precision Meters products. This ensures the highest level of integration quality, reliable data accuracy, and a single point of accountability for the complete metering solution.
 
 ---
 
@@ -570,11 +572,11 @@ Full handover of all project deliverables occurs at the completion of the projec
 
 | Metric | Value |
 |--------|-------|
-| Total investment | ~R1.87M (upper estimate) |
+| Total investment | ~R1.98M (upper estimate) |
 | Annual benefit (base case) | ~R3.79M |
-| Payback period | 5.9 months (base) / 9.6 months (conservative) |
-| 5-year net return | ~R17.0M |
-| 5-year ROI | 870% |
+| Payback period | 6.3 months (base) / 10.2 months (conservative) |
+| 5-year net return | ~R16.9M |
+| 5-year ROI | 816% |
 
 ### The Operational Case
 

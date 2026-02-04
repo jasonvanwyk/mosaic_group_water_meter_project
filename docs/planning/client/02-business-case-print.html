@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Case — Mosaic Group Water Meter Monitoring</title>
+    <style>
+        @page { size: A4; margin: 10mm 12mm 12mm 12mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 8.5pt; line-height: 1.35; color: #333; padding: 10mm 14mm; }
+        @media print {
+            body { padding: 0; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            .page-break { page-break-before: always; }
+            .no-break { page-break-inside: avoid; break-inside: avoid; }
+        }
+
+        /* Header */
+        .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2.5px solid #4c86c6; padding-bottom: 6px; margin-bottom: 6px; }
+        .logo svg { height: 32px; width: auto; }
+        .header-right { text-align: right; font-size: 7.5pt; color: #666; line-height: 1.3; }
+        .doc-title { font-size: 14pt; font-weight: 700; color: #4c86c6; margin-bottom: 2px; }
+        .doc-subtitle { font-size: 9pt; color: #555; margin-bottom: 4px; }
+        .doc-meta { display: flex; gap: 30px; font-size: 7.5pt; color: #666; margin-bottom: 8px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .doc-meta div { line-height: 1.4; }
+        .doc-meta strong { color: #444; }
+
+        /* Sections */
+        h1 { font-size: 11pt; color: #4c86c6; border-bottom: 1.5px solid #4c86c6; padding-bottom: 2px; margin: 10px 0 5px 0; }
+        h2 { font-size: 9pt; color: #333; margin: 7px 0 3px 0; font-weight: 600; }
+        h3 { font-size: 8.5pt; color: #555; margin: 4px 0 2px 0; }
+        p { margin: 2px 0; }
+        ul, ol { margin: 2px 0 4px 16px; }
+        li { margin: 1px 0; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 3px 0 6px 0; font-size: 8pt; }
+        th { background: #4c86c6; color: #fff; font-weight: 600; text-align: left; padding: 3px 6px; font-size: 7.5pt; }
+        td { padding: 2.5px 6px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+        tr:nth-child(even) td { background: #f8f9fb; }
+        td:first-child { font-weight: 500; }
+        .total-row td { background: #1a365d !important; color: #fff !important; font-weight: 600; border-bottom-color: #1a365d; }
+        .highlight-row td { background: #eef4fb !important; font-weight: 600; }
+        .compact-table td, .compact-table th { padding: 2px 5px; }
+
+        /* Layout */
+        .cols-2 { display: flex; gap: 12px; }
+        .cols-2 > div { flex: 1; }
+        .cols-3 { display: flex; gap: 10px; }
+        .cols-3 > div { flex: 1; }
+
+        /* Metric cards */
+        .metrics { display: flex; gap: 8px; margin: 6px 0; }
+        .metric { flex: 1; text-align: center; padding: 6px 4px; background: #f0f4f8; border-radius: 3px; border-top: 3px solid #4c86c6; }
+        .metric-value { font-size: 14pt; font-weight: 700; color: #1a365d; line-height: 1.2; }
+        .metric-label { font-size: 7pt; color: #666; margin-top: 1px; }
+
+        /* Special */
+        .callout { background: #eef4fb; border-left: 3px solid #4c86c6; padding: 5px 8px; margin: 4px 0 6px 0; font-size: 8pt; }
+        .callout strong { color: #4c86c6; }
+        .highlight { background: #ecfdf5; border-left: 3px solid #10b981; padding: 5px 8px; margin: 4px 0 6px 0; font-size: 8pt; }
+        .warning { background: #fef3c7; border-left: 3px solid #f59e0b; padding: 5px 8px; margin: 4px 0 6px 0; font-size: 8pt; }
+        .note { font-size: 7.5pt; color: #666; font-style: italic; margin: 2px 0; }
+        .footer { margin-top: 10px; padding-top: 6px; border-top: 1.5px solid #4c86c6; font-size: 7pt; color: #888; display: flex; justify-content: space-between; }
+        .confidential { color: #c44; font-weight: 600; font-size: 7pt; }
+        .pill { display: inline-block; padding: 1px 6px; border-radius: 8px; font-size: 7pt; font-weight: 600; }
+        .pill-green { background: #d1fae5; color: #065f46; }
+        .pill-blue { background: #dbeafe; color: #1e40af; }
+        .pill-amber { background: #fef3c7; color: #92400e; }
+        .pill-red { background: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">
+        <svg viewBox="0 0 670.88 298.48" xmlns="http://www.w3.org/2000/svg" style="height:32px">
+            <defs><clipPath id="cp"><rect width="670.88" height="298.48" fill="none"/></clipPath></defs>
+            <g clip-path="url(#cp)">
+                <path fill="#4c86c6" d="M255.77,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM280.76,108.28c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM255.77,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C283.88,1.39,282.48,0,280.76,0h-25ZM244.67,216.56c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM219.67,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM244.67,108.28c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM219.67,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C247.78,1.39,246.39,0,244.67,0h-25ZM208.58,72.19c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM183.58,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C211.69,1.39,210.3,0,208.58,0h-25ZM172.48,216.56c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM147.49,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM172.48,72.19c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM147.49,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM172.48,0c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11V3.11C144.37,1.39,145.77,0,147.49,0h25ZM111.39,144.37c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM136.39,108.28c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM111.39,72.19c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM100.3,144.37c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM75.3,108.28c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM100.3,72.19c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM75.3,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM100.3,0c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11V3.11C72.19,1.39,73.58,0,75.3,0h25ZM39.2,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM64.2,180.47c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM3.11,216.56C1.39,216.56,0,217.95,0,219.67v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11H3.11ZM28.11,180.47c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11H3.11C1.39,211.69,0,210.3,0,208.58v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM3.11,144.37C1.39,144.37,0,145.77,0,147.49v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11H3.11ZM28.11,108.28c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11H3.11C1.39,139.5,0,138.11,0,136.39v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM3.11,72.19C1.39,72.19,0,73.58,0,75.3v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11H3.11ZM28.11,36.09c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11H3.11C1.39,67.32,0,65.92,0,64.2v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM3.11,0C1.39,0,0,1.39,0,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C31.22,1.39,29.83,0,28.11,0H3.11Z"/>
+                <path fill="#89cfc7" d="M255.76,144.37c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM244.67,144.37c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM183.58,144.37c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM172.48,144.37c1.72,0,3.11,1.39,3.11,3.11v25c0,1.72-1.39,3.11-3.11,3.11h-25c-1.72,0-3.11-1.39-3.11-3.11v-25c0-1.72,1.39-3.11,3.11-3.11h25ZM255.76,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM255.76,72.19c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM255.76,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM219.67,72.19c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM219.67,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM183.58,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM183.58,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM183.58,108.28c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM183.58,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM147.48,108.28c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM111.39,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM111.39,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM111.39,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM111.39,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C139.5,1.39,138.11,0,136.39,0h-25ZM75.3,216.56c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM75.3,180.47c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,144.37c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,108.28c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,72.19c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,36.09c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11v-25c0-1.72-1.39-3.11-3.11-3.11h-25ZM39.2,0c-1.72,0-3.11,1.39-3.11,3.11v25c0,1.72,1.39,3.11,3.11,3.11h25c1.72,0,3.11-1.39,3.11-3.11V3.11C67.31,1.39,65.92,0,64.2,0h-25Z"/>
+                <path fill="#4c86c6" d="M315.52,22.32c-2.92,0-5.29,2.37-5.29,5.29v47.69c0,2.92,2.37,5.29,5.29,5.29h20.28c2.92,0,5.29-2.37,5.29-5.29V27.61c0-2.92-2.37-5.29-5.29-5.29h-20.28ZM310.23,170.88c0,2.92,2.37,5.29,5.29,5.29h20.28c2.92,0,5.29-2.37,5.29-5.29v-67.08c0-2.92-2.37-5.29-5.29-5.29h-20.28c-2.92,0-5.29,2.37-5.29,5.29v67.08Z"/>
+                <path fill="#89cfc7" d="M420.96,50.94c0,29.29-23.76,52.04-52.93,52.04l-74.89.3c-1.72,0-3.11-1.38-3.11-3.1v-24.99c0-1.72,1.39-3.11,3.11-3.11l74.86-.06c12.17,0,22.09-8.83,22.09-21.07s-9.92-19.96-22.09-19.96l-74.86.23c-1.72,0-3.11-1.38-3.11-3.1V3.11C290.04,1.39,291.43,0,293.15,0h74.86C397.2,0,420.96,21.62,420.96,50.94"/>
+                <path fill="#4c86c6" d="M629.87,175.78h14.83v-40.67h16.03v-11.76h-46.96v11.76h16.1v40.67ZM588.61,150.39h-8.24v-15.35h8.24c6.14,0,9.21,2.85,9.21,7.71s-3.07,7.64-9.21,7.64M589.5,123.36h-23.97v52.42h14.83v-13.7h9.14c14.3,0,23.29-7.41,23.29-19.32s-8.99-19.4-23.29-19.4M529.89,164.32v-9.59h23.29v-11.08h-23.29v-8.84h26.44v-11.46h-41.11v52.42h42.09v-11.46h-27.41ZM486.08,176.83c9.66,0,17.45-3.52,22.54-9.89l-9.44-8.54c-3.3,3.97-7.34,6.14-12.36,6.14-8.61,0-14.6-5.99-14.6-14.98s5.99-14.98,14.6-14.98c5.02,0,9.06,2.17,12.36,6.14l9.44-8.54c-5.09-6.37-12.88-9.89-22.54-9.89-16.62,0-28.83,11.31-28.83,27.26s12.21,27.26,28.83,27.26M424.37,164.32v-9.59h23.29v-11.08h-23.29v-8.84h26.44v-11.46h-41.11v52.42h42.09v-11.46h-27.41ZM386.56,142.75c0,4.79-3.07,7.64-9.21,7.64h-8.24v-15.35h8.24c6.14,0,9.21,2.85,9.21,7.71M386.71,175.78h15.88l-11.31-16.48c6.52-3.15,10.26-8.84,10.26-16.55,0-11.98-8.99-19.4-23.29-19.4h-23.96v52.42h14.83v-13.93h8.09l9.51,13.93Z"/>
+                <path fill="#4c86c6" d="M647.66,247.57c15.58,0,23.22-7.79,23.22-16.92,0-19.32-29.73-13.33-29.73-21.34,0-2.62,2.25-4.72,8.46-4.72,4.57,0,9.51,1.35,14.53,4.04l4.57-11.01c-5.17-3-12.21-4.57-19.02-4.57-15.58,0-23.21,7.64-23.21,17,0,19.47,29.8,13.4,29.8,21.72,0,2.55-2.4,4.27-8.54,4.27s-12.66-2.1-17.3-5.17l-4.87,10.93c4.94,3.44,13.48,5.77,22.09,5.77M618.76,246.52l-.15-52.42h-12.21l-17.97,30.26-18.42-30.26h-12.21v52.42h13.71v-27.04l13.4,21.87h6.59l13.48-22.62.15,27.78h13.63ZM522.15,235.06v-9.59h23.29v-11.08h-23.29v-8.84h26.44v-11.46h-41.11v52.42h42.09v-11.46h-27.41ZM471.08,246.52h14.83v-40.67h16.03v-11.76h-46.96v11.76h16.1v40.67ZM430.64,247.57c15.58,0,23.22-7.79,23.22-16.92,0-19.32-29.73-13.33-29.73-21.34,0-2.62,2.25-4.72,8.46-4.72,4.57,0,9.51,1.35,14.53,4.04l4.57-11.01c-5.17-3-12.21-4.57-19.02-4.57-15.58,0-23.21,7.64-23.21,17,0,19.47,29.8,13.4,29.8,21.72,0,2.55-2.4,4.27-8.54,4.27s-12.66-2.1-17.3-5.17l-4.87,10.93c4.94,3.44,13.48,5.77,22.09,5.77M409.59,194.1h-14.38l-12.43,20.82-12.43-20.82h-15.65l20,33.4v19.02h14.83v-18.8l20.07-33.62ZM332.53,247.57c15.58,0,23.22-7.79,23.22-16.92,0-19.32-29.73-13.33-29.73-21.34,0-2.62,2.25-4.72,8.46-4.72,4.57,0,9.51,1.35,14.53,4.04l4.57-11.01c-5.17-3-12.21-4.57-19.02-4.57-15.58,0-23.22,7.64-23.22,17,0,19.47,29.81,13.4,29.81,21.72,0,2.55-2.4,4.27-8.54,4.27s-12.66-2.1-17.3-5.17l-4.87,10.93c4.94,3.44,13.48,5.77,22.09,5.77"/>
+            </g>
+        </svg>
+    </div>
+    <div class="header-right">
+        <span class="confidential">COMMERCIAL IN CONFIDENCE</span><br>
+        MGW-PRO-202602-002 v1.2<br>
+        5 February 2026
+    </div>
+</div>
+
+<div class="doc-title">Business Case</div>
+<div class="doc-subtitle">Water Meter Monitoring &mdash; City Life, 477 Anton Lembede Street, Durban</div>
+<div class="doc-meta">
+    <div><strong>Prepared by:</strong> Jason van Wyk, Precept Systems</div>
+    <div><strong>Prepared for:</strong> Mosaic Group &mdash; Tanya Dowley</div>
+    <div><strong>Status:</strong> Draft for client review</div>
+</div>
+
+<!-- ===== 1. EXECUTIVE SUMMARY ===== -->
+<h1>1. Executive Summary</h1>
+
+<p><strong>What gets measured gets managed.</strong></p>
+
+<p>Mosaic Group's City Life building currently spends approximately <strong>R1.2 million per month</strong> on water for 27 floors. The first 12 floors under Mosaic Group's management account for an estimated <strong>R533,000/month</strong> &mdash; yet tenant water charges recover only <strong>R230,400/month</strong> (43% cost recovery). That leaves a shortfall of approximately <strong>R302,600 every month</strong>.</p>
+
+<div class="metrics">
+    <div class="metric">
+        <div class="metric-value">R533K</div>
+        <div class="metric-label">Monthly Water Cost (12 floors)</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">R230K</div>
+        <div class="metric-label">Monthly Tenant Revenue</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">R303K</div>
+        <div class="metric-label">Monthly Shortfall</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value" style="color:#10b981">43%</div>
+        <div class="metric-label">Cost Recovery Rate</div>
+    </div>
+</div>
+
+<p>This business case proposes installing smart water meters on all 576 units and 12 floor bulk meters across the first 12 floors, with a monitoring platform that provides real-time visibility, automated billing data, and leak detection. <strong>Three pillars drive the value:</strong></p>
+<ol>
+    <li><strong>Conservation through awareness</strong> &mdash; When tenants know their usage is measured, consumption typically drops 10&ndash;25%. At 15%, that saves ~R80,000/month.</li>
+    <li><strong>Fair billing and cost recovery</strong> &mdash; Usage-based billing replaces the flat R400/month charge, lifting revenue from R230K to R373K&ndash;R627K/month depending on the rate applied.</li>
+    <li><strong>Leak detection</strong> &mdash; Bulk-vs-unit meter reconciliation per floor identifies leaks immediately. A single running toilet costs ~R4,900/month. A concealed pipe leak costs ~R14,800/month.</li>
+</ol>
+
+<div class="no-break">
+<h2>Investment Overview</h2>
+<table>
+    <tr><th>Component</th><th style="width:140px">Est. Cost (ex VAT)</th><th style="width:160px">Procured From</th></tr>
+    <tr><td>Smart meters (588 units)</td><td>R1,321,920</td><td>Precision Meters (direct)</td></tr>
+    <tr><td>IoT telemetry hardware (588 nodes)</td><td>R441,000</td><td>Precept Systems</td></tr>
+    <tr><td>Platform development and integration</td><td>R70,200&ndash;R105,600</td><td>Precept Systems</td></tr>
+    <tr><td>Deployment, installation and training</td><td>R31,800&ndash;R48,000</td><td>Precept Systems</td></tr>
+    <tr><td>Infrastructure (gateways, server, NAS)</td><td>R47,000&ndash;R65,000</td><td>Precept Systems</td></tr>
+    <tr class="total-row"><td><strong>Total capital</strong></td><td><strong>~R1,912,000&ndash;R1,982,000</strong></td><td></td></tr>
+</table>
+</div>
+
+<div class="highlight">
+    <strong>The system pays for itself within 6&ndash;10 months.</strong> Every month without metering is another R302,600 in unrecovered water costs.
+</div>
+
+<!-- ===== 2. CURRENT STATE ANALYSIS ===== -->
+<div class="page-break"></div>
+<h1>2. Current State Analysis</h1>
+
+<div class="cols-2">
+<div>
+    <h2>2.1 Water Costs</h2>
+    <table class="compact-table">
+        <tr><th>Metric</th><th>Value</th></tr>
+        <tr><td>Total building water bill</td><td>R1,200,000/month</td></tr>
+        <tr><td>Municipal water tariff</td><td>R65.91/kL</td></tr>
+        <tr><td>Reported total consumption</td><td>~10,500 kL/month (all 27 floors)</td></tr>
+        <tr><td>Effective all-in rate</td><td>~R114/kL</td></tr>
+    </table>
+    <p class="note">The difference between R65.91/kL tariff and ~R114/kL effective rate likely includes sewage/sanitation surcharges and/or fixed municipal charges. Whether the sewage component is consumption-based needs to be confirmed with eThekwini Municipality. Financial calculations use the effective all-in rate (~R114/kL) as the base case.</p>
+
+    <h2>2.2 Twelve-Floor Estimate</h2>
+    <table class="compact-table">
+        <tr><th>Metric</th><th>Value</th></tr>
+        <tr><td>Share of building</td><td>12 &divide; 27 = 44.4%</td></tr>
+        <tr><td>Estimated consumption</td><td>~4,667 kL/month</td></tr>
+        <tr><td>Estimated water cost</td><td>~R533,000/month</td></tr>
+        <tr><td>Annual water cost</td><td>~R6,400,000/year</td></tr>
+    </table>
+</div>
+<div>
+    <h2>2.3 Revenue Model</h2>
+    <table class="compact-table">
+        <tr><th>Metric</th><th>Value</th></tr>
+        <tr><td>Total tenants (12 floors)</td><td>576</td></tr>
+        <tr><td>Flat monthly water charge</td><td>R400/tenant</td></tr>
+        <tr><td>Monthly tenant revenue</td><td>R230,400</td></tr>
+        <tr><td>Monthly water cost</td><td>~R533,000</td></tr>
+        <tr class="total-row"><td>Monthly shortfall</td><td>~R302,600</td></tr>
+        <tr><td>Annual shortfall</td><td>~R3,631,200</td></tr>
+        <tr><td>Cost recovery rate</td><td>43%</td></tr>
+    </table>
+
+    <h2>2.4 Per-Tenant Economics</h2>
+    <table class="compact-table">
+        <tr><th>Metric</th><th>Value</th></tr>
+        <tr><td>Average consumption</td><td>~8.1 kL/month</td></tr>
+        <tr><td>Average cost (all-in)</td><td>~R923/month</td></tr>
+        <tr><td>Amount charged</td><td>R400/month</td></tr>
+        <tr class="total-row"><td>Subsidy per tenant</td><td>~R523/month</td></tr>
+    </table>
+</div>
+</div>
+
+<div class="no-break">
+<h2>2.5 Pain Points</h2>
+<table>
+    <tr><th>Problem</th><th>Impact</th><th>Business Risk</th></tr>
+    <tr><td>No usage visibility</td><td>Cannot identify high consumers, waste, or anomalies</td><td>Operating blind on a R6.4M/year expense</td></tr>
+    <tr><td>No tenant incentive</td><td>Flat R400 charge regardless of usage</td><td>No motivation to conserve or report leaks</td></tr>
+    <tr><td>No leak detection</td><td>Leaks detected visually or when reported</td><td>Hidden leaks accumulate undetected</td></tr>
+    <tr><td>Manual reading impractical</td><td>576 meters daily &mdash; labour-intensive, error-prone</td><td>Not a viable alternative</td></tr>
+    <tr><td>Cost gap widening</td><td>Tariffs increase annually; R400 flat has not kept pace</td><td>Shortfall grows every year</td></tr>
+    <tr><td>ERP disconnect</td><td>No automated data flow to CLTM tenant management</td><td>Administrative overhead and errors</td></tr>
+</table>
+</div>
+
+<!-- ===== 3. PROPOSED SOLUTION BENEFITS ===== -->
+<div class="page-break"></div>
+<h1>3. Proposed Solution Benefits</h1>
+
+<div class="no-break">
+<h2>3.1 Pillar 1 &mdash; Conservation Through Awareness</h2>
+<p>Published residential studies consistently show that metering and feedback reduce water consumption by <strong>10&ndash;25%</strong>, with a commonly cited median of <strong>15%</strong>.</p>
+<table>
+    <tr><th>Scenario</th><th>Reduction</th><th>kL Saved/Month</th><th>Monthly Saving (at R114/kL)</th><th>Annual Saving</th></tr>
+    <tr><td>Conservative</td><td>10%</td><td>467 kL</td><td>R53,200</td><td>R638,700</td></tr>
+    <tr class="highlight-row"><td><strong>Base case</strong></td><td><strong>15%</strong></td><td><strong>700 kL</strong></td><td><strong>R79,800</strong></td><td><strong>R958,000</strong></td></tr>
+    <tr><td>Optimistic</td><td>25%</td><td>1,167 kL</td><td>R133,000</td><td>R1,596,000</td></tr>
+</table>
+<p class="note">If the sewage component is not consumption-based, conservation savings at R65.91/kL would be approximately 58% of figures above &mdash; e.g., base case ~R554,000/year.</p>
+</div>
+
+<div class="no-break">
+<h2>3.2 Pillar 2 &mdash; Fair Billing and Cost Recovery</h2>
+<p>Replacing the flat R400/month with usage-based billing shifts cost recovery dramatically:</p>
+<table>
+    <tr><th>Billing Rate</th><th>Revenue/Month</th><th>vs Current R230K</th><th>Gap to R533K Cost</th><th>Cost Recovery</th></tr>
+    <tr><td>R400 flat (current)</td><td>R230,400</td><td>&mdash;</td><td>-R302,600</td><td>43%</td></tr>
+    <tr><td>R80/kL</td><td>R373,360</td><td>+R143,000</td><td>-R159,640</td><td>70%</td></tr>
+    <tr><td>R100/kL</td><td>R466,700</td><td>+R236,300</td><td>-R66,300</td><td>88%</td></tr>
+    <tr class="highlight-row"><td><strong>R114/kL (at cost)</strong></td><td><strong>R532,138</strong></td><td><strong>+R301,700</strong></td><td><strong>-R862</strong></td><td><strong>~100%</strong></td></tr>
+    <tr><td>R130/kL</td><td>R606,710</td><td>+R376,300</td><td>+R73,710</td><td>114%</td></tr>
+</table>
+<div class="callout">Even at a conservative R80/kL, monthly revenue increases by R143,000 &mdash; nearly <strong>R1.72M/year</strong> in additional cost recovery. At R114/kL, the shortfall is eliminated entirely.</div>
+</div>
+
+<div class="no-break">
+<h2>3.3 Pillar 3 &mdash; Leak Detection</h2>
+<p>Bulk meters on each floor&rsquo;s 50mm branch enable <strong>bulk-vs-unit reconciliation</strong>: any discrepancy indicates water loss.</p>
+<table>
+    <tr><th>Leak Type</th><th>Typical Flow</th><th>Monthly kL</th><th>Monthly Cost</th><th>Detection Method</th></tr>
+    <tr><td>Running toilet (1 unit)</td><td>1 L/min</td><td>~43 kL</td><td>~R4,900</td><td>Unit meter: continuous flow</td></tr>
+    <tr><td>Dripping tap</td><td>0.25 L/min</td><td>~11 kL</td><td>~R1,250</td><td>Unit meter: elevated baseline</td></tr>
+    <tr><td>Pipe leak (concealed)</td><td>3 L/min</td><td>~130 kL</td><td>~R14,820</td><td>Bulk &gt; sum of unit meters</td></tr>
+    <tr><td>Major pipe burst</td><td>10+ L/min</td><td>~432 kL</td><td>~R49,250</td><td>Bulk meter alarm</td></tr>
+</table>
+<div class="warning"><strong>Without metering, these leaks run undetected for months.</strong> If 5% of units have an undetected running toilet (29 units), that alone costs ~R142,000/month &mdash; nearly half the current shortfall.</div>
+</div>
+
+<div class="no-break">
+<h2>3.4 Operational Benefits</h2>
+<table>
+    <tr><th>Benefit</th><th>Description</th></tr>
+    <tr><td>Automated meter reading</td><td>Eliminates manual reading of 576 meters &mdash; readings delivered every 5&ndash;15 minutes</td></tr>
+    <tr><td>CLTM ERP integration</td><td>Consumption data fed directly into tenant management system via API</td></tr>
+    <tr><td>Management reporting</td><td>Automated daily, weekly, monthly reports per floor and per unit</td></tr>
+    <tr><td>Anomaly detection</td><td>Alerts for unusual patterns, zero-flow, continuous flow</td></tr>
+    <tr><td>Dispute resolution</td><td>Timestamped, tamper-evident consumption data</td></tr>
+    <tr><td>Municipal bill verification</td><td>Compare building total against municipal meter reading</td></tr>
+    <tr><td>Foundation for future</td><td>Upper 15 floors, motorised valves, other Mosaic properties</td></tr>
+</table>
+</div>
+
+<p class="note" style="margin-top:4px"><strong>Motorised ball valves:</strong> Not included in this phase, but all hardware is <strong>valve-ready</strong> &mdash; connectors and driver circuitry are built into the IoT node PCB. Valves can be added in a future phase without replacing any components.</p>
+
+<!-- ===== 4. INVESTMENT REQUIRED ===== -->
+<div class="page-break"></div>
+<h1>4. Investment Required</h1>
+
+<div class="cols-2">
+<div>
+    <div class="no-break">
+    <h2>4.1 Smart Meters (Precision Meters &rarr; Mosaic Group)</h2>
+    <p class="note">Precision Meters invoices Mosaic Group directly. Avoids markup; allows Mosaic to claim VAT.</p>
+    <table class="compact-table">
+        <tr><th>Item</th><th>Qty</th><th>Unit Price</th><th>Total (ex VAT)</th></tr>
+        <tr><td>15mm ultrasonic (LoRaWAN)</td><td>576</td><td>R2,100</td><td>R1,209,600</td></tr>
+        <tr><td>50mm ultrasonic (LoRaWAN)</td><td>12</td><td>R9,360</td><td>R112,320</td></tr>
+        <tr class="total-row"><td><strong>Total meters</strong></td><td><strong>588</strong></td><td></td><td><strong>R1,321,920</strong></td></tr>
+    </table>
+    <p class="note">Pricing as quoted by Garth Le Roux, 3 Feb 2026. Volume discount pending from Precision Meters management.</p>
+    </div>
+
+    <div class="no-break">
+    <h2>4.2 IoT Telemetry Nodes (Precept Systems)</h2>
+    <table class="compact-table">
+        <tr><th>Item</th><th>Qty</th><th>Unit Cost</th><th>Total (ex VAT)</th></tr>
+        <tr><td>Precept IoT node (LoRaWAN, battery, valve-ready)</td><td>588</td><td>R750</td><td>R441,000</td></tr>
+    </table>
+    <p class="note">Includes LoRa radio, custom PCB, battery, enclosure, antenna, assembly/testing. R750/unit is a conservative estimate. Firm pricing in the Proposal.</p>
+    </div>
+</div>
+<div>
+    <div class="no-break">
+    <h2>4.3 Platform Development (Precept Systems)</h2>
+    <table class="compact-table">
+        <tr><th>Activity</th><th>Hours</th><th>Est. Cost</th></tr>
+        <tr><td>Platform adaptation and configuration</td><td>40&ndash;60</td><td>R24,000&ndash;R36,000</td></tr>
+        <tr><td>Custom node firmware</td><td>20&ndash;30</td><td>R12,000&ndash;R18,000</td></tr>
+        <tr><td>ChirpStack codec and device profile</td><td>10&ndash;15</td><td>R6,000&ndash;R9,000</td></tr>
+        <tr><td>CLTM ERP integration (API + Postman)</td><td>25&ndash;40</td><td>R15,000&ndash;R24,000</td></tr>
+        <tr><td>Operating manual</td><td>10&ndash;15</td><td>R6,000&ndash;R9,000</td></tr>
+        <tr><td>Project management</td><td>12&ndash;16</td><td>R7,200&ndash;R9,600</td></tr>
+        <tr class="total-row"><td><strong>Total development</strong></td><td><strong>117&ndash;176</strong></td><td><strong>R70,200&ndash;R105,600</strong></td></tr>
+    </table>
+    <p class="note">Hourly rate: R600/hr (ex VAT). Precept Systems is not VAT registered.</p>
+    </div>
+
+    <div class="no-break">
+    <h2>4.4 Deployment &amp; Training (Precept Systems)</h2>
+    <table class="compact-table">
+        <tr><th>Activity</th><th>Hours</th><th>Est. Cost</th></tr>
+        <tr><td>Gateway config and network deployment</td><td>15&ndash;20</td><td>R9,000&ndash;R12,000</td></tr>
+        <tr><td>On-site installation &amp; commissioning</td><td>30&ndash;50</td><td>R18,000&ndash;R30,000</td></tr>
+        <tr><td>Training (Sumir, building management)</td><td>8&ndash;10</td><td>R4,800&ndash;R6,000</td></tr>
+        <tr class="total-row"><td><strong>Total deployment</strong></td><td><strong>53&ndash;80</strong></td><td><strong>R31,800&ndash;R48,000</strong></td></tr>
+    </table>
+    <p class="note">Plumbing by Ryan (Mosaic in-house). Each unit has an isolation valve &mdash; shutoff is per unit only.</p>
+    </div>
+</div>
+</div>
+
+<div class="cols-2">
+<div class="no-break">
+    <h2>4.5 Infrastructure</h2>
+    <table class="compact-table">
+        <tr><th>Item</th><th>Est. Cost (ex VAT)</th></tr>
+        <tr><td>LoRaWAN gateways (4 units, indoor, PoE)</td><td>R28,000&ndash;R36,000</td></tr>
+        <tr><td>Server (production-grade, on-premises)</td><td>R12,000&ndash;R18,000</td></tr>
+        <tr><td>NAS backup device (2-bay, mirrored)</td><td>R7,000&ndash;R11,000</td></tr>
+        <tr class="total-row"><td><strong>Total infrastructure</strong></td><td><strong>R47,000&ndash;R65,000</strong></td></tr>
+    </table>
+    <p class="note">The LoRaWAN technology choice is validated in the <em>Communications Technology Validation</em> report (MGW-PRO-202602-005), which covers RF propagation analysis, alternative technology comparison, battery-life modelling, and 10-year TCO.</p>
+</div>
+<div class="no-break">
+    <h2>4.6 System Resilience</h2>
+    <table class="compact-table">
+        <tr><th>Tier</th><th>Method</th><th>Purpose</th></tr>
+        <tr><td>Tier 1 &mdash; Local</td><td>Daily backup to on-site NAS</td><td>Fast recovery from software failure</td></tr>
+        <tr><td>Tier 2 &mdash; Cloud</td><td>Daily off-site backup (SA-hosted)</td><td>Recovery from hardware failure/theft</td></tr>
+        <tr><td>Tier 3 &mdash; Meter</td><td>Smart meters store readings internally</td><td>No data loss during any outage</td></tr>
+    </table>
+    <p class="note">Containerised deployment (Docker). Rebuild from backup within 4&ndash;8 hours. Cloud migration option available.</p>
+</div>
+</div>
+
+<div class="no-break">
+<h2>4.7 Operating Costs (Monthly)</h2>
+<div class="cols-2">
+<div>
+    <h3>On-Premises Hosting</h3>
+    <table class="compact-table">
+        <tr><td>Platform monitoring</td><td>R500</td></tr>
+        <tr><td>Cloud backup storage</td><td>R100&ndash;R200</td></tr>
+        <tr><td>Maintenance reserve</td><td>R400&ndash;R800</td></tr>
+        <tr class="total-row"><td><strong>Total monthly</strong></td><td><strong>R1,000&ndash;R1,500</strong></td></tr>
+    </table>
+</div>
+<div>
+    <h3>Cloud-Hosted (Alternative)</h3>
+    <table class="compact-table">
+        <tr><td>SA-hosted cloud VPS</td><td>R800&ndash;R1,500</td></tr>
+        <tr><td>Platform monitoring</td><td>R500</td></tr>
+        <tr><td>Cloud backup + maintenance</td><td>R500&ndash;R1,000</td></tr>
+        <tr class="total-row"><td><strong>Total monthly</strong></td><td><strong>R1,800&ndash;R3,000</strong></td></tr>
+    </table>
+</div>
+</div>
+</div>
+
+<div class="no-break">
+<h2>4.8 Investment Summary</h2>
+<table>
+    <tr><th>Category</th><th>Est. Amount (ex VAT)</th><th>Procured From</th></tr>
+    <tr><td>Smart meters (588)</td><td>R1,321,920</td><td>Precision Meters &rarr; Mosaic Group</td></tr>
+    <tr><td>IoT telemetry nodes (588)</td><td>R441,000</td><td>Precept Systems &rarr; Mosaic Group</td></tr>
+    <tr><td>Platform development and integration</td><td>R70,200&ndash;R105,600</td><td>Precept Systems &rarr; Mosaic Group</td></tr>
+    <tr><td>Deployment, installation and training</td><td>R31,800&ndash;R48,000</td><td>Precept Systems &rarr; Mosaic Group</td></tr>
+    <tr><td>Infrastructure (gateways, server, NAS)</td><td>R47,000&ndash;R65,000</td><td>Precept Systems &rarr; Mosaic Group</td></tr>
+    <tr class="total-row"><td><strong>Total capital investment</strong></td><td><strong>~R1,912,000&ndash;R1,982,000</strong></td><td></td></tr>
+    <tr><td>Monthly operating (on-premises)</td><td>R1,000&ndash;R1,500/month</td><td></td></tr>
+</table>
+<p class="note">All Precept Systems estimates are indicative. Firm pricing in the formal Proposal (MGW-PRO-202602-004).</p>
+</div>
+
+<!-- ===== 5. RETURN ON INVESTMENT ===== -->
+<div class="page-break"></div>
+<h1>5. Return on Investment</h1>
+
+<div class="no-break">
+<h2>5.1 Annual Benefit Scenarios</h2>
+<p>Total annual benefit combines billing improvement (Pillar 2) with conservation savings (Pillar 1). Leak detection (Pillar 3) excluded from base case as event-dependent.</p>
+<table>
+    <tr><th>Scenario</th><th>Billing Rate</th><th>Conservation</th><th>Billing Gain/Year</th><th>Conservation/Year</th><th>Total Annual</th></tr>
+    <tr><td>Conservative</td><td>R80/kL</td><td>10%</td><td>R1,716,000</td><td>R639,000</td><td><strong>R2,355,000</strong></td></tr>
+    <tr class="highlight-row"><td><strong>Base case</strong></td><td><strong>R100/kL</strong></td><td><strong>15%</strong></td><td><strong>R2,836,000</strong></td><td><strong>R958,000</strong></td><td><strong>R3,794,000</strong></td></tr>
+    <tr><td>Optimistic</td><td>R130/kL</td><td>20%</td><td>R4,516,000</td><td>R1,277,000</td><td><strong>R5,793,000</strong></td></tr>
+</table>
+</div>
+
+<div class="cols-2">
+<div class="no-break">
+    <h2>5.2 Payback Period</h2>
+    <div class="metrics" style="margin-bottom:4px">
+        <div class="metric">
+            <div class="metric-value" style="color:#10b981">6.3 mo</div>
+            <div class="metric-label">Base Case Payback</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">10.2 mo</div>
+            <div class="metric-label">Conservative Payback</div>
+        </div>
+    </div>
+    <table class="compact-table">
+        <tr><th>Scenario</th><th>Investment</th><th>Annual Net</th><th>Payback</th></tr>
+        <tr><td>Conservative</td><td>R1,982,000</td><td>R2,337,000</td><td><strong>10.2 months</strong></td></tr>
+        <tr class="highlight-row"><td><strong>Base case</strong></td><td>R1,982,000</td><td>R3,776,000</td><td><strong>6.3 months</strong></td></tr>
+        <tr><td>Optimistic</td><td>R1,982,000</td><td>R5,775,000</td><td><strong>4.1 months</strong></td></tr>
+    </table>
+    <p class="note">Investment uses upper-range estimate. Net benefit = gross minus ~R18K/year operating.</p>
+</div>
+<div class="no-break">
+    <h2>5.3 What If Only One Pillar Delivers?</h2>
+    <table class="compact-table">
+        <tr><th>Scenario</th><th>Annual Benefit</th><th>Payback</th></tr>
+        <tr><td>Billing only (R100/kL, no conservation)</td><td>R2,836,000</td><td>8.4 months</td></tr>
+        <tr><td>Conservation only (15% at R114/kL)</td><td>R958,000</td><td>25 months</td></tr>
+        <tr><td>Conservation only (15% at R65.91/kL)</td><td>R554,000</td><td>43 months</td></tr>
+        <tr><td>Leak detection only (~R165K/mo)</td><td>R1,982,000</td><td>12 months</td></tr>
+    </table>
+    <div class="highlight" style="margin-top:4px"><strong>The billing improvement alone justifies the investment</strong> with payback under 9 months.</div>
+</div>
+</div>
+
+<div class="cols-2">
+<div class="no-break">
+    <h2>5.4 Break-Even Analysis</h2>
+    <p>Break-even within 12 months if <strong>any one</strong> of the following occurs:</p>
+    <table class="compact-table">
+        <tr><th>Condition</th><th>Threshold</th></tr>
+        <tr><td>Billing rate increase only</td><td>R400 &rarr; ~R690/month flat</td></tr>
+        <tr><td>Conservation only (at R114/kL)</td><td>31% reduction</td></tr>
+        <tr><td>Leak detection only</td><td>~R165,000/month (~1,450 kL)</td></tr>
+    </table>
+    <p>In practice, all three pillars contribute simultaneously.</p>
+</div>
+<div class="no-break">
+    <h2>5.5 Five-Year Projection (Base Case)</h2>
+    <table class="compact-table">
+        <tr><th>Year</th><th>Cumulative Invest.</th><th>Cumulative Benefit</th><th>Cumulative Net</th><th>ROI</th></tr>
+        <tr><td>1</td><td>R2,000,000</td><td>R3,794,000</td><td>R1,794,000</td><td>90%</td></tr>
+        <tr><td>2</td><td>R2,018,000</td><td>R7,588,000</td><td>R5,570,000</td><td>276%</td></tr>
+        <tr><td>3</td><td>R2,036,000</td><td>R11,382,000</td><td>R9,346,000</td><td>459%</td></tr>
+        <tr><td>4</td><td>R2,054,000</td><td>R15,176,000</td><td>R13,122,000</td><td>639%</td></tr>
+        <tr class="highlight-row"><td><strong>5</strong></td><td>R2,072,000</td><td>R18,970,000</td><td><strong>R16,898,000</strong></td><td><strong>816%</strong></td></tr>
+    </table>
+    <p class="note">Assumes constant base case benefits (no tariff escalation). Real returns higher as tariffs rise annually.</p>
+</div>
+</div>
+
+<!-- ===== 6. PHASED APPROACH ===== -->
+<div class="page-break"></div>
+<h1>6. Phased Approach</h1>
+<p>A phased rollout minimises risk, validates the solution before full commitment, and aligns with Mosaic Group's preference for phased payments.</p>
+
+<div class="cols-2">
+<div class="no-break">
+    <h2>6.1 Pilot Phase</h2>
+    <table class="compact-table">
+        <tr><td><strong>Scope</strong></td><td>1 floor: 6 unit meters + 1 bulk meter + 7 nodes + 1 gateway</td></tr>
+        <tr><td><strong>Duration</strong></td><td>6&ndash;8 weeks (incl. monitoring period)</td></tr>
+        <tr><td><strong>Purpose</strong></td><td>Validate RF, accuracy, ERP integration, platform</td></tr>
+    </table>
+    <h3>Pilot Investment</h3>
+    <table class="compact-table">
+        <tr><th>Item</th><th>Cost (ex VAT)</th><th>From</th></tr>
+        <tr><td>6&times; 15mm + 1&times; 50mm meters</td><td>R21,960</td><td>Precision Meters</td></tr>
+        <tr><td>7&times; IoT telemetry nodes</td><td>R5,250</td><td>Precept Systems</td></tr>
+        <tr><td>1&times; LoRaWAN gateway</td><td>R7,000&ndash;R9,000</td><td>Precept Systems</td></tr>
+        <tr><td>Platform setup, firmware, codec, commissioning</td><td>R40,000&ndash;R55,000</td><td>Precept Systems</td></tr>
+        <tr class="total-row"><td><strong>Pilot total</strong></td><td><strong>~R74,000&ndash;R91,000</strong></td><td></td></tr>
+    </table>
+    <h3>What the Pilot Validates</h3>
+    <ul>
+        <li>LoRaWAN signal through reinforced concrete</li>
+        <li>Meter accuracy and pulse output reliability</li>
+        <li>ChirpStack network server and codec</li>
+        <li>CLTM ERP integration (automated billing)</li>
+        <li>Dashboard and reporting (management acceptance)</li>
+        <li>Per-unit installation time (refined rollout)</li>
+    </ul>
+    <div class="callout" style="margin-top:4px"><strong>All pilot hardware is reused</strong> in Phase 1 &mdash; nothing is throwaway.</div>
+</div>
+<div class="no-break">
+    <h2>6.2 Phase 1 &mdash; Remaining 11 Floors</h2>
+    <table class="compact-table">
+        <tr><td><strong>Scope</strong></td><td>11 floors: 570 unit + 11 bulk meters + 581 nodes + 3 gateways + server + NAS</td></tr>
+        <tr><td><strong>Duration</strong></td><td>8&ndash;12 weeks (~1 floor per week)</td></tr>
+        <tr><td><strong>Prerequisites</strong></td><td>Successful pilot, client approval</td></tr>
+    </table>
+    <h3>Phase 1 Investment (remaining after pilot)</h3>
+    <table class="compact-table">
+        <tr><th>Item</th><th>Cost (ex VAT)</th><th>From</th></tr>
+        <tr><td>570&times; 15mm + 11&times; 50mm meters</td><td>R1,299,960</td><td>Precision Meters</td></tr>
+        <tr><td>581&times; IoT telemetry nodes</td><td>R435,750</td><td>Precept Systems</td></tr>
+        <tr><td>3&times; LoRaWAN gateways</td><td>R21,000&ndash;R27,000</td><td>Precept Systems</td></tr>
+        <tr><td>Server + NAS</td><td>R19,000&ndash;R29,000</td><td>Precept Systems</td></tr>
+        <tr><td>Remaining dev, ERP, deployment, training, manual</td><td>R62,000&ndash;R99,000</td><td>Precept Systems</td></tr>
+        <tr class="total-row"><td><strong>Phase 1 total</strong></td><td><strong>~R1,838,000&ndash;R1,891,000</strong></td><td></td></tr>
+    </table>
+
+    <h2 style="margin-top:8px">6.3 Future Phases (Not Priced)</h2>
+    <table class="compact-table">
+        <tr><th>Phase</th><th>Scope</th></tr>
+        <tr><td>Upper 15 floors</td><td>720 additional unit meters + 15 bulk + gateways</td></tr>
+        <tr><td>Motorised valves</td><td>Remote shutoff/throttling (system is valve-ready)</td></tr>
+        <tr><td>Other properties</td><td>Extend platform to additional Mosaic buildings</td></tr>
+    </table>
+
+    <h2 style="margin-top:8px">6.4 Why Phased?</h2>
+    <table class="compact-table">
+        <tr><td><strong>Risk management</strong></td><td>Pilot validates before committing R1.3M+ in meters</td></tr>
+        <tr><td><strong>Cash flow</strong></td><td>Payments spread, not single upfront commitment</td></tr>
+        <tr><td><strong>Learning</strong></td><td>Pilot process refined, applied to Phase 1</td></tr>
+        <tr><td><strong>Confidence</strong></td><td>Real data before full rollout &mdash; easier board approval</td></tr>
+        <tr><td><strong>No waste</strong></td><td>Pilot hardware reused &mdash; not a sunk cost</td></tr>
+    </table>
+</div>
+</div>
+
+<!-- ===== 7. RISK + 8. ALTERNATIVES ===== -->
+<div class="page-break"></div>
+<h1>7. Risk Summary</h1>
+<table>
+    <tr><th style="width:22%">Risk</th><th style="width:60px">Likelihood</th><th style="width:50px">Impact</th><th>Mitigation</th></tr>
+    <tr><td>Tenant resistance to usage-based billing</td><td><span class="pill pill-amber">Medium</span></td><td><span class="pill pill-amber">Medium</span></td><td>Gradual transition; conservative initial rate (R80/kL); transparent communication; show usage before billing change</td></tr>
+    <tr><td>RF coverage gaps in concrete building</td><td><span class="pill pill-amber">Low&ndash;Med</span></td><td><span class="pill pill-amber">Medium</span></td><td>4 gateways for redundancy; pilot validates; additional gateways can be added</td></tr>
+    <tr><td>ERP integration complexity</td><td><span class="pill pill-amber">Medium</span></td><td><span class="pill pill-amber">Medium</span></td><td>CLTM developer confirmed API model; Postman collection provided; pilot validates end-to-end</td></tr>
+    <tr><td>Installation disruption</td><td><span class="pill pill-green">Low</span></td><td><span class="pill pill-green">Low</span></td><td>Per-unit isolation valve; ~1 hour/unit; 10:00&ndash;14:00 schedule; advance notification</td></tr>
+    <tr><td>Meter pricing changes</td><td><span class="pill pill-green">Low</span></td><td><span class="pill pill-amber">Medium</span></td><td>Volume discount pending; firm pricing locked before Phase 1 order</td></tr>
+    <tr><td>Load shedding</td><td><span class="pill pill-amber">Medium</span></td><td><span class="pill pill-green">Low</span></td><td>Meters battery-powered; gateways on UPS PoE; data buffered, no readings lost</td></tr>
+    <tr><td>Server hardware failure</td><td><span class="pill pill-green">Low</span></td><td><span class="pill pill-amber">Medium</span></td><td>Three-tier backup; containerised rebuild within 4&ndash;8 hours (Section 4.6)</td></tr>
+    <tr><td>Meter supplier dependency</td><td><span class="pill pill-green">Low</span></td><td><span class="pill pill-green">Low</span></td><td>Precision Meters is established with national distribution and SANS 1529 certification (Section 9)</td></tr>
+</table>
+
+<h1 style="margin-top:6px">8. Alternatives Considered</h1>
+<table>
+    <tr><th>Option</th><th>Capital Cost</th><th>Annual Operating</th><th>5-Year TCO</th><th>Verdict</th></tr>
+    <tr><td>1. Status quo</td><td>R0</td><td>R0</td><td>R0 (but R18.2M unrecovered)</td><td><span class="pill pill-red">Not recommended</span></td></tr>
+    <tr><td>2. Manual meter reading</td><td>~R1.32M (meters only)</td><td>R150,000+ (labour)</td><td>~R2.1M</td><td><span class="pill pill-red">Not recommended</span></td></tr>
+    <tr><td>3. Prepaid meters</td><td>~R1.5&ndash;R2M</td><td>R50,000+</td><td>~R1.8&ndash;R2.3M</td><td><span class="pill pill-red">Rejected by client</span></td></tr>
+    <tr><td>4. SaaS platform (3rd party)</td><td>~R1.32M + R50&ndash;100K</td><td>R60K&ndash;R180K/year</td><td>~R1.7&ndash;R2.3M</td><td><span class="pill pill-red">Not recommended</span></td></tr>
+    <tr class="highlight-row"><td><strong>5. Custom platform (Precept)</strong></td><td><strong>~R1.91&ndash;R1.98M</strong></td><td><strong>R12&ndash;R18K/year</strong></td><td><strong>~R1.97&ndash;R2.07M</strong></td><td><span class="pill pill-green"><strong>Recommended</strong></span></td></tr>
+</table>
+
+<div class="cols-2" style="margin-top:4px">
+<div class="no-break">
+    <h2>Why Not Manual Reading?</h2>
+    <p>576 meters &times; 10 min/read &times; R28.79/hr = ~R2,764 per reading round. Monthly cost: ~R33,000. Annual: R150,000+. No real-time visibility, no leak detection, no ERP integration, data quality degrades with staff absence.</p>
+</div>
+<div class="no-break">
+    <h2>Why Not SaaS?</h2>
+    <p>Subscription fees of R60K&ndash;R180K/year erode ROI. Vendor lock-in, data leaves site, limited customisation, CLTM integration may not be supported. Dependent on vendor&rsquo;s continued operation.</p>
+</div>
+</div>
+
+<div class="no-break">
+<h2>Why Custom Platform?</h2>
+<p>Lowest 5-year TCO. Full control. CLTM ERP integration built to spec. No recurring subscription. Data stays on-premises or SA-hosted. Expandable to other buildings. Proven architecture (Fairfield Dairy reference). <strong>Mosaic Group receives full intellectual property</strong> &mdash; all designs, schematics, firmware, code, and documentation (see Section 10).</p>
+</div>
+
+<!-- ===== 9. PARTNERSHIP + 10. IP + 11. RECOMMENDATION ===== -->
+<div class="page-break"></div>
+<h1>9. Strategic Partnership &mdash; Precision Meters</h1>
+
+<p>Precept Systems operates in strategic partnership with Precision Meters, a specialist supplier of independently tested, SANS 1529-certified ultrasonic water meters. The monitoring platform has been designed, developed, and tested specifically for integration with Precision Meters&rsquo; product range. This partnership is a foundation of the solution:</p>
+
+<table>
+    <tr><th>Factor</th><th>Benefit</th></tr>
+    <tr><td>Purpose-built integration</td><td>Firmware, payload codec, and dashboard engineered specifically for Precision Meters&rsquo; pulse output and LoRaWAN protocol</td></tr>
+    <tr><td>Single-vendor consistency</td><td>One meter supplier &mdash; uniform data format, consistent accuracy, shared spare parts</td></tr>
+    <tr><td>Coordinated support</td><td>Precept provides field support in KwaZulu-Natal; Precision Meters provides product and technical support from Cape Town</td></tr>
+    <tr><td>Quality assurance</td><td>All meters independently tested and certified to SANS 1529 &mdash; industrial quality</td></tr>
+</table>
+<div class="callout">The monitoring platform &mdash; including firmware, payload codec, device profiles, and dashboard analytics &mdash; is <strong>engineered exclusively for Precision Meters products</strong>. This ensures the highest level of integration quality, reliable data accuracy, and a single point of accountability.</div>
+
+<h1>10. Intellectual Property and System Ownership</h1>
+
+<div class="cols-2">
+<div class="no-break">
+    <h2>IP Handover</h2>
+    <p>Full handover of all project deliverables at project completion (or upon completion of the final delivered phase if discontinued):</p>
+    <table class="compact-table">
+        <tr><th>Deliverable</th><th>Format</th></tr>
+        <tr><td>Hardware schematics and PCB designs</td><td>Source files (KiCad)</td></tr>
+        <tr><td>Node firmware source code</td><td>Source repository</td></tr>
+        <tr><td>Application and API source code</td><td>Source repository</td></tr>
+        <tr><td>ChirpStack codec and device profiles</td><td>JavaScript source</td></tr>
+        <tr><td>Operating manual</td><td>PDF / Markdown</td></tr>
+        <tr><td>Architecture and config documentation</td><td>Technical docs</td></tr>
+    </table>
+</div>
+<div class="no-break">
+    <h2>Ownership Terms</h2>
+    <ul>
+        <li><strong>During development:</strong> Precept retains working access for development and support.</li>
+        <li><strong>Upon handover:</strong> Mosaic Group owns all project-specific deliverables. Complete documentation, source code, and schematics can be provided to any service provider to continue maintenance.</li>
+        <li><strong>Non-compete:</strong> Mosaic Group may not share IP with a direct competitor of Precept Systems, provided Precept remains operational and available.</li>
+        <li><strong>Reuse rights:</strong> Precept may reuse underlying design/code patterns in other projects. This does not diminish Mosaic Group&rsquo;s ownership of their specific implementation.</li>
+    </ul>
+</div>
+</div>
+
+<h1 style="margin-top:8px">11. Recommendation</h1>
+
+<div class="metrics">
+    <div class="metric">
+        <div class="metric-value">~R1.98M</div>
+        <div class="metric-label">Total Investment (upper est.)</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">~R3.79M</div>
+        <div class="metric-label">Annual Benefit (base case)</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value" style="color:#10b981">6.3 mo</div>
+        <div class="metric-label">Base Case Payback</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">R16.9M</div>
+        <div class="metric-label">5-Year Net Return</div>
+    </div>
+    <div class="metric">
+        <div class="metric-value">816%</div>
+        <div class="metric-label">5-Year ROI</div>
+    </div>
+</div>
+
+<div class="cols-2" style="margin-top:4px">
+<div class="no-break">
+    <h2>The Operational Case</h2>
+    <ul>
+        <li>Eliminates the blind spot on a R6.4M/year water expense</li>
+        <li>Automated data flow: meters &rarr; dashboard &rarr; CLTM ERP</li>
+        <li>Real-time leak detection prevents silent water loss</li>
+        <li>Operating manual and training for independent operation</li>
+        <li>Foundation for portfolio-wide water management</li>
+    </ul>
+</div>
+<div class="no-break">
+    <h2>The Strategic Case</h2>
+    <ul>
+        <li>Every month without metering = R302,600 in unrecovered costs</li>
+        <li>Municipal tariffs increase annually &mdash; shortfall grows</li>
+        <li>Usage-based billing is the industry standard</li>
+        <li>Metering data supports tenant comms, disputes, board reporting</li>
+        <li>Full IP ownership protects investment regardless of circumstances</li>
+    </ul>
+</div>
+</div>
+
+<div class="highlight" style="margin-top:6px">
+    <strong>Proceed with the phased deployment.</strong> Begin with the pilot (1 floor) to validate, then roll out to the remaining 11 floors. The investment is justified under any reasonable scenario &mdash; even under the most conservative assumptions, the billing improvement alone pays back the investment within 9 months.
+</div>
+
+<!-- ===== 12. NEXT STEPS + ASSUMPTIONS ===== -->
+<div class="page-break"></div>
+<h1>12. Next Steps</h1>
+<table>
+    <tr><th>#</th><th>Action</th><th>Owner</th></tr>
+    <tr><td>1</td><td>Review and approve this Business Case</td><td>Tanya Dowley / Board</td></tr>
+    <tr><td>2</td><td>Confirm meter pricing (volume discount pending from Precision Meters)</td><td>Garth Le Roux</td></tr>
+    <tr><td>3</td><td><strong>Confirm municipal bill composition</strong> (sewage/sanitation tariff structure &mdash; see Section 2.1)</td><td>Tanya Dowley / Accounts</td></tr>
+    <tr><td>4</td><td>Review Scope of Work and Proposal (to follow)</td><td>Tanya Dowley</td></tr>
+    <tr><td>5</td><td>Select pilot floor</td><td>Tanya Dowley / Ryan</td></tr>
+    <tr><td>6</td><td>Approve project commencement (pilot phase)</td><td>Board</td></tr>
+    <tr><td>7</td><td>Precept Systems initiates platform setup and pilot deployment</td><td>Jason van Wyk</td></tr>
+</table>
+
+<h1 style="margin-top:8px">Approval</h1>
+<table>
+    <tr><th>Role</th><th>Name</th><th>Decision</th><th style="width:100px">Signature</th><th style="width:80px">Date</th></tr>
+    <tr><td>Property Management</td><td>Tanya Dowley</td><td>Approve / Reject</td><td></td><td></td></tr>
+    <tr><td>Board of Directors</td><td></td><td>Approve / Reject</td><td></td><td></td></tr>
+</table>
+
+<h1 style="margin-top:8px">Assumptions</h1>
+<p>This business case is based on the following assumptions. If any prove incorrect, the financial projections should be revised.</p>
+<table>
+    <tr><th style="width:20px">#</th><th>Assumption</th><th style="width:90px">Status</th></tr>
+    <tr><td>1</td><td>Water consumption on the first 12 floors is proportional to their share of the building (44.4%). Actual consumption may differ if floor usage patterns vary.</td><td><span class="pill pill-amber">Assumed</span></td></tr>
+    <tr><td>2</td><td>The effective all-in rate of ~R114/kL is derived from R1,200,000 &divide; 10,500 kL. Includes all municipal water-related charges.</td><td><span class="pill pill-amber">Assumed</span></td></tr>
+    <tr><td>3</td><td><strong>Whether the municipal bill includes consumption-based sewage/sanitation charges needs to be confirmed.</strong> If a significant portion is fixed charges, conservation savings per kL would be lower.</td><td><span class="pill pill-red">To confirm</span></td></tr>
+    <tr><td>4</td><td>Conservation savings of 10&ndash;25% based on published residential metering studies. Actual results depend on tenant behaviour.</td><td><span class="pill pill-amber">Assumed</span></td></tr>
+    <tr><td>5</td><td>All 576 units occupied and paying R400/month. Vacancy reduces both costs and revenue proportionally.</td><td><span class="pill pill-amber">Assumed</span></td></tr>
+    <tr><td>6</td><td>Meter pricing of R2,100 (15mm) and R9,360 (50mm) ex VAT as quoted 3 Feb 2026. Volume discount pending.</td><td><span class="pill pill-blue">Quoted</span></td></tr>
+    <tr><td>7</td><td>IoT node and infrastructure costs are estimated. Firm pricing in the formal Proposal.</td><td><span class="pill pill-amber">Estimated</span></td></tr>
+    <tr><td>8</td><td>Platform service hours estimated at R600/hr. Firm pricing in the formal Proposal.</td><td><span class="pill pill-amber">Estimated</span></td></tr>
+    <tr><td>9</td><td>CLTM ERP supports API integration as confirmed by Sumir (2 Feb 2026). Integration complexity estimated, not scoped in detail.</td><td><span class="pill pill-green">Confirmed</span></td></tr>
+    <tr><td>10</td><td>Cloud hosting costs are indicative and depend on provider selection.</td><td><span class="pill pill-amber">Estimated</span></td></tr>
+</table>
+
+<h1 style="margin-top:8px">Sources</h1>
+<table class="compact-table">
+    <tr><td>Water costs and tariff</td><td>Tanya Dowley, site visit 29 January 2026; Mosaic Group records</td></tr>
+    <tr><td>Building profile and infrastructure</td><td>Site visit report, 29 January 2026 (MGW-PRO-202602-001)</td></tr>
+    <tr><td>Meter pricing</td><td>Garth Le Roux, Precision Meters, email 3 February 2026</td></tr>
+    <tr><td>Conservation studies</td><td>General residential metering literature (10&ndash;25% reduction commonly cited)</td></tr>
+    <tr><td>Platform estimates</td><td>Precept Systems, based on Fairfield Dairy reference project</td></tr>
+    <tr><td>ERP integration</td><td>Sumir (Mosaic Group IT), email 2 February 2026</td></tr>
+</table>
+
+<div class="no-break">
+<h1 style="margin-top:8px">Related Documents</h1>
+<table class="compact-table">
+    <tr><th>Ref</th><th>Document</th><th>Description</th></tr>
+    <tr><td>MGW-PRO-202602-001</td><td>Site Assessment Report</td><td>Site visit findings and building profile</td></tr>
+    <tr><td>MGW-PRO-202602-003</td><td>Scope of Work</td><td>Detailed deliverables (TBD)</td></tr>
+    <tr><td>MGW-PRO-202602-004</td><td>Proposal</td><td>Commercial terms and pricing (TBD)</td></tr>
+    <tr><td>MGW-PRO-202602-005</td><td>Communications Technology Validation</td><td>LoRaWAN selection justification and site-specific RF analysis</td></tr>
+</table>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div>MGW-PRO-202602-002 &middot; Version 1.2 &middot; Draft for client review</div>
+    <div><span class="confidential">COMMERCIAL IN CONFIDENCE</span> &middot; Precept Systems &middot; 5 February 2026</div>
+</div>
+
+</body>
+</html>
