@@ -2,14 +2,14 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-02-03
+**Last Updated:** 2026-02-04
 
 ---
 
 ## Right Now
 
-**Phase:** Post-Site Visit / Internal Research & Solution Design
-**Next Action:** Complete internal research (CLTM ERP, hosting, etc.), then build business case and proposal
+**Phase:** Post-Site Visit / Proposal Development
+**Next Action:** Build business case and proposal — target delivery to Tanya by 5 Feb
 
 ### Site Visit Completed
 | Item | Details |
@@ -31,7 +31,14 @@
 
 ---
 
-## Current Session (2026-02-03)
+## Current Session (2026-02-04)
+
+### Updates
+- Emailed Tanya with proposal status update — finalising proposal, waiting on final pricing, out in field today, proposal by tomorrow (5 Feb)
+
+---
+
+## Previous Session (2026-02-03)
 
 ### Updates
 - **09:43** — Called Garth Le Roux (Precision Meters). Confirmed he and Bradley will sit together today and reply to our email (site assessment report + 7 questions) by this afternoon.
@@ -48,7 +55,7 @@
 
 ---
 
-## Previous Session (2026-01-30)
+## Earlier Session (2026-01-30)
 
 ### Completed
 - Site visit conducted at 477 Anton Lembede Street (City Life)
@@ -64,7 +71,7 @@
   - `docs/planning/internal/Research/03-hosting-options-research.md` — Hetzner SA recommended for cloud; on-prem Proxmox for pilot
   - `docs/planning/internal/Research/03-solution-design-research.md` — LoRaWAN architecture, meter selection, valve research, pilot design
 
-### Earlier Session (2026-01-28)
+### Earlier (2026-01-28)
 - Initial phone call with Tanya Dowley
 - Site visit scheduled
 - Email sent to Tanya confirming meeting
@@ -177,6 +184,7 @@
 | 2026-02-02 | MGW-COR-202602-003 | Sumir reply — CLTM is custom in-house, API integration confirmed |
 | 2026-02-03 | MGW-COR-202602-001 | Phone call with Garth — reply expected today PM |
 | 2026-02-03 | MGW-COR-202602-002 | Garth reply — all 7 questions answered (pricing, LoRaWAN, supply chain) |
+| 2026-02-04 | MGW-COR-202602-004 | Email to Tanya — proposal update, delivery by 5 Feb |
 
 ---
 

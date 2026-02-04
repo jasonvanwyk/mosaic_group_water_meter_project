@@ -1,9 +1,9 @@
 # Project Status
 
 ## Current Status
-**Phase:** Post-Site Visit / Solution Design
+**Phase:** Post-Site Visit / Proposal Development
 **Health:** Green
-**Last Updated:** 2026-02-03
+**Last Updated:** 2026-02-04
 
 ## Completed
 - [x] Project directory created
@@ -131,8 +131,8 @@
 | ~~Document site findings~~ | 2026-01-30 | Done — formalized into site visit report |
 | ~~Internal research~~ | 2026-01-30 | Done — CLTM, hosting, solution design |
 | ~~Site assessment report~~ | 2026-01-30 | Done — sent to Precision Meters |
-| Business case + proposal | After assessment | Benefits, alternatives, pricing |
-| Submit to Tanya | Before 1st week Feb | Tanya reviewing pricing then |
+| Business case + proposal | 5 Feb 2026 | Benefits, alternatives, pricing — target delivery |
+| Submit to Tanya | 5 Feb 2026 | Tanya advised proposal coming tomorrow |
 
 ## Key Contacts
 
@@ -189,6 +189,7 @@
 | 2026-02-03 | MGW-COR-202602-001 | [Phone call with Garth](docs/planning/correspondence/2026-02-03-garth-phone-call.md) |
 | 2026-02-03 | MGW-COR-202602-002 | [Garth reply — all 7 questions answered](docs/planning/correspondence/2026-02-03-garth-meter-questions-reply.md) |
 | 2026-02-03 | MGW-COR-202602-001 | [Phone call with Garth — reply expected today PM](docs/planning/correspondence/2026-02-03-garth-phone-call.md) |
+| 2026-02-04 | MGW-COR-202602-004 | [Proposal update to Tanya](docs/planning/correspondence/2026-02-04-tanya-proposal-update.md) |
 
 ## Documentation
 
