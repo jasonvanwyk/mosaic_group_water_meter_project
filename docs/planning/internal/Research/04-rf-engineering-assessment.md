@@ -337,15 +337,16 @@ Since all 588 nodes are Precept-designed (reading meter pulse output), the node 
 |-----------|---------------|---------|
 | MCU + LoRa | RAK3172 (STM32WLE5 + SX1262) | LoRaWAN Class A, EU868, configurable SF/TX |
 | Pulse input | Dry contact (reed switch) from meter | Counts pulses, calculates cumulative volume |
-| Battery | 2× ER34615 (D-cell Li-SOCl2, 3.6V, 19Ah) in parallel | 38Ah total capacity |
+| Battery | 1× ER34615 (D-cell Li-SOCl2, 3.6V, 19Ah) — dual holder on PCB for optional 2nd cell | 19Ah default, 38Ah with dual cells |
 | H-bridge driver | DRV8837 or equivalent | Valve-ready (Phase 2) |
 | Valve connectors | 2× JST-XH 2-pin | 12V input + motor output |
 | Feedback input | Optocoupler | Valve position (Phase 2) |
 | Antenna | PCB trace (internal) or SMA whip (external option) | Tuned for 868 MHz |
 | Enclosure | ABS IP54, ~100×70×40mm | Passage ceiling mount |
 
-### 7.2 Battery Life Analysis — Dual Cell Configuration
+### 7.2 Battery Life Analysis
 
+**Single ER34615: 19Ah at 3.6V**
 **Dual ER34615 in parallel: 2 × 19Ah = 38Ah total at 3.6V**
 
 ```
@@ -356,37 +357,57 @@ Per uplink cycle (SF7, 10-byte payload):
   Processing: 10 mA × 5 ms = 0.014 µAh
   Total per cycle:          ≈ 0.97 µAh
 
-Sleep current (RAK3172): 1.5 µA continuous
+Sleep current (RAK3172): 1.5 µA continuous = 36 µAh/day
 
 Pulse counting (interrupt-driven): ~0.1 µA average
 ```
 
-| Interval | Cycles/Day | Active µAh/Day | Sleep µAh/Day | Total mAh/Day | Years (38Ah, ×0.7 derating) |
-|----------|------------|----------------|---------------|----------------|------------------------------|
-| 5 min | 288 | 279 | 36,000 | 36.3 | **2.0 years** |
-| 10 min | 144 | 140 | 36,000 | 36.1 | **2.0 years** |
-| 15 min | 96 | 93 | 36,000 | 36.1 | **2.0 years** |
+| Interval | Cycles/Day | Active µAh/Day | Sleep µAh/Day | Total µAh/Day | Total mAh/Day |
+|----------|------------|----------------|---------------|----------------|----------------|
+| 5 min | 288 | 279 | 36 | 315 | 0.315 |
+| 10 min | 144 | 140 | 36 | 176 | 0.176 |
+| 15 min | 96 | 93 | 36 | 129 | 0.129 |
 
-**Note:** At these intervals, sleep current (1.5 µA × 24h = 36 µAh/day = 36 mAh/day) dominates the power budget. The difference between 5-min and 15-min intervals is negligible (<1% of total consumption). Battery life is primarily determined by sleep current, not uplink frequency.
+**Note:** At 5-minute intervals, active current (TX/RX) accounts for ~89% of the power budget. Increasing the interval from 5 to 15 minutes reduces daily consumption by 2.4×, roughly doubling battery life. The uplink interval is a meaningful design choice for battery longevity.
 
-**With 0.7 derating factor** (accounts for self-discharge ~1%/year, temperature effects, end-of-life voltage sag, and margin): **2.0 years minimum.**
+**Battery life projections (single ER34615, 19,000 mAh):**
 
-**With 0.85 derating** (optimistic but realistic for indoor, temperature-stable passage ceiling): **2.5 years.**
+Self-discharge for Li-SOCl2 is ~1%/year = 190 mAh/year.
+
+| Interval | Active mAh/Year | Self-Discharge mAh/Year | Total mAh/Year | Theoretical Life | Practical (÷10 derating) |
+|----------|-----------------|-------------------------|-----------------|-------------------|--------------------------|
+| 5 min | 115 | 190 | 305 | 62 years | **~6 years** |
+| 10 min | 64 | 190 | 254 | 75 years | **~7.5 years** |
+| 15 min | 47 | 190 | 237 | 80 years | **~8 years** |
+
+**Battery life projections (dual ER34615, 38,000 mAh):**
+
+| Interval | Total mAh/Year | Theoretical Life | Practical (÷10 derating) |
+|----------|----------------|-------------------|--------------------------|
+| 5 min | 495 | 77 years | **~8 years** |
+| 10 min | 254 | 150 years | **~15 years** |
+| 15 min | 427 | 89 years | **~9 years** |
+
+The ÷10 derating factor is conservative and accounts for: temperature variation, end-of-life voltage sag, manufacturing variance, passivation effects in Li-SOCl2 cells, and engineering margin. Real-world performance in a stable indoor environment (passage ceiling) is likely better than these figures.
+
+**Conclusion:** A single ER34615 at 5-minute intervals achieves ~6 years practical life. Dual cells extend this to ~8+ years. At 10-minute intervals, even a single cell approaches 8 years. The dual-cell option provides comfortable margin for the 10-year project horizon, especially at 10-15 minute intervals.
+
+**Design decision:** Include dual battery holders on the PCB (low cost, adds flexibility), but deploy with a single cell initially. If field measurements show higher-than-modelled consumption, the second cell can be added without hardware changes.
 
 ### 7.3 Battery Replacement Strategy
 
-A 2-2.5 year replacement cycle for 588 nodes is manageable:
+With single-cell deployment at 5-minute intervals (~6 year life), battery replacement is an infrequent event:
 
-| Parameter | Value |
-|-----------|-------|
-| Replacement interval | 24-30 months |
-| Nodes per cycle | 588 |
-| Battery cost (2× ER34615) | ~R200/node |
-| Labour (Sumir + assistant, 5 min/node) | ~R50/node |
-| Total per replacement cycle | ~R147,000 |
-| Annual battery cost | ~R59,000-R74,000 |
+| Parameter | Single Cell (5-min) | Dual Cell (10-min) |
+|-----------|--------------------|--------------------|
+| Replacement interval | ~6 years | ~15 years (exceeds project horizon) |
+| Nodes per cycle | 588 | 588 |
+| Battery cost per node | ~R100 (1× ER34615) | ~R200 (2× ER34615) |
+| Labour (Sumir + assistant, 5 min/node) | ~R50/node | ~R50/node |
+| Total per replacement cycle | ~R88,000 | ~R147,000 |
+| Annualised battery cost | ~R15,000/year | Negligible (beyond project horizon) |
 
-This is a known, predictable OPEX item that should be included in the proposal. Mosaic Group currently spends R1.2M/month on water — even R74K/year in battery maintenance is trivial relative to the savings from usage visibility and leak detection.
+Even with single-cell deployment and a conservative 6-year replacement cycle, the annualised cost is ~R15K/year — negligible relative to the R1.2M/month water bill.
 
 ### 7.4 Battery Optimisation Options (Future)
 
@@ -394,12 +415,12 @@ If longer battery life is desired in later revisions:
 
 | Option | Impact | Complexity |
 |--------|--------|------------|
-| Lower sleep current MCU (e.g., STM32WL55 bare chip, ~0.3 µA stop mode) | Extends life to 8-10 years | Requires custom PCB redesign (no module) |
-| Reduce uplink to 30 min | Marginal improvement (~5%) — sleep dominates | Firmware change only |
+| Increase uplink interval to 10-15 min | Extends single-cell life to ~7.5-8 years | Firmware change only |
+| Deploy dual cells from day one | Extends life to ~8-15 years depending on interval | Hardware provision on Rev 1.0 PCB |
+| Lower sleep current MCU (e.g., STM32WL55 bare chip, ~0.3 µA stop mode) | Extends life further by reducing sleep drain | Requires custom PCB redesign (no module) |
 | Switch to Class C with external power (Phase 2, when valve power installed) | Unlimited battery life (mains powered) | Requires 12V DC infrastructure per floor |
-| Larger battery (ER341245 F-cell, 35Ah × 2 = 70Ah) | ~3.5-4 years | Larger enclosure needed |
 
-For Rev 1.0, the dual D-cell design is the right balance of cost, size, and acceptable replacement cycle.
+For Rev 1.0, design the PCB with dual battery holders. Deploy with a single cell initially. Add the second cell if field measurements warrant it or if valve power infrastructure (Phase 2) is delayed beyond the first battery cycle.
 
 ---
 
@@ -514,7 +535,7 @@ With 4 gateways at 3-floor spacing, the loss of any single gateway is tolerable:
 | 4 | **Precision Meters pulse output incompatible or undocumented** | Low | High — node cannot read meter | Confirm pulse specification (reed switch or wired, litres per pulse) before PCB design. Request from Bradley. |
 | 5 | **WiFi interference from 13-15 APs per floor bleeds into sub-GHz** | Very Low | Low — different frequency bands | 868 MHz is far from 2.4/5 GHz. No practical risk of interference. |
 | 6 | **Concrete stairwell/lift shaft propagation creates unexpected multipath** | Medium | Low — may improve or degrade signal | ADR handles automatically. Multi-gateway diversity provides resilience. |
-| 7 | **Battery life shorter than 2 years in practice** | Low-Medium | Medium — increases maintenance frequency | Dual-cell design provides margin. Monitor voltage via dashboard. Adjust uplink interval if needed. |
+| 7 | **Battery life shorter than 6 years in practice** | Low | Medium — brings forward replacement cycle | Dual-cell holder on PCB allows adding second cell. Uplink interval adjustable via downlink. Monitor voltage via dashboard. |
 | 8 | **ChirpStack ADR oscillation ("flapping") in marginal zones** | Low | Low — affects battery life, not reliability | Set conservative ADR installation margin (10 dB). Fix SF for pilot nodes to validate. |
 
 ---
@@ -582,7 +603,7 @@ This investment is approximately 1.5% of the meter hardware cost and provides th
 | Is it legal under ICASA? | Yes — 868 MHz is licence-exempt in SA. Per-device duty cycle at 5-min intervals is 0.02% (limit: 1%). Power at 14 dBm ERP is within 25 mW limit. |
 | Can 588 nodes share the network without collisions? | Yes — channel utilisation at 5-min intervals is 1.5% per channel. With 4-gateway diversity, PDR exceeds 99%. |
 | Is 4 gateways sufficient? | Yes — provides dual coverage on most floors, single coverage on floors 1-2 and 12, and self-healing if any gateway fails. |
-| Is the battery life acceptable? | Yes — dual D-cell Li-SOCl2 provides ~2-2.5 years at 5-minute intervals. Predictable, manageable replacement cycle. |
+| Is the battery life acceptable? | Yes — single D-cell Li-SOCl2 provides ~6 years at 5-minute intervals. Dual cells extend to 8+ years. Well within acceptable range for the 10-year project horizon. |
 | Can Precept control the uplink interval? | Yes — own firmware on RAK3172, fully configurable (5/10/15 min). No dependency on Precision Meters radio. |
 | Can Precept write the codec? | Yes — own payload specification, own ChirpStack JavaScript codec. Full control of the data pipeline. |
 
@@ -605,7 +626,7 @@ The primary risks, in order of likelihood and impact:
 | Gateway design (4 units) | **Robust** | Dual coverage on most floors, self-healing capability |
 | Network capacity | **No concern** | 588 nodes at 5-min easily within limits |
 | Node design (Precept custom) | **Correct** | Full control of interval, payload, codec, valve-readiness |
-| Battery strategy (dual D-cell) | **Acceptable** | 2-2.5 year cycle, predictable OPEX |
+| Battery strategy (single D-cell, dual option) | **Good** | ~6 years at 5-min interval; dual cells or longer interval extends to 8-15 years |
 | Test equipment plan | **Adequate** | ~R17K investment covers survey, validation, and troubleshooting |
 
 ---
