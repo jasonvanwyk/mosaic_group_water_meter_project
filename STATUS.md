@@ -124,6 +124,13 @@
 |---------|-------|--------|
 | ~~CLTM ERP identity~~ — **Resolved 2026-02-02.** Custom in-house app, API integration confirmed. | Jason | Done |
 | ~~Precision Meters LoRaWAN confirmation~~ — **Resolved 2026-02-03.** All questions answered. | Jason | Done |
+| Revised meter pricing from Garth — Tanya requested volume discount, Garth revising with manager | Garth | Waiting |
+
+## Strategic Notes
+
+- **Supplier exclusivity committed:** Jason has committed to Garth that the platform is strategically partnered with Precision Meters only. Jason will not work with other meter suppliers on this project. This must be communicated to Tanya.
+- **Tanya shopping around:** Tanya has told Garth she is comparing other meter suppliers. If she selects a different supplier, Precept's platform offering would not apply.
+- **Proposal implication:** The proposal should clearly state the platform is built for Precision Meters integration.
 
 ## Upcoming
 | Event | Date | Notes |
@@ -190,6 +197,8 @@
 | 2026-02-03 | MGW-COR-202602-002 | [Garth reply — all 7 questions answered](docs/planning/correspondence/2026-02-03-garth-meter-questions-reply.md) |
 | 2026-02-03 | MGW-COR-202602-001 | [Phone call with Garth — reply expected today PM](docs/planning/correspondence/2026-02-03-garth-phone-call.md) |
 | 2026-02-04 | MGW-COR-202602-004 | [Proposal update to Tanya](docs/planning/correspondence/2026-02-04-tanya-proposal-update.md) |
+| 2026-02-04 | MGW-COR-202602-005 | [Tanya reply — meters direct from Garth](docs/planning/correspondence/2026-02-04-tanya-proposal-update-reply.md) |
+| 2026-02-04 | MGW-COR-202602-006 | [Phone call with Garth — pricing revision, supplier loyalty](docs/planning/correspondence/2026-02-04-garth-phone-call.md) |
 
 ## Documentation
 

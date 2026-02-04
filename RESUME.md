@@ -35,6 +35,8 @@
 
 ### Updates
 - Emailed Tanya with proposal status update — finalising proposal, waiting on final pricing, out in field today, proposal by tomorrow (5 Feb)
+- **Tanya replied (08:20)** — confirmed she will purchase meters directly from Garth (Precision Meters). Garth CC'd on thread. Supply chain arrangement formally acknowledged by client.
+- **Garth phone call** — Garth sent Tanya pricing. Tanya requested volume discount and told Garth she's shopping around. Garth raised concern about Tanya using another supplier's meters with Jason's platform. Jason committed to Garth: platform is strategically partnered with Precision Meters only — will not work with other meter suppliers. Jason to communicate this to Tanya. Garth revising pricing with his manager.
 
 ---
 
@@ -185,6 +187,8 @@
 | 2026-02-03 | MGW-COR-202602-001 | Phone call with Garth — reply expected today PM |
 | 2026-02-03 | MGW-COR-202602-002 | Garth reply — all 7 questions answered (pricing, LoRaWAN, supply chain) |
 | 2026-02-04 | MGW-COR-202602-004 | Email to Tanya — proposal update, delivery by 5 Feb |
+| 2026-02-04 | MGW-COR-202602-005 | Tanya reply — will purchase meters directly from Garth |
+| 2026-02-04 | MGW-COR-202602-006 | Phone call with Garth — Tanya shopping around, pricing revision, supplier loyalty commitment |
 
 ---
 
