@@ -199,6 +199,7 @@
 | 2026-02-04 | MGW-COR-202602-004 | [Proposal update to Tanya](docs/planning/correspondence/2026-02-04-tanya-proposal-update.md) |
 | 2026-02-04 | MGW-COR-202602-005 | [Tanya reply — meters direct from Garth](docs/planning/correspondence/2026-02-04-tanya-proposal-update-reply.md) |
 | 2026-02-04 | MGW-COR-202602-006 | [Phone call with Garth — pricing revision, supplier loyalty](docs/planning/correspondence/2026-02-04-garth-phone-call.md) |
+| 2026-02-04 | MGW-COR-202602-007 | [RFQ to Garth — 1× 15mm ultrasonic for R&D](docs/planning/correspondence/2026-02-04-garth-rfq-bench-meter.md) |
 
 ## Documentation
 
