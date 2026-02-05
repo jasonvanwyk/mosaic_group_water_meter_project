@@ -8,8 +8,8 @@
 
 ## Right Now
 
-**Phase:** Document Pack Approved — Ready for Client Submission
-**Next Action:** Send document pack to Tanya
+**Phase:** Document Pack Submitted — Awaiting Client Review
+**Next Action:** Tanya reviews docs with board → if proceed, deliver Scope of Work + Proposal
 
 ### Site Visit Completed
 | Item | Details |
@@ -33,16 +33,20 @@
 
 ## Current Session (2026-02-05)
 
-### Document Pack Approved — Ready for Tanya
-| # | Ref | Document | Files |
-|---|-----|----------|-------|
-| 1 | MGW-PRO-202602-001 | Site Assessment Report (updated) | `docs/planning/MGW-Site-Assessment-Report-2026-01-30.html` |
-| 2 | MGW-PRO-202602-002 | Business Case v1.2 | `docs/planning/client/02-business-case-print.html` |
-| 3 | MGW-PRO-202602-005 | Communications Technology Validation v1.0 | `docs/planning/client/05-communications-technology-validation-print.html` |
+### Document Pack Sent to Tanya (12:12, 5 Feb 2026)
+| # | Ref | Document | Status |
+|---|-----|----------|--------|
+| 1 | MGW-PRO-202602-001 | Site Assessment Report | ✓ Sent |
+| 2 | MGW-PRO-202602-002 | Business Case v1.2 | ✓ Sent |
+| 3 | MGW-PRO-202602-005 | Communications Technology Validation v1.0 | ✓ Sent |
 
-**Precision Meters review complete:** Garth confirmed (10:02) they offered Tanya a 5% discount on meter pricing. Jason will send docs to Tanya as is — not adjusting pricing figures in business case.
+**Email:** MGW-COR-202602-011 — sent to Tanya, cc'd Garth and Bradley.
 
-**Plan:** Tanya reviews these docs → if she wants to proceed → Precept delivers formal Scope of Work (MGW-PRO-202602-003) and Proposal/Quote (MGW-PRO-202602-004).
+**Next if Tanya proceeds:**
+- Scope of Work (MGW-PRO-202602-003)
+- Proposal/Quote (MGW-PRO-202602-004)
+- Technical Architecture Document
+- Pilot Agreement
 
 ### RFQ P00044 Progress (Bench Meter)
 - Garth requested POPIA form to open COD account (10:03)
@@ -203,7 +207,7 @@
 7. ~~**Update site assessment for client**~~ — Done (architecture, audience, next steps fixed)
 8. ~~**Draft email to Bradley/Garth**~~ — Done (MGW-COR-202602-008)
 9. ~~**Send doc pack to Bradley/Garth**~~ — Done (4 Feb 21:17), approved (5 Feb 10:02)
-10. **Send doc pack to Tanya** — ready to send
+10. ~~**Send doc pack to Tanya**~~ — Done (5 Feb 12:12), cc'd Garth and Bradley
 11. **Scope of Work** (MGW-PRO-202602-003) — after Tanya buy-in
 12. **Proposal / Quote** (MGW-PRO-202602-004) — after Tanya buy-in
 13. **Then:** Develop ChirpStack payload codec for Precision ultrasonic meters
@@ -228,6 +232,7 @@
 | 2026-02-04 | MGW-COR-202602-008 | Document pack to Bradley/Garth for review before client submission |
 | 2026-02-05 | MGW-COR-202602-009 | Garth reply — 5% discount offered to Tanya, doc pack approved |
 | 2026-02-05 | MGW-COR-202602-010 | RFQ P00044 — POPIA form submitted, awaiting pro-forma |
+| 2026-02-05 | MGW-COR-202602-011 | Document pack sent to Tanya (cc Garth, Bradley) — site assessment, business case, comms validation |
 
 ---
 
