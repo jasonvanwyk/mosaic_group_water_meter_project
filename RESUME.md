@@ -8,8 +8,8 @@
 
 ## Right Now
 
-**Phase:** Document Pack Review / Awaiting Supplier Sign-Off
-**Next Action:** Send doc pack to Bradley/Garth tonight for review → forward to Tanya after approval
+**Phase:** Document Pack Approved — Ready for Client Submission
+**Next Action:** Send document pack to Tanya
 
 ### Site Visit Completed
 | Item | Details |
@@ -33,16 +33,21 @@
 
 ## Current Session (2026-02-05)
 
-### Document Pack Ready — 3 Documents for Client
+### Document Pack Approved — Ready for Tanya
 | # | Ref | Document | Files |
 |---|-----|----------|-------|
 | 1 | MGW-PRO-202602-001 | Site Assessment Report (updated) | `docs/planning/MGW-Site-Assessment-Report-2026-01-30.html` |
 | 2 | MGW-PRO-202602-002 | Business Case v1.2 | `docs/planning/client/02-business-case-print.html` |
 | 3 | MGW-PRO-202602-005 | Communications Technology Validation v1.0 | `docs/planning/client/05-communications-technology-validation-print.html` |
 
-**Email to Bradley/Garth drafted:** MGW-COR-202602-008 — sending tonight, asking them to vet before it goes to Tanya.
+**Precision Meters review complete:** Garth confirmed (10:02) they offered Tanya a 5% discount on meter pricing. Jason will send docs to Tanya as is — not adjusting pricing figures in business case.
 
 **Plan:** Tanya reviews these docs → if she wants to proceed → Precept delivers formal Scope of Work (MGW-PRO-202602-003) and Proposal/Quote (MGW-PRO-202602-004).
+
+### RFQ P00044 Progress (Bench Meter)
+- Garth requested POPIA form to open COD account (10:03)
+- Jason submitted signed POPIA + supporting docs (11:41)
+- **Status:** Awaiting pro-forma invoice → pay → delivery to Howick
 
 ### Updates This Session
 - **Business case revised to v1.2** — node pricing increased to R750/unit (conservative), all downstream financials recalculated (CAPEX ~R1.91–1.98M, base payback 6.3 months, 5-year ROI 816%). Precision Meters partnership language firmed up — removed "happy to discuss alternatives" messaging, changed "manufacturer" to "specialist supplier of independently tested" meters.
@@ -197,8 +202,8 @@
 6. ~~**Communications technology validation**~~ — Done (`docs/planning/client/05-communications-technology-validation.md`)
 7. ~~**Update site assessment for client**~~ — Done (architecture, audience, next steps fixed)
 8. ~~**Draft email to Bradley/Garth**~~ — Done (MGW-COR-202602-008)
-9. **Send doc pack to Bradley/Garth** — tonight
-10. **Send doc pack to Tanya** — after Bradley/Garth approval
+9. ~~**Send doc pack to Bradley/Garth**~~ — Done (4 Feb 21:17), approved (5 Feb 10:02)
+10. **Send doc pack to Tanya** — ready to send
 11. **Scope of Work** (MGW-PRO-202602-003) — after Tanya buy-in
 12. **Proposal / Quote** (MGW-PRO-202602-004) — after Tanya buy-in
 13. **Then:** Develop ChirpStack payload codec for Precision ultrasonic meters
@@ -221,6 +226,8 @@
 | 2026-02-04 | MGW-COR-202602-006 | Phone call with Garth — Tanya shopping around, pricing revision, supplier loyalty commitment |
 | 2026-02-04 | MGW-COR-202602-007 | RFQ to Garth (P00044) — 1× 15mm ultrasonic for R&D bench testing |
 | 2026-02-04 | MGW-COR-202602-008 | Document pack to Bradley/Garth for review before client submission |
+| 2026-02-05 | MGW-COR-202602-009 | Garth reply — 5% discount offered to Tanya, doc pack approved |
+| 2026-02-05 | MGW-COR-202602-010 | RFQ P00044 — POPIA form submitted, awaiting pro-forma |
 
 ---
 
@@ -243,3 +250,4 @@
 - Research completed on LoRaWAN architecture for high-rise deployment
 - Vendor spec sheets uploaded from Precision Meters (4 product lines)
 - Site visit notes formalized into report (2026-01-30)
+- **Precision Meters offered Tanya 5% discount** on meter pricing (confirmed 5 Feb)
