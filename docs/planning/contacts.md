@@ -2,7 +2,7 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-01-30
+**Last Updated:** 2026-02-05
 
 ---
 
@@ -38,6 +38,21 @@
 ### Offices
 - **Cape Town:** 021 510 4266 / info@precisionmeters.co.za
 - **Johannesburg:** +27 (11) 609 6336 / salesjhb2@precisionmeters.co.za
+
+---
+
+## Supplier - RF Design
+
+**Company:** RF Design
+**Website:** https://www.rfdesign.co.za
+**Office Phone:** 021 555 8400
+**Role:** SA distributor for RAK wireless products (gateways, LoRa modules, antennas, RF components)
+
+| Person | Role | Cell | Email |
+|--------|------|------|-------|
+| **Gerrie van Heerden** | Durban Contact | - | gerrie@rfdesign.co.za |
+
+**Notes:** Existing relationship from Fairfield Dairy project. Potential supplier for RAK gateways, RAK3172 modules, antennas, cable assemblies. Also provides BOM kitting services.
 
 ---
 
@@ -82,10 +97,11 @@ Mosaic Group (Tanya Dowley)
 
 ## Quick Reference
 
-| Need | Contact | Number |
-|------|---------|--------|
+| Need | Contact | Number / Email |
+|------|---------|----------------|
 | Client queries | Tanya Dowley | 072 227 0883 |
 | On-site IT / ERP | Sumir | 084 347 5755 |
 | On-site plumbing | Ryan | 084 701 2780 |
 | Meter specs/pricing | Bradley Cassani | 061 864 0536 |
 | Sales/referral | Garth Le Roux | 072 469 8133 |
+| RF/LoRa components | Gerrie van Heerden | gerrie@rfdesign.co.za |

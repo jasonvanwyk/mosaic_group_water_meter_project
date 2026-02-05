@@ -53,6 +53,11 @@
 - Jason submitted signed POPIA + supporting docs (11:41)
 - **Status:** Awaiting pro-forma invoice → pay → delivery to Howick
 
+### RF Technology Validation Request
+- **12:02** — Called Gerrie to discuss potential project and RF technology validation
+- **12:16** — Emailed site assessment + comms validation docs for review
+- **Purpose:** Independent validation of LoRaWAN choice; source components from Gerrie if project proceeds
+
 ### Updates This Session
 - **Business case revised to v1.2** — node pricing increased to R750/unit (conservative), all downstream financials recalculated (CAPEX ~R1.91–1.98M, base payback 6.3 months, 5-year ROI 816%). Precision Meters partnership language firmed up — removed "happy to discuss alternatives" messaging, changed "manufacturer" to "specialist supplier of independently tested" meters.
 - **Business case HTML** created with Precept branding for print-to-PDF.
@@ -233,6 +238,7 @@
 | 2026-02-05 | MGW-COR-202602-009 | Garth reply — 5% discount offered to Tanya, doc pack approved |
 | 2026-02-05 | MGW-COR-202602-010 | RFQ P00044 — POPIA form submitted, awaiting pro-forma |
 | 2026-02-05 | MGW-COR-202602-011 | Document pack sent to Tanya (cc Garth, Bradley) — site assessment, business case, comms validation |
+| 2026-02-05 | MGW-COR-202602-012 | Call + email to Gerrie — RF technology validation request, potential component sourcing |
 
 ---
 
