@@ -58,6 +58,12 @@
 - **12:16** — Emailed site assessment + comms validation docs for review
 - **Purpose:** Independent validation of LoRaWAN choice; source components from Gerrie if project proceeds
 
+### ICASA Type Approval — QALCOSONIC W1
+- **Certificate:** TA-2024/3570 (issued 2025-02-14)
+- **Model:** AXIOMA QALCOSONIC W1 (the Precision Meters 15mm ultrasonic)
+- **LoRa:** 868 MHz, CSS modulation, 6.6 dBm — ICASA approved for SA
+- **File:** `docs/planning/internal/Vendors/AXIOMA QALSONIC W1 ICASA Approval Certificate.pdf`
+
 ### Updates This Session
 - **Business case revised to v1.2** — node pricing increased to R750/unit (conservative), all downstream financials recalculated (CAPEX ~R1.91–1.98M, base payback 6.3 months, 5-year ROI 816%). Precision Meters partnership language firmed up — removed "happy to discuss alternatives" messaging, changed "manufacturer" to "specialist supplier of independently tested" meters.
 - **Business case HTML** created with Precept branding for print-to-PDF.
