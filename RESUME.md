@@ -2,14 +2,14 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-02-05
+**Last Updated:** 2026-02-09
 
 ---
 
 ## Right Now
 
-**Phase:** Document Pack Submitted — Awaiting Client Review
-**Next Action:** Tanya reviews docs with board → if proceed, deliver Scope of Work + Proposal
+**Phase:** Client Engaged — Responding to Tanya's Questions
+**Next Action:** Reply to Tanya's two questions (pilot software, motorised ball valves)
 
 ### Site Visit Completed
 | Item | Details |
@@ -31,7 +31,38 @@
 
 ---
 
-## Current Session (2026-02-05)
+## Current Session (2026-02-09)
+
+### Tanya Replied to Document Pack (15:30, 9 Feb 2026)
+- **Reference:** MGW-COR-202602-016
+- **Tone:** Positive — "Thank goodness I was seated" (business case numbers made an impression)
+- **Question 1:** How would the software work for a pilot? Concerned it's customised and needs to be fully functional to evaluate.
+- **Question 2:** What would motorised ball valves cost? Notes they're excluded but considers them important to the project scope.
+- **File:** `docs/planning/correspondence/2026-02-09-tanya-document-pack-reply.md`
+- **Action:** Reply sent (21:15)
+
+### Reply Sent to Tanya (21:15, 9 Feb 2026)
+- **Reference:** MGW-COR-202602-017
+- Answered both questions: pilot software (full production platform) and valve pricing (three tiers: R250/R650/R3,500 per DN15 valve)
+- Recommended mid-range tier (SS304, position feedback, proven brands)
+- Introduced **pilot commercial structure**: hardware + install upfront, 20% deposit on dev fees (~R8K–R11K), remainder deferred until after 3-month evaluation
+- **Total pilot outlay: ~R42K–R47K** (including ~R22K meters from Precision)
+- Offered to formalise in proposal
+- **File:** `docs/planning/correspondence/2026-02-09-tanya-document-pack-reply-sent.md`
+
+---
+
+## Previous Session (2026-02-06)
+
+### RF Technology Validation Complete
+- **08:38** — Gerrie (RF Design) confirmed LoRaWAN is the best option for single-building deployment
+- **10:52** — Replied confirming custom RAK3172 node approach, asked for recommendations
+- **11:00** — Gerrie offered to source complete unit or assist with PCB development
+- **Outcome:** Independent RF validation complete. Proceeding with custom pulse-counting nodes (RAK3172) interfacing with meter electronic pulse output (not reed switch — ultrasonic meters have no moving parts).
+
+---
+
+## Previous Session (2026-02-05)
 
 ### Document Pack Sent to Tanya (12:12, 5 Feb 2026)
 | # | Ref | Document | Status |
@@ -74,7 +105,7 @@
 
 ---
 
-## Previous Session (2026-02-04)
+## Earlier Session (2026-02-04)
 
 ### Updates
 - Emailed Tanya with proposal status update — finalising proposal, waiting on final pricing, out in field today, proposal by tomorrow (5 Feb)
@@ -86,7 +117,7 @@
 
 ---
 
-## Previous Session (2026-02-03)
+## Earlier Session (2026-02-03)
 
 ### Updates
 - **09:43** — Called Garth Le Roux (Precision Meters). Confirmed he and Bradley will sit together today and reply to our email (site assessment report + 7 questions) by this afternoon.
@@ -245,6 +276,11 @@
 | 2026-02-05 | MGW-COR-202602-010 | RFQ P00044 — POPIA form submitted, awaiting pro-forma |
 | 2026-02-05 | MGW-COR-202602-011 | Document pack sent to Tanya (cc Garth, Bradley) — site assessment, business case, comms validation |
 | 2026-02-05 | MGW-COR-202602-012 | Call + email to Gerrie — RF technology validation request, potential component sourcing |
+| 2026-02-06 | MGW-COR-202602-013 | Gerrie reply — LoRaWAN validated as best option, queried node hardware status |
+| 2026-02-06 | MGW-COR-202602-014 | Reply to Gerrie — confirmed custom RAK3172 nodes, asked for recommendations |
+| 2026-02-06 | MGW-COR-202602-015 | Gerrie reply — offered to source complete unit or assist with PCB development |
+| 2026-02-09 | MGW-COR-202602-016 | Tanya reply — two questions: pilot software approach, motorised ball valve pricing |
+| 2026-02-09 | MGW-COR-202602-017 | Reply to Tanya — pilot software, valve pricing (3 tiers), pilot commercial structure (~R42K–R47K) |
 
 ---
 
