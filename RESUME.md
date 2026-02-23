@@ -2,14 +2,14 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-02-09
+**Last Updated:** 2026-02-23
 
 ---
 
 ## Right Now
 
-**Phase:** Client Engaged — Responding to Tanya's Questions
-**Next Action:** Reply to Tanya's two questions (pilot software, motorised ball valves)
+**Phase:** Client Engaged — Awaiting Tanya's Response
+**Next Action:** Await Tanya's response to scalability, hosting, deployment, and operating cost clarifications
 
 ### Site Visit Completed
 | Item | Details |
@@ -31,7 +31,29 @@
 
 ---
 
-## Current Session (2026-02-09)
+## Current Session (2026-02-23)
+
+### Tanya Follow-Up Questions (08:37, 23 Feb 2026)
+- **Reference:** MGW-COR-202602-018
+- **Tone:** Professional, detail-oriented, cost-conscious — strong buying signal
+- **Question 1:** Is there a meter limit? Can software be deployed at other sites without additional cost?
+- **Question 2:** Hosting costs — assumes these fall away with on-site infrastructure
+- **Question 3:** Requests review of deployment and training amounts
+- **Question 4:** What is the R12K-18K annual operating cost for?
+- **File:** `docs/planning/correspondence/2026-02-23-tanya-followup-questions.md`
+
+### Reply Sent to Tanya (23 Feb 2026)
+- **Reference:** MGW-COR-202602-019
+- Answered all four questions with full detail and options
+- **Q1:** No meter limit, no licensing/per-site fees — full IP ownership, multi-site is configuration not development
+- **Q2:** Confirmed no hosting fee with on-prem; transparent about on-prem responsibilities (power, connectivity, security, hardware)
+- **Q3:** Explained deployment covers tech commissioning (588 devices, 4 gateways, CLTM integration), not plumbing; training split into Sumir (3-4 hrs technical) and Tanya/management (2-3 hrs dashboard); will firm up in proposal
+- **Q4:** Broke down operating costs into three line items; presented three options (full support R1K-1.5K/mo, backup only R100-200/mo, self-managed R0); recommended Option A for first year with path to Option B
+- **File:** `docs/planning/correspondence/2026-02-23-tanya-followup-questions-reply.md`
+
+---
+
+## Previous Session (2026-02-09)
 
 ### Tanya Replied to Document Pack (15:30, 9 Feb 2026)
 - **Reference:** MGW-COR-202602-016
@@ -281,6 +303,8 @@
 | 2026-02-06 | MGW-COR-202602-015 | Gerrie reply — offered to source complete unit or assist with PCB development |
 | 2026-02-09 | MGW-COR-202602-016 | Tanya reply — two questions: pilot software approach, motorised ball valve pricing |
 | 2026-02-09 | MGW-COR-202602-017 | Reply to Tanya — pilot software, valve pricing (3 tiers), pilot commercial structure (~R42K–R47K) |
+| 2026-02-23 | MGW-COR-202602-018 | Tanya follow-up — 4 questions: meter limit/multi-site, hosting costs, deployment/training, annual operating |
+| 2026-02-23 | MGW-COR-202602-019 | Reply to Tanya — scalability, hosting, deployment, operating cost options (3 tiers) |
 
 ---
 
