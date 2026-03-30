@@ -1,9 +1,9 @@
 # Project Status
 
 ## Current Status
-**Phase:** Post-Site Visit / Proposal Development
-**Health:** Green
-**Last Updated:** 2026-02-05
+**Phase:** Meter Architecture Under Review
+**Health:** Amber — W1 sealed unit limitation blocks real-time monitoring architecture
+**Last Updated:** 2026-03-30
 
 ## Completed
 - [x] Project directory created
@@ -119,10 +119,11 @@
 - [x] **Communications technology validation** — Done (v1.0, MD + HTML, `docs/planning/client/05-communications-technology-validation.md`)
 - [x] **Update site assessment for client** — Done (external node architecture, 4 gateways, audience/next steps fixed)
 - [x] **Coordinate with Precision Meters** — Done (pricing confirmed, supply chain agreed, all questions answered)
-- [ ] **Send document pack to Bradley/Garth for review** — drafted (MGW-COR-202602-008), sending tonight
-- [ ] Send document pack to Tanya — after Bradley/Garth approval
-- [ ] Create Scope of Work (MGW-PRO-202602-003) — after Tanya buy-in
-- [ ] Create Proposal / Quote (MGW-PRO-202602-004) — after Tanya buy-in
+- [x] ~~Send document pack to Bradley/Garth for review~~ — sent 2026-02-04, approved 2026-02-05
+- [x] ~~Send document pack to Tanya~~ — sent 2026-02-05 (MGW-COR-202602-011)
+- [ ] **Resolve meter architecture** — W1 sealed unit only supports 4-8hr uplink; need pulse-output ultrasonic meter for real-time platform. Email sent to Garth/Bradley 2026-03-30 (MGW-COR-202603-001)
+- [ ] Create Scope of Work (MGW-PRO-202602-003) — after meter question resolved + Tanya buy-in
+- [ ] Create Proposal / Quote (MGW-PRO-202602-004) — after meter question resolved + Tanya buy-in
 
 ## Blockers
 | Blocker | Owner | Status |
@@ -130,6 +131,8 @@
 | ~~CLTM ERP identity~~ — **Resolved 2026-02-02.** Custom in-house app, API integration confirmed. | Jason | Done |
 | ~~Precision Meters LoRaWAN confirmation~~ — **Resolved 2026-02-03.** All questions answered. | Jason | Done |
 | Revised meter pricing from Garth — Tanya requested volume discount, Garth revising with manager | Garth | Waiting |
+| **W1 sealed unit — no pulse output, 4-8hr uplink only.** Need pulse-output ultrasonic meter for real-time platform. Email sent 2026-03-30 (MGW-COR-202603-001). | Garth/Bradley | Waiting |
+| Tanya response — last contact 23 Feb (5+ weeks). May be waiting on meter/proposal resolution. | Tanya | Waiting |
 
 ## Strategic Notes
 
@@ -144,9 +147,11 @@
 | ~~Internal research~~ | 2026-01-30 | Done — CLTM, hosting, solution design |
 | ~~Site assessment report~~ | 2026-01-30 | Done — sent to Precision Meters |
 | ~~Business case + supporting docs~~ | 4 Feb 2026 | Done — business case, comms validation, site assessment updated |
-| Send doc pack to Bradley/Garth | 4 Feb 2026 | Tonight — for review before client submission |
-| Send doc pack to Tanya | 5 Feb 2026 | After Bradley/Garth approval |
-| Scope of Work + Proposal | TBD | After Tanya confirms interest |
+| ~~Send doc pack to Bradley/Garth~~ | 4 Feb 2026 | Done — approved 5 Feb |
+| ~~Send doc pack to Tanya~~ | 5 Feb 2026 | Done — MGW-COR-202602-011 |
+| W1 bench testing update to Garth/Bradley | 30 Mar 2026 | Done — MGW-COR-202603-001 |
+| Garth/Bradley response on pulse-output meter | TBD | Waiting |
+| Scope of Work + Proposal | TBD | After meter question resolved + Tanya buy-in |
 
 ## Key Contacts
 

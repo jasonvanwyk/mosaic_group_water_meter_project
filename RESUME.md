@@ -2,14 +2,14 @@
 
 **Project:** Mosaic Group Water Meter Monitoring
 **Code:** MGW
-**Last Updated:** 2026-02-23
+**Last Updated:** 2026-03-30
 
 ---
 
 ## Right Now
 
-**Phase:** Client Engaged — Awaiting Tanya's Response
-**Next Action:** Await Tanya's response to scalability, hosting, deployment, and operating cost clarifications
+**Phase:** Meter Architecture Under Review — Awaiting Garth/Bradley Response
+**Next Action:** Await Garth/Bradley's response on pulse-output ultrasonic meter availability
 
 ### Site Visit Completed
 | Item | Details |
@@ -31,7 +31,30 @@
 
 ---
 
-## Current Session (2026-02-23)
+## Current Session (2026-03-30)
+
+### W1 Bench Testing — Critical Finding
+- **The QALCOSONIC W1 is a sealed unit** with integrated LoRaWAN radio and sealed battery
+- **Uplink interval locked at 8hr (default) / 4hr (minimum)** — factory-configured only
+- At best: 3–6 readings per day — this is AMR (automated meter reading), not real-time monitoring
+- NFC and optical interface exist but polling would drain sealed battery and require per-meter hardware
+- **Original architecture assumed pulse output** with external RAK3172 nodes — W1 doesn't support this
+
+### Email Sent to Garth & Bradley (30 Mar 2026)
+- **Reference:** MGW-COR-202603-001
+- Updated on bench testing findings
+- Asked whether Precision offers an ultrasonic meter with **electronic pulse output** (no integrated radio)
+- Presented two paths: open architecture (preferred) vs Axioma ecosystem (AMR-only)
+- Reaffirmed commitment to Precision Meters
+- **File:** `docs/planning/correspondence/2026-03-30-garth-bradley-w1-bench-testing-update.md`
+
+### Awaiting
+- Garth/Bradley response on pulse-output meter availability
+- Tanya's response (last contact 23 Feb — 5 weeks, may be waiting on us to resolve meter question)
+
+---
+
+## Previous Session (2026-02-23)
 
 ### Tanya Follow-Up Questions (08:37, 23 Feb 2026)
 - **Reference:** MGW-COR-202602-018
@@ -305,6 +328,7 @@
 | 2026-02-09 | MGW-COR-202602-017 | Reply to Tanya — pilot software, valve pricing (3 tiers), pilot commercial structure (~R42K–R47K) |
 | 2026-02-23 | MGW-COR-202602-018 | Tanya follow-up — 4 questions: meter limit/multi-site, hosting costs, deployment/training, annual operating |
 | 2026-02-23 | MGW-COR-202602-019 | Reply to Tanya — scalability, hosting, deployment, operating cost options (3 tiers) |
+| 2026-03-30 | MGW-COR-202603-001 | W1 bench testing update to Garth/Bradley — sealed unit limitation, pulse-output meter request |
 
 ---
 
